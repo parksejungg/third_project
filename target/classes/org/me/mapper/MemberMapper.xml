@@ -2,11 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="member">
 
+<!-- 회원가입 쿼리문 -->
 <!-- INSERT INTO tbl_member(USERID, USERPW, USERNAME,useradd1, useradd2,userbirth,regdate) 
  VALUES('zzang1', '1234', '짱한솔1','싸움도 짱시 주먹3동 내가제일쎄 아파트 2동','1818허', 19600101,sysdate); -->
 <insert id="register" parameterType="org.me.domain.MemberVO">
-INSERT INTO tbl_member(USERID, USERPW, USERNAME,useradd1, useradd2,userbirth,regdate) 
- VALUES(${userId}, ${userPw} ,${userName},${userAdd1},${userAdd2}, ${userBirth}, sysdate)
-
+INSERT INTO tbl_member(USERID, USERPW, USERNAME,useradd1, useradd2,userbirth, regdate)
+VALUES(#{userId}, #{userPw}, #{userName}, #{userAdd1}, #{userAdd2}, #{userBirth}, sysdate)
 </insert>
+
+<!-- 로그인 쿼리문 -->
+<!-- select userId, userpw from tbl_member where userId = 'zzang3' and userPw = 1234; -->
+<select id="login" parameterType="org.me.domain.MemberVO">
+select USERID, USERPW from tbl_member 
+where userId = #{userId} and userPw = #{userPW}
+</select>
 </mapper>

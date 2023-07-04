@@ -14,37 +14,40 @@ import lombok.extern.log4j.Log4j;
 
 @Controller
 @RequestMapping("/member/*")
-@Log4j
 
 public class MemberController {
 	
-	@Inject
+	@Inject	
 	private MemberService service;
 	
 	//회원가입페이지
 	@RequestMapping(value ="/register", method = RequestMethod.GET)
 	public String registerGET() {
-		log.info("회원가입페이지");
+		System.out.println("횐가입 페이쥐ㅣ");
 		return "/member/register";
 	}
 	
-	// 회원가입 처리
-	/*
-	 * @RequestMapping(value = "/register.do", method = RequestMethod.POST) public
-	 * String registerPOST(MemberVO memberVO){
-	 * 
-	 * service.register(memberVO);
-	 * 
-	 * return "/"; }
-	 */
-	
-	  @RequestMapping(value = "/register", method = RequestMethod.POST) public
-	  String registerPOST(MemberVO memberVO, RedirectAttributes redirectAttributes)
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public String registerPOST(MemberVO memberVO, RedirectAttributes redirectAttributes)
 	  throws Exception {
 	  
 	  String hashedPw = BCrypt.hashpw(memberVO.getUserPw(), BCrypt.gensalt());
-	  memberVO.setUserPw(hashedPw); service.register(memberVO);
+	  memberVO.setUserPw(hashedPw);
+	  service.register(memberVO); 
 	  redirectAttributes.addFlashAttribute("msg", "REGISTERED");
 	  
-	  return "redirect:/member/login"; }
-	 }
+	  
+	  return "/member/login"; 
+	 
+	}
+	
+	//로그인 페이지
+	@RequestMapping(value="/login", method = RequestMethod.GET)
+	public String loginGET() {
+		System.out.println("로그인 페이즤");
+		return "/member/login";
+	}
+	
+	
+	  
+}

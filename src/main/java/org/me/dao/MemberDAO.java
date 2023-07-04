@@ -4,5 +4,7 @@ import org.me.domain.MemberVO;
 
 public interface MemberDAO {
 
-	void register(MemberVO memberVO);
+	public void register(MemberVO memberVO);
+	
+	public void login (MemberVo)
 }

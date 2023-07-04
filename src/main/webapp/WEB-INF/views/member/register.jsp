@@ -10,61 +10,15 @@
 </head>
 <body>
  <form action="/member/register" method="post">
-        <div class="input-group mb-3">
           <input type="text" name="userId" class="form-control" placeholder="아아디">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-exclamation"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="text" name="userName" class="form-control" placeholder="이름">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="email" name="userEmail" class="form-control" placeholder="이메일">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
           <input type="password" name="userPw" class="form-control" placeholder="비밀번호">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
           <input type="password" class="form-control" placeholder="비밀번호 확인">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-              <label for="agreeTerms">
-               I agree to the <a href="#">terms</a>
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
-          </div>
-          <!-- /.col -->
-        </div>
+          <input type="text" name="userName" class="form-control" placeholder="이름">
+          <input type="text" name="userBirth" class="form-control" placeholder="생일">
+          <input type="text" name="userAdd1" class="form-control" placeholder="주소1">
+          <input type="text" name="userAdd2" class="form-control" placeholder="주소2">
+          <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+          <button type="submit" class="btn btn-primary btn-block">Register</button>
       </form>
       
       <script>
