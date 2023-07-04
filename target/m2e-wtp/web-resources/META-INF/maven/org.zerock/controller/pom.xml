@@ -18,6 +18,14 @@
 	</properties>
 	<dependencies>
 	
+		<!--비밀번호 암호화 -->
+		<!-- https://mvnrepository.com/artifact/org.mindrot/jbcrypt -->
+		<dependency>
+		    <groupId>org.mindrot</groupId>
+		    <artifactId>jbcrypt</artifactId>
+		    <version>0.4</version>
+		</dependency>
+			
 		<!-- 스프링은 AOP 처리가 된 객체를 생성할 때, AspectJ Weaver 라이브러리의
 		         도움을 받게 됩니다. 필히! pom.xml에 추가해 주시기 바랍니다. -->
 		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->

@@ -10,5 +10,6 @@
 </head>
 <body>
    <a href="payment.do">티켓예매</a>
+   <a href="member/register">회원가입</a>
 </body>
 </html>
