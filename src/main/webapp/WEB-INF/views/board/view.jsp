@@ -67,11 +67,11 @@
 	</div>
 	
 		<div class="view_input01" style="position: absolute; width: 100%; text-align: center; top: 292px; font-size: 16pt">
-	              제목 : <br /><input class="view_input02" style="border: 1px solid #8D8D8D; background: transparent;  margin-top: 13px; height: 35px; padding: 5px;" name="title" id="title" size="80" value="${dto.title}" placeholder="제목을 입력해주세요"> <br /><br />
-	              내용 : <br /><textarea class="view_input03" style="border: 1px solid #8D8D8D; background: transparent; margin-top: 13px;  height: 85px; padding: 10px;" name="content" id="content" rows="4" cols="80" placeholder="내용을 입력해주세요">${dto.content}</textarea> <br /><br />
+	              제목 : <br /><input class="view_input02" style="border: 1px solid #8D8D8D; background: transparent;  margin-top: 5px; height: 35px; padding: 7px;" name="title" id="title" size="80" value="${dto.title}" placeholder="제목을 입력해주세요"> <br /><br />
+	              내용 : <br /><textarea class="view_input03" style="border: 1px solid #8D8D8D; background: transparent; margin-top: 5px;  height: 120px; padding: 12px;" name="content" id="content" rows="4" cols="80" placeholder="내용을 입력해주세요">${dto.content}</textarea> <br /><br />
 		         <!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
 	             <!-- 날짜 형식 => yyyy 4자리연도, MM 월, dd 일, a 오전/오후, HH 24시간제, hh 12시간제, mm 분, ss 초 -->
-		   <div style="margin-top: 17px">작성일자 : <fmt:formatDate value="${dto.regdate}" pattern="yyyy-MM-dd a HH:mm:ss"/></div>
+		   <div style="margin-top: 3px">작성일자 : <fmt:formatDate value="${dto.regdate}" pattern="yyyy-MM-dd a HH:mm:ss"/></div>
 	    </div>
 	
 	<div style="width:650px; margin: 0 auto; text-align: center;">

@@ -57,7 +57,7 @@
 
 <form name="form1" method="post" action="${path}/board/insert.do">
 	<div style="text-align: center; font-size: 16pt">
-	       작성자 : <input style="border: 1px solid #8D8D8D; background: transparent; height: 32px; padding: 7px;" name="writer" id="writer"  placeholder="이름을 입력해주세요">
+	       작성자 : <input style="border: 1px solid #8D8D8D; background: transparent; height: 32px; padding: 7px;" name="writer" id="writer"  placeholder="이름">
 	</div>
 	
 	<div style="text-align: center; padding: 5px; margin-left: auto; margin-right: auto; margin: 0 auto;">
@@ -65,8 +65,8 @@
 	</div>
 	
 	   <div  class="write_input01" style="position: absolute; width: 100%; text-align: center; top: 292px; font-size: 16pt">
-	              제목 : <br /><input class="write_input02" style="border: 1px solid #8D8D8D; background: transparent;  margin-top: 13px; height: 35px; padding: 5px;" name="title" id="title" size="80" placeholder="제목을 입력해주세요"> <br /><br />
-	              내용 : <br /><textarea class="write_input03" style="border: 1px solid #8D8D8D; background: transparent; margin-top: 13px;  height: 150px; padding: 10px;" name="content" id="content" rows="4" cols="80" placeholder="내용을 입력해주세요"></textarea> <br /><br />
+	              제목 : <br /><input class="write_input02" style="border: 1px solid #8D8D8D; background: transparent;  margin-top: 13px; height: 35px; padding: 7px;" name="title" id="title" size="80" placeholder="제목을 입력해주세요"> <br /><br />
+	              내용 : <br /><textarea class="write_input03" style="border: 1px solid #8D8D8D; background: transparent; margin-top: 13px;  height: 150px; padding: 12px;" name="content" id="content" rows="4" cols="80" placeholder="내용을 입력해주세요"></textarea> <br /><br />
 	    </div>
 
 	<div style="width:650px; margin: 0 auto; text-align: center;">
