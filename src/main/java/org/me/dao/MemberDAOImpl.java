@@ -17,6 +17,7 @@ public class MemberDAOImpl implements MemberDAO {
 
 	private static SqlSessionFactory sqlMapper;
 	
+	
 	private static SqlSessionFactory getInstane() {
 		
 			if(sqlMapper == null) {
@@ -33,15 +34,25 @@ public class MemberDAOImpl implements MemberDAO {
 			return sqlMapper;		
 	}	
 	
+	//회원가입 처리
 	@Override
 	public void register(MemberVO memberVO) {
 		sqlMapper = getInstane();
 		SqlSession session = sqlMapper.openSession();
 		
 		System.out.println("세션열려");
-		session.insert("member.register", memberVO);
+		session.insert("register", memberVO);
 		System.out.println("찐으로 등록함");
 		session.commit();
+	}
+
+	//로그인 처리
+	@Override
+	public MemberVO login(MemberVO memberVO) {
+		sqlMapper = getInstane();
+		SqlSession session = sqlMapper.openSession();
+
+		return session.selectOne("login",memberVO);
 	}
 
 }

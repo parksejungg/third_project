@@ -6,5 +6,5 @@ public interface MemberDAO {
 
 	public void register(MemberVO memberVO);
 	
-	public void login (MemberVo)
+	public MemberVO login(MemberVO memberVO);
 }

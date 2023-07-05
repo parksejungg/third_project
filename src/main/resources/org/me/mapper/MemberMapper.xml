@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="member">
+<mapper namespace="org.me.mapper.MemberMapper">
 
 <!-- 회원가입 쿼리문 -->
 <!-- INSERT INTO tbl_member(USERID, USERPW, USERNAME,useradd1, useradd2,userbirth,regdate) 
@@ -12,8 +12,8 @@ VALUES(#{userId}, #{userPw}, #{userName}, #{userAdd1}, #{userAdd2}, #{userBirth}
 
 <!-- 로그인 쿼리문 -->
 <!-- select userId, userpw from tbl_member where userId = 'zzang3' and userPw = 1234; -->
-<select id="login" parameterType="org.me.domain.MemberVO">
+<select id="login" resultType="org.me.domain.MemberVO">
 select USERID, USERPW from tbl_member 
-where userId = #{userId} and userPw = #{userPW}
+where userId = #{userId}
 </select>
 </mapper>
