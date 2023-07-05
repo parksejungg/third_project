@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+      	@media screen and (max-width: 1400px){
+			/* *{background: pink;} */
+			
+			.write_content{
+				width: 900px !important;
+			}
+
+			.write_input01{
+				top: 276px !important;
+			}
+
+			.write_input02{
+				width: 670px;
+				height: 35px !important;
+			}
+
+			.write_input03{
+				width: 670px;
+				height: 90px !important;
+			}
+
+        }

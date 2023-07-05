@@ -1,0 +1,102 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/resources/css/list.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- boot css -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<title>릴레이 소설 게시판</title>
+
+<!-- sts에서 jquery 사용 -->
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<script>
+    $(document).ready(function(){
+        $("#btnWrite").click(function(){
+            // 페이지 주소 변경(이동)
+            location.href = "${path}/board/write.do";
+        });
+    });
+</script>
+</head>
+<body style="background: #FFFBF2">
+
+<h2>게시글 목록</h2>
+
+<div>
+	<img style="width: 100%;" src="../resources/img/board/relay_banner.png" alt=""> 
+</div>
+
+<div style="text-align: center; font-size: 18pt; line-height: 55px; margin-top: 60px; margin-bottom: 70px">
+	<span>
+	✎ <br />
+	관람객 또한 작가가 될 수 있는 공간을 꿈꿉니다. <br />
+	작가의 글에 이어 릴레이 소설을 작성해보세요. <br />
+	여러분들의 창의성이 모여 하나의 작품이 될 거예요!</span>
+</div>
+
+<div class="list_relay" style="text-align: center;">
+	<img style="width: 1280px" src="../resources/img/board/relay_img.png" alt=""> <br /><br />
+</div>
+
+<div class="list_btn01" style="width: 1280px; margin-top: 50px; margin-left: auto; margin-right: auto;">
+	<button class="btn btn-outline-secondary list_btn02" style="margin: 5px; width: 120px; height: 50px;" type="button" id="btnWrite">글쓰기</button>
+</div>
+
+
+<table class="table list_table01" style="width: 1200px; height: auto; margin-top: 5px; margin-left: auto; margin-right: auto;">
+    <c:forEach var="row" items="${list}" varStatus="loop">
+        <c:if test="${loop.index % 3 == 0}">
+            <tr style="border-bottom:hidden;">
+        </c:if>
+        <td>
+        <div style="text-align: center; padding: 15px;">
+            <!-- boot card -->
+            <div style="width: 400px; height: 240px; margin: 0 auto; background: #F1E8DB; border-radius: 5px;">
+	                <div class="card-header" style="color: #994D22; font-size: 18pt">${row.bno}</div>
+	                <div class="card-body" style="color: #545454; margin-top: 20px"><b>작성자 : </b>${row.writer}
+	                <p class="card-title" style="color: #545454; margin-top: 5px; margin-bottom: 30px; font-size: 17pt;"><b>제목 : </b><a href="${path}/board/view.do?bno=${row.bno}" style="text-decoration: none; color: #545454">${row.title}</a></p>
+	                <!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
+	                <div class="card-text" style="color: #545454"><b>작성일 : </b><fmt:formatDate value="${row.regdate}" pattern="yyyy-MM-dd"/></div>
+	               <!-- <div class="card-text" style="color: #545454"><b>수정일 : </b><fmt:formatDate value="${row.updatedate}" pattern="yyyy-MM-dd"/></div> -->
+                </div>
+            </div>
+        </div>
+        </td>
+        <c:if test="${(loop.index + 1) % 3 == 0 || loop.last}">
+            </tr>
+        </c:if>
+    </c:forEach>
+</table>
+
+<table class="table list_table02" style="width: 890px; height: auto; margin-top: 5px; margin-left: auto; margin-right: auto;">
+    <c:forEach var="row" items="${list}" varStatus="loop">
+        <c:if test="${loop.index % 2 == 0}">
+            <tr style="border-bottom:hidden;">
+        </c:if>
+        <td>
+        <div style="text-align: center; padding: 15px;">
+            <!-- boot card -->
+            <div style="width: 400px; height: 240px; margin: 0 auto; background: #F1E8DB; border-radius: 5px;">
+	                <div class="card-header" style="color: #994D22; font-size: 18pt">${row.bno}</div>
+	                <div class="card-body" style="color: #545454; margin-top: 20px"><b>작성자 : </b>${row.writer}
+	                <p class="card-title" style="color: #545454; margin-top: 5px; margin-bottom: 30px; font-size: 17pt;"><b>제목 : </b><a href="${path}/board/view.do?bno=${row.bno}" style="text-decoration: none; color: #545454">${row.title}</a></p>
+	                <!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
+	                <div class="card-text" style="color: #545454"><b>작성일 : </b><fmt:formatDate value="${row.regdate}" pattern="yyyy-MM-dd"/></div>
+	               <!-- <div class="card-text" style="color: #545454"><b>수정일 : </b><fmt:formatDate value="${row.updatedate}" pattern="yyyy-MM-dd"/></div> -->
+                </div>
+            </div>
+        </div>
+        </td>
+        <c:if test="${(loop.index + 1) % 2 == 0 || loop.last}">
+            </tr>
+        </c:if>
+    </c:forEach>
+</table>
+
+
+
+</body>
+</html>

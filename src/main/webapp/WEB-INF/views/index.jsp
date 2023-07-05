@@ -10,5 +10,6 @@
 </head>
 <body>
    <a href="payment.do">티켓예매</a>
+   <a href="list.do">게시판</a>
 </body>
 </html>

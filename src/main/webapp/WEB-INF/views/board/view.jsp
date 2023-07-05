@@ -1,0 +1,87 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/resources/css/view.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<title>게시글 작성</title>
+<!-- sts에서 jquery 사용 -->
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<!-- 헤더 넣을 공간 -->
+<script>
+    $(document).ready(function(){
+        $("#btnDelete").click(function(){
+            if(confirm("정말로 삭제하시겠습니까?")){
+                document.form1.action = "${path}/board/delete.do";
+                document.form1.submit();
+            }
+        });
+        
+        $("#btnUpdete").click(function(){
+            //var title = document.form1.title.value; ==> name속성으로 처리할 경우
+            //var content = document.form1.content.value;
+            //var writer = document.form1.writer.value;
+            var title = $("#title").val();
+            var content = $("#content").val();
+            var writer = $("#writer").val();
+            if(title == ""){
+                alert("제목을 입력하세요");
+                document.form1.title.focus();
+                return;
+            }
+            if(content == ""){
+                alert("내용을 입력하세요");
+                document.form1.content.focus();
+                return;
+            }
+            if(writer == ""){
+                alert("이름을 입력하세요");
+                document.form1.writer.focus();
+                return;
+            }
+            document.form1.action="${path}/board/update.do"
+            // 폼에 입력한 데이터를 서버로 전송
+            document.form1.submit();
+        });
+    });
+</script>
+</head>
+<body style="background: #FFFBF2">
+<!-- 카테고리 넣을 공간 -->
+<h2>게시글 보기</h2>
+
+<div style="text-align: center;">
+	<img style="width: 400px; margin-bottom: 55px" src="../resources/img/board/view_title.png" alt=""> <br /><br />
+</div>
+
+<form name="form1" method="post">
+	<div style="text-align: center; font-size: 16pt">
+	       작성자 : <input style="border: 1px solid #8D8D8D; background: transparent; height: 32px; padding: 7px;" name="writer" id="writer" value="${dto.writer}" placeholder="이름을 입력해주세요">
+	</div>
+	
+	<div style="text-align: center; padding: 5px; margin-left: auto; margin-right: auto; margin: 0 auto;">
+		<img class="view_content" style="width: 1150px; margin-top: 10px; position: relative;" src="../resources/img/board/view_contents.png" alt=""> <br /><br />
+	</div>
+	
+		<div class="view_input01" style="position: absolute; width: 100%; text-align: center; top: 292px; font-size: 16pt">
+	              제목 : <br /><input class="view_input02" style="border: 1px solid #8D8D8D; background: transparent;  margin-top: 13px; height: 35px; padding: 5px;" name="title" id="title" size="80" value="${dto.title}" placeholder="제목을 입력해주세요"> <br /><br />
+	              내용 : <br /><textarea class="view_input03" style="border: 1px solid #8D8D8D; background: transparent; margin-top: 13px;  height: 85px; padding: 10px;" name="content" id="content" rows="4" cols="80" placeholder="내용을 입력해주세요">${dto.content}</textarea> <br /><br />
+		         <!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
+	             <!-- 날짜 형식 => yyyy 4자리연도, MM 월, dd 일, a 오전/오후, HH 24시간제, hh 12시간제, mm 분, ss 초 -->
+		   <div style="margin-top: 17px">작성일자 : <fmt:formatDate value="${dto.regdate}" pattern="yyyy-MM-dd a HH:mm:ss"/></div>
+	    </div>
+	
+	<div style="width:650px; margin: 0 auto; text-align: center;">
+	    <!-- 게시물번호를 hidden으로 처리 -->
+	    <input type="hidden" name="bno" value="${dto.bno}">
+	    <button class="btn btn-outline-secondary" style="margin: 5px; width: 90px; height: 45px;" type="button" id="btnUpdete">수정</button>
+	    <button class="btn btn-outline-secondary" style="margin: 5px; width: 90px; height: 45px;" type="button" id="btnDelete">삭제</button>
+	</div>
+</form>
+
+
+</body>
+</html>

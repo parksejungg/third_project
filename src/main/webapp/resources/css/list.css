@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+      	@media screen and (max-width: 1400px){
+			/* *{background: pink;} */
+			
+			.list_relay{
+                display: none;
+			}
+			
+			.list_btn01{
+				width: 100% !important;
+				margin-top: -38px !important;
+				margin-bottom: 40px !important;
+				text-align: center;
+			}
+
+			.list_btn02{
+				width: 210px !important;
+				height: 50px !important;
+			}
+			
+			.list_table01{
+				display: none;
+			}
+
+			.list_table02{
+				display: block !important;
+			}
+		}
+		
+		.list_table02{
+			display: none;
+		}

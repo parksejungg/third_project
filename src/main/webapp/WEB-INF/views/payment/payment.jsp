@@ -55,7 +55,7 @@ function fn_buy() {
 				data : JSON.stringify(paymentInfo),
 				success:function(data, textStatus){
 					console.log(paymentInfo);
-					location.href = "/paymentDone.do?apply_num=" + rsp.apply_num + "&paid_amount=" + rsp.paid_amount;
+					location.href = "/paymentDone.do";
 				},
 				error : function(e) {
 					console.log(e);

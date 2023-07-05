@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+      	@media screen and (max-width: 1400px){
+			/* *{background: pink;} */
+			
+			.view_content{
+				width: 900px !important;
+				height: 450px !important;
+			}
+
+			.view_input01{
+				top: 276px !important;
+			}
+
+			.view_input02{
+				width: 670px;
+				height: 35px !important;
+			}
+
+			.view_input03{
+				width: 670px;
+				height: 90px !important;
+			}
+
+        }
