@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: korFont;
+    src: url("/font/SUITE-Regular.otf")format('opentype');
+}
+
+@font-face {
+    font-family: engFont;
+    src: url("/font/ViaodaLibre-Regular.otf")format('opentype');
+}
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background-color: #FFFBF2;
+}
+
+.container {
+    /* border: 1px solid red; */
+}
+
+.wrapAll {
+    width: 98%;
+    /* border: 1px solid sandybrown; */
+}
+
+/* .header {
+    border: 1px solid seagreen;
+    margin-top: 20px;
+} */
+
+.header img {
+    width: 125px;
+    margin-top: 12px;
+}
+
+.wrapBody {
+    width: 600px;
+    margin-top: 65px;
+    margin-bottom: 290px;
+}
+
+.loginText {
+    font-family: 'engFont';
+    font-size: 90pt;
+    letter-spacing: 8px;
+    /* border: 1px solid sandybrown; */
+}
+
+.loginform {
+    /* border: 1px solid pink; */
+    margin-top: 10px;
+}
+
+.loginform input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1.5px solid #A98B67;
+    font-size: 14pt;
+    font-family: 'korFont';
+
+    padding-bottom: 5px;
+    /*  border: 1px solid rebeccapurple; */
+
+}
+
+.loginform input[type=text] {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.loginform input:focus {
+    outline: none;
+    border-bottom: 2px solid #994D22;
+    /* box-shadow: 0 0 0 .2rem rgba(156, 102, 3, 0.3); */
+}
+
+.loginform input[type=password] {
+    margin-bottom: 20px;
+}
+
+.notice {
+    text-align: center;
+    font-size: 14pt;
+    font-family: 'korFont';
+    color: #994D22;
+    padding: 20px 0 20px 0;
+    margin-bottom: 20px;
+    display: none;
+
+}
+
+hr {
+    width: 100%;
+    background-color: #A98B67;
+    height: 1px;
+    margin-top: 50px;
+
+}
+
+.btn {
+    margin-top: 30px;
+}
+
+.btnLogin {
+    font-family: korFont;
+    padding: 10px 0 10px 0;
+    width: 100%;
+    font-size: 16pt;
+}
+
+.btnRegister {
+    float: right;
+    font-family: korFont;
+    font-size: 12pt;
+    margin-top: 15px;
+
+}
+
+.btnRegister>a {
+    text-decoration: none;
+    color: #8d8d8d;
+}
+
+.footer {
+    font-family: engFont;
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #8d8d8d;
+
+}
