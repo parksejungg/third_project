@@ -14,7 +14,7 @@ public class PaymentServiceImpl implements PaymentService {
 	private PaymentDAO dao;
 	
 	@Override
-	public void insertPaymentSuccess(PaymentVO vo) {
-		dao.insertPaymentSuccess(vo);		
+	public void PaymentInsert(PaymentVO vo) {
+		dao.PaymentInsert(vo);		
 	}
 }
