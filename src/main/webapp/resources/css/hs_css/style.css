@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: engFont;
-  src: url("/font/ViaodaLibre-Regular.otf")format('opentype');
+  src: url("../../common/font/ViaodaLibre-Regular.otf")format('opentype');
 }
 
 .container {
@@ -20,7 +20,6 @@
 .header img {
   width: 125px;
 }
-
 
 body:before {
   content: "";
@@ -258,7 +257,7 @@ a {
 .burger span,
 .burger:after {
   width: 100%;
-  height: 2px;
+  height: 2.5px;
   display: block;
   background: #994D22;
   border-radius: 2px;
