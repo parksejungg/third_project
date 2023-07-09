@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>render</title>
+    <link rel="stylesheet" href="./css/render.css">
+    <!-- <link rel="stylesheet" href="./css/renderbtn.css"> -->
+</head>
+<script>
+    window.addEventListener('load', function () {
+        var rcanvas = document.getElementById('rcanvas');
+        rcanvas.classList.remove('fade-out');
+    });
+</script>
+
+<body>
+
+    <div class="warpHeader">
+        <div class="header">
+            <img src="/img/logo.svg" alt="로고" srcset="">
+            <div class="text">
+                <button> Entry MUSEUM </button>
+            </div>
+        </div>
+    </div>
+
+
+    <canvas id="backcanvas" class="backcanvas"> </canvas>
+    <canvas id="rcanvas" class="rcanvas fade-out"> </canvas>
+    <script src="/js/render.js"></script>
+
+    <!--<div class="wrapBody">
+        <canvas id="rcanvas" class="rcanvas"> </canvas>
+        <script src="/js/render.js"></script>
+    </div>-->
+
+</body>
+
+</html>
