@@ -3,7 +3,7 @@
 <mapper namespace="org.me.mapper.ReviewMapper">
 
 
-<!-- 글 등록 INSERT-->
+<!-- 글 등록 insert-->
 <insert id="insertBoard">
 
  	 insert into tbl_board_C(bno, title, content, writer, regdate, updatedate)
@@ -11,5 +11,12 @@
 	
 </insert>
 
+
+<!-- 글 수정 update -->
+<update id="modify">
+
+	update tbl_board_C set title = #{title}, content = #{content}, updatedate = sysdate where bno = #{bno}
+
+</update>
 
 </mapper>

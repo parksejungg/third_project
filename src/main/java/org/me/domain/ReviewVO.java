@@ -3,6 +3,8 @@ package org.me.domain;
 import java.util.Date;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
 public class ReviewVO {

@@ -16,7 +16,7 @@ public interface ReviewMapper {
     public List<ReviewVO> selectAllBoards();
     
     // 글 수정 메서드
-    public void updateBoard(ReviewVO board);
+    public int modify(ReviewVO board);
     
     
     // 글 삭제 메서드

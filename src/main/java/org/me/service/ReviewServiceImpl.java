@@ -12,10 +12,17 @@ public class ReviewServiceImpl implements ReviewService {
 	private ReviewMapper mapper;
 	
 	
+	// 글등록
 	@Override
 	public void insertBoard(ReviewVO board) {
 		mapper.insertBoard(board);
 		
+	}
+
+	// 글수정
+	@Override
+	public int modify(ReviewVO board) {
+		return mapper.modify(board);
 	}
 
 	
