@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+/* 한글 눈누폰트 적용 사이트 */
+/* https://noonnu.cc/font_page/1150 */
+
+/* 영문 구글폰트 적용 사이트 */
+/* https://fonts.google.com/specimen/Viaoda+Libre?query=Viaoda+Libre */
+
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ViaodaLibre';
+    src: url('/resources/fonts/ej_fonts/ViaodaLibre-Regular.ttf') format('truetype');
+}
+
+
+footer{
+   margin-top: 140px;
+   height: 310px;
+}
+
+.rollbanner{
+   background-color: #f0ebe8;
+    width: 100%;
+    height: 40px;
+    font-size: .875rem;
+    color: #fff;
+    letter-spacing: -.075em;
+}
+.rollbanner > .roll{
+    position: relative;
+    width: 1100px;
+    height: 40px;
+   background-color: #f0ebe8;
+
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.roll::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 100%;
+    z-index: 1;
+   
+}
+.roll::after{
+    content:'';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    z-index: 1;
+}
+.rolltxt{
+    position: absolute;
+    height: 100%;
+}
+.rolltxt > ul{
+    margin: 0;
+    list-style: none;
+    padding: 9px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.rolltxt > ul > li{
+   color: #000;
+    padding-right: 30px;
+   text-decoration: none;
+    white-space: nowrap;
+    font-family: 'SUITE-Regular';
+    
+}
+
+.footimg img{
+   width: 250px;
+   padding: 30px;
+   margin-top: 110px;
+   margin-right: 25px;
+   float: right;
+}
+.foottxtbox{
+   text-align: left;
+   margin-top: 30px;
+   height: 40px;
+   line-height: 30px;
+   font-family: 'ViaodaLibre';
+   font-size: 15px;
+}
+.foottxtbox li{
+   list-style: none;
+    font-family: 'SUITE-Regular';
+}
+.foottxtbox li:last-child{
+    font-family: 'ViaodaLibre';
+   
+}
+.foottxtbox img{
+   margin-top: 20px;
+   width: 50px;
+}
+.foottxtbox li span{
+    font-family: 'ViaodaLibre';
+}

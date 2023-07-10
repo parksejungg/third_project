@@ -133,5 +133,7 @@ function fn_buy() {
 	    </div>
 	   </div>
 
+
 </body>
+<%@ include file="../includes/footer.jsp" %>
 </html> 
