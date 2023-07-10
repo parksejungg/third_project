@@ -19,6 +19,7 @@
 
 .header img {
   width: 125px;
+  margin-left: 25px;
 }
 
 body:before {
@@ -329,5 +330,11 @@ a {
   .site-mobile-menu {
     width: 100%;
   }
+}
+
+@media(max-width: 500px) {
+    .header img {
+        width: 100px;
+    }
 
 }

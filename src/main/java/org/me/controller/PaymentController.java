@@ -31,10 +31,8 @@ public class PaymentController {
 	}
 	
 
-//	@RequestMapping(value = "/")
-//	public ModelAndView goMain() {
-//		return new ModelAndView("/payment/intro_payment");
-//	}
-	
-	
+	/*
+	 * @RequestMapping(value = "ffff") public ModelAndView goMain() { return new
+	 * ModelAndView("/payment/intro_payment"); }
+	 */
 }
