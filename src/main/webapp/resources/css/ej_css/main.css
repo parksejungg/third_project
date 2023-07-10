@@ -286,6 +286,8 @@ footer{
     padding-right: 30px;
 	text-decoration: none;
     white-space: nowrap;
+    font-family: 'SUITE-Regular';
+    
 }
 
 .footimg img{
@@ -298,8 +300,8 @@ footer{
 .foottxtbox{
 	text-align: left;
 	margin-top: 30px;
-	height: 40px;
-	line-height: 30px;
+	height: 30px;
+	line-height: 25px;
 	font-family: 'ViaodaLibre';
 	font-size: 15px;
 }
@@ -394,6 +396,7 @@ footer{
 		display: none;
 	}
 	.foottxtbox{
+		margin-top: 50px;
 		font-size: 14px;
 	}
 	.foottxtbox img{
