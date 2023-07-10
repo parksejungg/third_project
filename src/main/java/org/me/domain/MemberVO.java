@@ -11,7 +11,6 @@ public class MemberVO {
 	private String userPw;
 	private String userName;
 	private String userAdd1;
-	private String userAdd2;
 	private int userBirth;
 	private Date regDate;
 	

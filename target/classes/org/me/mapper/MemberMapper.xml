@@ -3,17 +3,16 @@
 <mapper namespace="org.me.mapper.MemberMapper">
 
 <!-- 회원가입 쿼리문 -->
-<!-- INSERT INTO tbl_member(USERID, USERPW, USERNAME,useradd1, useradd2,userbirth,regdate) 
- VALUES('zzang1', '1234', '짱한솔1','싸움도 짱시 주먹3동 내가제일쎄 아파트 2동','1818허', 19600101,sysdate); -->
+<!-- INSERT INTO tbl_member(userid, USERPW, USERNAME,useradd1,userbirth,regdate)  VALUES('zzang6', 'vam123', '짱한솔1','싸움도 짱시 주먹3동 내가제일쎄 아파트 2동', 19600101,sysdate); -->
 <insert id="register" parameterType="org.me.domain.MemberVO">
-INSERT INTO tbl_member(USERID, USERPW, USERNAME,useradd1, useradd2,userbirth, regdate)
-VALUES(#{userId}, #{userPw}, #{userName}, #{userAdd1}, #{userAdd2}, #{userBirth}, sysdate)
+INSERT INTO tbl_member(USERID, USERPW, USERNAME,useradd1,userbirth, regdate)
+VALUES(#{userId}, #{userPw}, #{userName}, #{userAdd1}, #{userBirth}, sysdate)
 </insert>
 
 <!-- 로그인 쿼리문 -->
 <!-- select userId, userpw from tbl_member where userId = 'zzang3' and userPw = 1234; -->
 <select id="login" resultType="org.me.domain.MemberVO">
 select USERID, USERPW from tbl_member 
-where userId = #{userId}
+where USERID = #{userId}
 </select>
 </mapper>

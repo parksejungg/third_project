@@ -29,9 +29,10 @@
 
                 <div class="btnRegister"><a href="/member/register">회원가입</a></div>
             </div>
+             <%@ include file="/WEB-INF/views/includes/footer.jsp" %>
 
 <script>
-$(".btnLogin").click(function(){
+$(".btnLogin_").click(function(){
 	alert("로그인 버튼 작용");
 	
 	//로긴 메서드 서버 요청
