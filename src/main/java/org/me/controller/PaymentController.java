@@ -30,7 +30,6 @@ public class PaymentController {
 		return new ModelAndView("/payment/payment");
 	}
 	
-
 	
 	@RequestMapping(value = "/")
 	public ModelAndView goMain() {

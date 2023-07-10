@@ -1,0 +1,406 @@
+@charset "utf-8";
+
+/* 한글 눈누폰트 적용 사이트 */
+/* https://noonnu.cc/font_page/1150 */
+
+/* 영문 구글폰트 적용 사이트 */
+/* https://fonts.google.com/specimen/Viaoda+Libre?query=Viaoda+Libre */
+
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ViaodaLibre';
+    src: url('/resources/fonts/ej_fonts/ViaodaLibre-Regular.ttf') format('truetype');
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 20px;
+}
+
+body {
+	--color-bg: #f7f5f0;
+	--color-link: #ccc0a2;
+	background-color: var(--color-bg);
+	--cursor-stroke: none; 
+	--cursor-fill: #994D22; 
+	--cursor-stroke-width: 1px; 
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body, main {
+	height: 100vh;
+}
+
+
+@keyframes loaderAnim {
+	to {
+		opacity: 1;
+		transform: scale3d(0.5,0.5,1);
+	}
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+	outline: none;
+}
+
+a:hover {
+	outline: none;
+}
+
+a:focus {
+	outline: none;
+	background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+	background: transparent;
+}
+
+.cursor { 
+	display: none; 
+}
+
+.frame {
+	padding: 1rem;
+	text-align: center;
+	position: relative;
+	z-index: 1000;
+	font-weight: 500;
+}
+
+.frame__title {
+	font-size: 1rem;
+	margin: 0 0 1rem;
+	float: left;
+	font-weight: 500;
+}
+
+.frame__links {
+	display: inline;
+	float: right;
+	font-size: 27px;
+	font-family: 'ViaodaLibre';
+}
+
+.frame__links a:not(:last-child) {
+	margin-right: 1rem;
+}
+
+.menu {
+	width: 100%;
+	display: block;
+	height: 40%;
+	padding: 2rem 1rem 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	counter-reset: menucounter;
+	z-index: 100;
+}
+
+.menu__item {
+	margin-top: 40px;
+	margin-bottom: 1rem;
+    font-family: 'ViaodaLibre';
+	text-transform: uppercase;
+	cursor: pointer;
+	color: var(--color-menu);
+	will-change: transform;
+}
+
+.menu__item::before {
+	counter-increment: menucounter;
+	content: counters(menucounter, ".", decimal-leading-zero);
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: var(--color-link);
+	z-index: -1;
+	line-height: 1;
+}
+
+.menu__item-text {
+	letter-spacing: 7px;
+	pointer-events: none;
+	display: block;
+	line-height: 1;
+	position: relative;
+	z-index: -1;
+	font-size: 2rem;
+}
+
+.menu__item-text .word {
+	padding: 0 1.25rem;
+	overflow: hidden;
+	perspective: 1000px;
+	perspective-origin: -150% 50%;
+}
+
+.menu__item-text .word--clone {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.menu__item-text .word--clone .char {
+	opacity: 0;
+}
+
+.menu__item-text .char {
+	transform-origin: 0% 0%;
+	will-change: transform;
+}
+
+.hover-reveal {
+	position: absolute;
+	z-index: -1;
+	width: 350px;
+	height: 450px;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	opacity: 0;
+	will-change: transform, filter;
+}
+
+.hover-reveal__inner {
+	overflow: hidden;
+	will-change: transform, opacity;
+}
+
+.hover-reveal__inner,
+.hover-reveal__img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.hover-reveal__img {
+	background-size: cover;
+	background-position: 50% 50%;
+	will-change: transform;
+}
+
+.content {
+	line-height: 33px;
+	max-width: 430px;
+	margin: 0 auto;
+	z-index: -1;
+	position: relative;
+	text-align: justify;
+	margin-top: 90px;
+	font-family: 'SUITE-Regular';
+}
+
+.content::after {
+	content: '';
+	position: fixed;
+	pointer-events: none;
+	z-index: 500;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: linear-gradient(transparent 0%,transparent 70%,var(--color-bg) 100%);
+}
+
+footer{
+	margin-top: 140px;
+	height: 310px;
+}
+
+.rollbanner{
+	background-color: #f0ebe8;
+    width: 100%;
+    height: 40px;
+    font-size: .875rem;
+    color: #fff;
+    letter-spacing: -.075em;
+}
+.rollbanner > .roll{
+    position: relative;
+    width: 1100px;
+    height: 40px;
+	background-color: #f0ebe8;
+
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.roll::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 100%;
+    z-index: 1;
+	
+}
+.roll::after{
+    content:'';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    z-index: 1;
+}
+.rolltxt{
+    position: absolute;
+    height: 100%;
+}
+.rolltxt > ul{
+    margin: 0;
+    list-style: none;
+    padding: 9px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.rolltxt > ul > li{
+	color: #000;
+    padding-right: 30px;
+	text-decoration: none;
+    white-space: nowrap;
+}
+
+.footimg img{
+	width: 250px;
+	padding: 30px;
+	margin-top: 110px;
+	margin-right: 25px;
+	float: right;
+}
+.foottxtbox{
+	text-align: left;
+	margin-top: 30px;
+	height: 40px;
+	line-height: 30px;
+	font-family: 'ViaodaLibre';
+	font-size: 15px;
+}
+.foottxtbox li{
+	list-style: none;
+    font-family: 'SUITE-Regular';
+}
+.foottxtbox li:last-child{
+    font-family: 'ViaodaLibre';
+	
+}
+.foottxtbox img{
+	margin-top: 20px;
+	width: 50px;
+}
+.foottxtbox li span{
+    font-family: 'ViaodaLibre';
+}
+
+
+@media screen and (min-width: 53em) {
+	.frame {
+		pointer-events: none;
+		width: 100%;
+		align-content: space-between;
+		padding: 1.5rem 2rem;
+	}
+	.frame a {
+		pointer-events: auto;
+	}
+	.frame__title {
+		justify-self: start;
+	}
+	.menu__item::before {
+		left: 1vw;
+		top: 0.25vw;
+		letter-spacing: 2px;
+	}
+	.menu__item-text {
+		flex-direction: column;
+		font-size: 7.5vw;
+	}
+	.menu__item-text .word {
+    	padding: 0 3vw;
+    }
+	.content{
+		margin-top: 15%;
+	}
+	
+}
+
+@media (any-pointer:fine) {
+	.cursor {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: block;
+		pointer-events: none;
+		z-index: 1001;
+	}
+	.cursor__inner {
+		fill: var(--cursor-fill);
+		stroke: var(--cursor-stroke);
+		stroke-width: var(--cursor-stroke-width);
+		opacity: 0.7;
+	}
+	.no-js .cursor {
+		display: none;
+	}
+}
+
+@media (max-width:848px){
+	.hover-reveal{
+		display: none;
+	}
+	.frame__links{
+		font-size: 20px;
+	}
+	.menu__item::before{
+		font-size: 16px;
+	}
+	.content{
+		display: none;
+	}
+	footer{
+		height: 0px;
+	}
+	.rollbanner > .roll{
+		width: 300px;
+	}
+	.footimg{
+		display: none;
+	}
+	.foottxtbox{
+		font-size: 14px;
+	}
+	.foottxtbox img{
+		display: none;
+	}
+}
+
+
+
+
