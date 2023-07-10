@@ -1,3 +1,10 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: engFont;
+    src: url("/font/ViaodaLibre-Regular.otf")format('opentype');
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -8,35 +15,63 @@ canvas {
     position: absolute;
 }
 
-.wrapBody {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+a {
+    text-decoration: none !important;
+}
 
+.wrapAll {
+    position: relative;
+}
+
+.test {
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 img {
     width: 120px;
-    position: absolute;
-    z-index: 100;
+    height: 120px;
     pointer-events: none;
+    position: absolute !important;
+    z-index: 100;
+
+    margin-left: 100px;
+    margin-top: 50px;
 }
 
-.btnEnter {
-    margin-top: 500px;
-
-}
-
-.text button {
+.textpart {
     position: absolute;
     z-index: 100;
+    right: 0;
+
+    margin-top: 60px;
+    margin-right: 100px;
 }
 
-.container {
-    position: absolute;
+.realtext {
+    width: 350px;
+    font-family: engFont;
+    color: #FFFBF2;
+    font-size: 14pt;
+    letter-spacing: 2px;
+    pointer-events: none;
+    text-align: left;
 }
 
+input[type=button] {
+    width: 200px;
+    margin-top: 10px;
+    font-family: engFont;
+    font-size: 14pt;
+    letter-spacing: 2px;
+    padding: 0 5px;
+    color: #d3d3d3;
+}
+
+
+/* 애니메이션 */
 .fade-out {
     animation-name: fadeOut;
     animation-duration: 3s;
@@ -49,5 +84,40 @@ img {
 
     to {
         opacity: 0;
+    }
+}
+
+/* 미디어 쿼리 */
+@media(max-width: 768px) {
+
+    img {
+        width: 90px;
+        margin-left: 50px;
+    }
+
+    .textpart {
+        margin-top: 70px;
+        margin-right: -10px;
+    }
+}
+
+@media(max-width: 500px) {
+    img {
+        width: 90px;
+        margin-left: 30px;
+    }
+
+    .textpart {
+        margin-right: -40px;
+    }
+
+    input[type=button] {
+        width: 200px;
+        margin-top: 10px;
+        font-family: engFont;
+        font-size: 14pt;
+        letter-spacing: 2px;
+        padding: 0 5px;
+        color: #d3d3d3;
     }
 }

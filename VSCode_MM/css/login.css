@@ -136,3 +136,29 @@ hr {
     color: #8d8d8d;
 
 }
+
+/* 미디어쿼리 */
+@media(max-width: 768px) {
+
+    .loginText {
+        font-size: 80pt;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .header img {
+        width: 100px;
+    }
+
+    .loginText {
+        font-size: 60pt;
+    }
+
+    .wrapBody {
+        width: 100%;
+        margin-bottom: 350px;
+        margin-top: 115px;
+    }
+
+}

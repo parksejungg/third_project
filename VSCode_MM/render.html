@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>render</title>
     <link rel="stylesheet" href="./css/render.css">
+    <link rel="stylesheet" href="./css/bootstrap_min.css">
+    <link rel="stylesheet" href="./css/rbutton.css">
     <!-- <link rel="stylesheet" href="./css/renderbtn.css"> -->
 </head>
 <script>
@@ -16,21 +18,22 @@
 </script>
 
 <body>
-
-    <div class="warpHeader">
-        <div class="header">
-            <img src="/img/logo.svg" alt="로고" srcset="">
-            <div class="text">
-                <button> Entry MUSEUM </button>
+    <div class="wrapAll">
+        <div class="test">
+            <img src="/img/rlogo.svg" alt="로고">
+            <div class="textpart">
+                <div class="realtext">A PLACE WHERE EVERYONE<br>
+                    CAN MAKE ART<br>
+                </div>
+                <a href="/"><input type="button" class="button button--ujarak button--border-thin button--text-thick"
+                        value="Entry Museum"></a>
             </div>
         </div>
+
+        <canvas id="backcanvas" class="backcanvas"> </canvas>
+        <canvas id="rcanvas" class="rcanvas fade-out"> </canvas>
+        <script src="/js/render.js"></script>
     </div>
-
-
-    <canvas id="backcanvas" class="backcanvas"> </canvas>
-    <canvas id="rcanvas" class="rcanvas fade-out"> </canvas>
-    <script src="/js/render.js"></script>
-
     <!--<div class="wrapBody">
         <canvas id="rcanvas" class="rcanvas"> </canvas>
         <script src="/js/render.js"></script>

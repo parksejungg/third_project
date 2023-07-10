@@ -4,8 +4,9 @@ var rcontext = rcanvas.getContext("2d");
 var backcanvas = document.getElementById("backcanvas");
 var backcontext = backcanvas.getContext("2d");
 
+
 // 이미지 객체 배열
-var imgSource = ['img/1.png', 'img/2.png', 'img/3.png'];
+var imgSource = ['img/1-1.png', 'img/2.png', 'img/3.png'];
 var currntImgIndex = 0; // 현재 이미지 인덱스
 var backIndex = currntImgIndex + 1; //뒤에 이미지 인덱스
 
@@ -22,32 +23,32 @@ frontimg.onload = function () {
 };
 
 
-/*
-function resizeAndDraw() {
+
+/* function resizeAndDraw() {
     rcanvas.width = window.innerWidth;
     rcanvas.height = window.innerHeight;
-    
+
     backcanvas.width = window.innerWidth;
     backcanvas.height = window.innerHeight;
-    
+
     var widthRatio = rcanvas.width / backimg.width;
     var heightRatio = rcanvas.height / backimg.height;
     var scaleRatio = Math.max(widthRatio, heightRatio); // 가로 세로 비율 중 큰 값을 사용하여 이미지 비율 유지
-    
+
     var scaledWidth = backimg.width * scaleRatio;
     var scaledHeight = backimg.height * scaleRatio;
-    
+
     if (rcanvas.width < 1000) {
         scaledWidth = 1000;
         scaledHeight = 1000 * (backimg.height / backimg.width);
-    }    
-    
+    }
+
     var x = (rcanvas.width - scaledWidth) / 2; // 이미지 중앙 정렬
     var y = (rcanvas.height - scaledHeight) / 2;
-    
+
     rcontext.clearRect(0, 0, rcanvas.width, rcanvas.height);
     rcontext.drawImage(frontimg, x, y, scaledWidth, scaledHeight);
-}*/
+} */
 
 function resizeAndDraw() {
     rcanvas.width = window.innerWidth;
@@ -163,11 +164,11 @@ function erase(x, y) {
 
             backimg.onload = function () {
                 rcanvas.classList.remove('fade-out');
-                resizeAndDraw();
             };
-
+            resizeAndDraw();
             rcontext.clearRect(0, 0, rcanvas.width, rcanvas.height);
             rcontext.drawImage(frontimg, 0, 0, rcanvas.width, rcanvas.height); // 이미지를 캔버스에 다시 그림
+
         }, 3000);
     }
 }
