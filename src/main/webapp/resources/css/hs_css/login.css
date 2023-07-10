@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: korFont;
-    src: url("/font/SUITE-Regular.otf")format('opentype');
+    src: url("../../common/font/SUITE-Regular.otf")format('opentype');
 }
 
 @font-face {
     font-family: engFont;
-    src: url("/font/ViaodaLibre-Regular.otf")format('opentype');
+    src: url("../../common/font/ViaodaLibre-Regular.otf")format('opentype');
 }
 
 * {
@@ -17,22 +17,8 @@
 }
 
 body {
-    background-color: #FFFBF2;
+    background-color: #FFFBF2 !important;;
 }
-
-.container {
-    /* border: 1px solid red; */
-}
-
-.wrapAll {
-    width: 98%;
-    /* border: 1px solid sandybrown; */
-}
-
-/* .header {
-    border: 1px solid seagreen;
-    margin-top: 20px;
-} */
 
 .header img {
     width: 125px;
@@ -49,11 +35,9 @@ body {
     font-family: 'engFont';
     font-size: 90pt;
     letter-spacing: 8px;
-    /* border: 1px solid sandybrown; */
 }
 
 .loginform {
-    /* border: 1px solid pink; */
     margin-top: 10px;
 }
 
@@ -66,7 +50,6 @@ body {
     font-family: 'korFont';
 
     padding-bottom: 5px;
-    /*  border: 1px solid rebeccapurple; */
 
 }
 
@@ -104,14 +87,14 @@ hr {
 
 }
 
-.btn {
+.btn_ {
     margin-top: 30px;
 }
 
-.btnLogin {
+.btnLogin_ {
     font-family: korFont;
     padding: 10px 0 10px 0;
-    width: 100%;
+    width: 100% !important;
     font-size: 16pt;
 }
 
@@ -134,5 +117,27 @@ hr {
     margin-top: 10px;
     margin-bottom: 10px;
     color: #8d8d8d;
+
+}
+
+/* 미디어쿼리 */
+@media(max-width: 768px) {
+
+    .loginText {
+        font-size: 80pt;
+    }
+}
+
+@media(max-width: 500px) {
+
+
+    .loginText {
+        font-size: 60pt;
+    }
+
+    .wrapBody {
+        margin-bottom: 350px;
+        margin-top: 115px;
+    }
 
 }
