@@ -7,4 +7,5 @@ public interface ReviewService {
 	
 	public void insertBoard(ReviewVO board);
 	
+	public int modify(ReviewVO board);
 }

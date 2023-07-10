@@ -9,15 +9,16 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <link rel="stylesheet" href="/resources/css/payment/bootstrap.min.css">
 <link rel="stylesheet" href="/resources/css/payment/sj_payment.css">
-<link rel="stylesheet" href="/resources/css/hs_css/style.css">
+<link rel="stylesheet" href="/resources/css/payment/style2.css">
 <title></title>
 </head>
 <body>
 
   <div class="row">
         <div class="logo_form">
-            <img src="/resources/img/sj_img/logo.png" class="logo_img">
-           <span class="site-mobile-menu site-navbar-target">
+            <img src="/resources/img/sj_img/logo.svg" class="logo_img">
+           <!-- 햄버거 토글 시작 -->
+              <span class="site-mobile-menu site-navbar-target">
                     <div class="site-mobile-menu-header">
                         <div class="site-mobile-menu-close">
                             <span class="js-menu-toggle"></span>
@@ -57,6 +58,7 @@
    				<script src="/resources/js/hs_js/bootstrap.min.js"></script>
                 <script src="/resources/js/hs_js/aos.js"></script>
     			<script src="/resources/js/hs_js/custom.js"></script>
+    			 <!-- 햄버거 토글 끝 -->
         </div>
         <div class="col-7">
         <img src="/resources/img/sj_img/payment.svg" class="pay_img">

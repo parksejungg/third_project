@@ -12,7 +12,7 @@
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 <link rel="stylesheet" href="/resources/css/payment/bootstrap.min.css">
 <link rel="stylesheet" href="/resources/css/payment/sj_payment.css">
-<link rel="stylesheet" href="/resources/css/hs_css/style.css">
+<link rel="stylesheet" href="/resources/css/payment/style2.css">
 <script type="text/javascript">
 
 function fn_buy() {
@@ -73,7 +73,7 @@ function fn_buy() {
 <body>
 	  <div class="row">
         <div class="logo_form">
-            <img src="/resources/img/sj_img/logo.png" class="logo_img">
+            <img src="/resources/img/sj_img/logo.svg" class="logo_img">
             <!-- 햄버거 토글 시작 -->
               <span class="site-mobile-menu site-navbar-target">
                     <div class="site-mobile-menu-header">
@@ -133,5 +133,7 @@ function fn_buy() {
 	    </div>
 	   </div>
 
+
 </body>
+<%@ include file="../includes/footer.jsp" %>
 </html> 
