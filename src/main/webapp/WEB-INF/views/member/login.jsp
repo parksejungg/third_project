@@ -16,8 +16,8 @@
                 <div class="loginText">LOGIN</div>
                  <form id="login_form" method="post">
 	                <div class="loginform">
-	                    <div><input type="text" id="userId" placeholder="아이디"></div>
-	                    <div><input type="password" id="userPw" placeholder="비밀번호"></div>
+	                    <div><input type="text" name="userId" placeholder="아이디"></div>
+	                    <div><input type="password" name="userPw" placeholder="비밀번호"></div>
 	                    <div class="notice">
 	                        아이디 또는 비밀번호를 확인 해 주세요.
 	                    </div>
