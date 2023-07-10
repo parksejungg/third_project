@@ -16,25 +16,24 @@ public class PaymentController {
 	private PaymentService paymentService;		
 	
 	@RequestMapping(value = "/paymentProcess.do")
-	public void paymentDone(@RequestBody PaymentVO vo) {
-		paymentService.insertPaymentSuccess(vo);
+	public void PaymentProcess(@RequestBody PaymentVO vo) {
+		paymentService.PaymentInsert(vo);
 	}	
 	
-	@RequestMapping(value = "paymentDone.do")
-	public ModelAndView fwdPaymentSuccessPage() {
+	@RequestMapping(value = "/paymentSuccess.do")
+	public ModelAndView PaymentSuccessPage() {
 		return new ModelAndView("/payment/paymentSuccess");
 	}
 	
 	@RequestMapping(value = "payment.do")
-	public ModelAndView fwdPaymentPage() {
+	public ModelAndView PaymentPage() {
 		return new ModelAndView("/payment/payment");
 	}
 	
 
-	
 	@RequestMapping(value = "/")
 	public ModelAndView goMain() {
-		return new ModelAndView("index");
+		return new ModelAndView("/payment/intro_payment");
 	}
 	
 	
