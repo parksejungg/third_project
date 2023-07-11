@@ -42,9 +42,9 @@
 	</div>		
 	<div class="btn_wrap">
 		 <a class="btn" id="list_btn" href="/review/list">조회 페이지</a> 
-        <a class="btn" id="modify_btn" href="/review/modify?bno='${read.bno}'">수정 하기</a>
+        <a class="btn" id="modify_btn" href="/review/modify?bno=${read.bno}">수정 하기</a>
 	</div>
-	<form action="/review/modify" method="get">
+	<form id="infoForm" action="/review/modify" method="get">
 		<input type="hidden" id="bno" name="bno" value='<c:out value="${read.bno}"/>'>
 	</form>
 <script>

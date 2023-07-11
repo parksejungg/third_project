@@ -29,13 +29,13 @@ public class ReviewController {
 		model.addAttribute("list", reviewservice.getList());
 	}
 	
-	// 글등록
+	// 글등록페이지로 이동
 	@GetMapping("/insert")
 	public void board() {
 		System.out.println("게시판 등록 !");
 	}
 	
-	
+	// 글등록
 	@PostMapping("/insert")
 	public String insertBoard(ReviewVO board, RedirectAttributes rttr) {
 		log.info("게시글 등록 : " + board);
@@ -57,12 +57,13 @@ public class ReviewController {
 	
 	
 	
-	// 글수정
+	// 글수정페이지로 이동
 	@GetMapping("/modify")
 	public void modify(int bno, Model model) {
 		model.addAttribute("modify", reviewservice.getBoard(bno));
 	}
 	
+	// 글 수정
 	@PostMapping("/modify")
 	public String ModifyPOST(ReviewVO board, RedirectAttributes rttr) {
 		
