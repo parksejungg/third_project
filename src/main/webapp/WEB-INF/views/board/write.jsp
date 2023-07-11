@@ -26,6 +26,7 @@
             var title = $("#title").val();
             var content = $("#content").val();
             var writer = $("#writer").val();
+            
             if(title == ""){
                 alert("제목을 입력하세요");
                 document.form1.title.focus();
@@ -71,7 +72,7 @@
 
 	<div style="width:650px; margin: 0 auto; text-align: center;">
 	    <!-- 게시물번호를 hidden으로 처리 -->
-	    <button class="btn btn-outline-secondary" style="margin: 5px; width: 90px; height: 45px;" type="button" id="btnSave">확인</button>
+	    <button class="btn btn-outline-secondary" style="margin: 5px; width: 90px; height: 45px;" type="button" id="btnSave">작성</button>
 	    <button class="btn btn-outline-secondary" style="margin: 5px; width: 90px; height: 45px;" type="button" onclick="btnreset()">취소</button>
 	</div>
 </form>

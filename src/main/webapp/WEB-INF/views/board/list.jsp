@@ -55,11 +55,11 @@
         <div style="text-align: center; padding: 15px;">
             <!-- boot card -->
             <div style="width: 400px; height: 240px; margin: 0 auto; background: #F1E8DB; border-radius: 5px;">
-	                <div class="card-header" style="color: #994D22; font-size: 20pt";><b>${row.bno}</b></div>
-	                <div class="card-body" style="color: #545454; margin-top: 14px; font-size: 13pt;"><b>작성자 : </b>${row.writer}
-	                <p class="card-title" style="color: #545454; margin-top: 18px; margin-bottom: 18px; font-size: 20pt;"><b><a href="${path}/board/view.do?bno=${row.bno}" style="text-decoration: none; color: #545454">${row.title}</a></b></p>
+	                <div class="card-header" style="color: #994D22; font-size: 20pt";>${row.bno}</div>
+	                <div class="card-body" style="color: #545454; margin-top: 11px; font-size: 13pt; font-family: 'SUITE-Regular' !important;"><span>' </span> <b>${row.writer}</b> <span>' 님</span>
+	                <p class="card-title" style="color: #545454; margin-top: 18px; margin-bottom: 18px; font-size: 20pt; font-family: 'SUITE-Regular' !important;"><b><a href="${path}/board/view.do?bno=${row.bno}" style="text-decoration: none; color: #545454">${row.title}</a></b></p>
 	                <!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
-	                <div class="card-text" style="color: #545454"><fmt:formatDate value="${row.regdate}" pattern="yyyy-MM-dd"/></div>
+	                <div style="color: #545454; font-family: 'SUITE-Regular' !important;"><fmt:formatDate value="${row.regdate}" pattern="yyyy-MM-dd"/></div>
 	               <!-- <div class="card-text" style="color: #545454"><b>수정일 : </b><fmt:formatDate value="${row.updatedate}" pattern="yyyy-MM-dd"/></div> -->
                 </div>
             </div>
@@ -80,11 +80,11 @@
         <div style="text-align: center; padding: 15px;">
             <!-- boot card -->
             <div style="width: 400px; height: 240px; margin: 0 auto; background: #F1E8DB; border-radius: 5px;">
-	                <div class="card-header" style="color: #994D22; font-size: 20pt";><b>${row.bno}</b></div>
-	                <div class="card-body" style="color: #545454; margin-top: 14px; font-size: 13pt;"><b>작성자 : </b>${row.writer}
-	                <p class="card-title" style="color: #545454; margin-top: 18px; margin-bottom: 18px; font-size: 20pt;"><b><a href="${path}/board/view.do?bno=${row.bno}" style="text-decoration: none; color: #545454">${row.title}</a></b></p>
+	                <div class="card-header" style="color: #994D22; font-size: 20pt";>${row.bno}</div>
+	                <div class="card-body" style="color: #545454; margin-top: 11px; font-size: 13pt; font-family: 'SUITE-Regular' !important;"><span>' </span> <b>${row.writer}</b> <span>' 님</span>
+	                <p class="card-title" style="color: #545454; margin-top: 18px; margin-bottom: 18px; font-size: 20pt; font-family: 'SUITE-Regular' !important;"><b><a href="${path}/board/view.do?bno=${row.bno}" style="text-decoration: none; color: #545454">${row.title}</a></b></p>
 	                <!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
-	                <div class="card-text" style="color: #545454"><fmt:formatDate value="${row.regdate}" pattern="yyyy-MM-dd"/></div>
+	                <div style="color: #545454; font-family: 'SUITE-Regular' !important;"><fmt:formatDate value="${row.regdate}" pattern="yyyy-MM-dd"/></div>
 	               <!-- <div class="card-text" style="color: #545454"><b>수정일 : </b><fmt:formatDate value="${row.updatedate}" pattern="yyyy-MM-dd"/></div> -->
                 </div>
             </div>

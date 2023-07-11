@@ -12,6 +12,10 @@
 			font-family: 'SUITE-Regular', 'Viaoda Libre';
 		}
 
+		.card-text{
+			font-family: 'SUITE-Regular' !important;
+		}
+
       	@media screen and (max-width: 1400px){
 			/* *{background: pink;} */
 			
@@ -21,7 +25,7 @@
 			
 			.list_btn01{
 				width: 100% !important;
-				margin-top: -53px !important;
+				margin-top: -35px !important;
 				margin-bottom: 53px !important;
 				text-align: center;
 			}
