@@ -1,5 +1,7 @@
 package org.me.mapper;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.me.domain.ReviewVO;
@@ -33,7 +35,7 @@ public class ReviewMapperTests {
 		
 	
 	
-	@Test
+	//@Test
 	public void testModify() {
 		ReviewVO board = new ReviewVO();
 		
@@ -44,6 +46,24 @@ public class ReviewMapperTests {
 		int result = mapper.modify(board);
 		System.out.println("게시글 수정 " + result);
 	
+	}
+	
+	//@Test
+	public void testGetList() {
+		
+		List list = mapper.getList();
+		
+		for(int i = 0; i < list.size(); i++) {
+			log.info("" + list.get(i));
+		}
+	}
+	
+	
+	@Test
+	public void testGetBoard() {
+		
+		int bno = 8;
+		log.info("글 조회 ===> " + mapper.getBoard(bno));
 	}
 
 }
