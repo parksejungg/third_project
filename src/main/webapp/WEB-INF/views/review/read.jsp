@@ -15,6 +15,7 @@
   crossorigin="anonymous"></script>
 </head>
 <body>
+<%@ include file="../includes/header.jsp" %>
 <h1>조회 페이지</h1>
 	<div class="input_wrap">
 		<label>게시판 번호</label>
@@ -41,12 +42,14 @@
 		<input name="updateDate" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${read.updatedate}"/>' >
 	</div>		
 	<div class="btn_wrap">
-		 <a class="btn" id="list_btn" href="/review/list">조회 페이지</a> 
-        <a class="btn" id="modify_btn" href="/review/modify?bno=${read.bno}">수정 하기</a>
+		 <a class="btn" id="list_btn" href="/review/list">뒤로가기</a> 
+         <a class="btn" id="modify_btn" href="/review/modify?bno=${read.bno}">수정</a>
+         <a class="btn" id="delete_btn">삭제</a>
 	</div>
 	<form id="infoForm" action="/review/modify" method="get">
 		<input type="hidden" id="bno" name="bno" value='<c:out value="${read.bno}"/>'>
 	</form>
+	
 <script>
 	let form = $("#infoForm");
 	
@@ -60,7 +63,14 @@
 		form.attr("action", "/review/modify");
 		form.submit();
 	});	
+	
+	
+	$("#delete_btn").on("click", function(e){
+	    form.attr("action", "/review/delete");
+	    form.attr("method", "post");
+	    form.submit();
+	});
 </script>
-
+<%@ include file="../includes/footer.jsp" %>
 </body>
 </html>

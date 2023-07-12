@@ -17,4 +17,7 @@ public interface ReviewService {
 	
 // 	글조회
 	public ReviewVO getBoard(int bno);
+	
+//	글삭제
+	public int deleteBoard(int bno);
 }

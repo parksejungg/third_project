@@ -20,7 +20,7 @@ public interface ReviewMapper {
     
     
     // 글 삭제 메서드
-    public void deleteBoard(int bno);
+    public int deleteBoard(int bno);
 	
 	
 }

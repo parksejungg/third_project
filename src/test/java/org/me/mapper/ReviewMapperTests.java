@@ -25,9 +25,9 @@ public class ReviewMapperTests {
 		
 		 ReviewVO vo = new ReviewVO();
 		         
-         vo.setTitle("안뇽 제목입니당");
-         vo.setContent("안뇽 내용임돵");
-         vo.setWriter("내가 썼다 마!");
+         vo.setTitle("제목입력띙");
+         vo.setContent("내용입력띵");
+         vo.setWriter("메롱띵");
          
          mapper.insertBoard(vo);
 	}
@@ -63,6 +63,11 @@ public class ReviewMapperTests {
 		
 		int bno = 8;
 		log.info("글 조회 ===> " + mapper.getBoard(bno));
+	}
+	
+	//@Test
+	public void testDeleteBoard() {
+		mapper.deleteBoard(8);
 	}
 
 }

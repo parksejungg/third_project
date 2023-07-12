@@ -29,16 +29,15 @@ public class ReviewController {
 		model.addAttribute("list", reviewservice.getList());
 	}
 	
-	// 글등록페이지로 이동
+	// 글등록 페이지로 이동
 	@GetMapping("/insert")
 	public void board() {
-		System.out.println("게시판 등록 !");
+		System.out.println("게시판 등록 페이지 이동!");
 	}
 	
 	// 글등록
 	@PostMapping("/insert")
 	public String insertBoard(ReviewVO board, RedirectAttributes rttr) {
-		log.info("게시글 등록 : " + board);
 		reviewservice.insertBoard(board);
 		
 		rttr.addFlashAttribute("result", "insert Success");
@@ -57,7 +56,7 @@ public class ReviewController {
 	
 	
 	
-	// 글수정페이지로 이동
+	// 글수정 페이지로 이동
 	@GetMapping("/modify")
 	public void modify(int bno, Model model) {
 		model.addAttribute("modify", reviewservice.getBoard(bno));
@@ -65,11 +64,21 @@ public class ReviewController {
 	
 	// 글 수정
 	@PostMapping("/modify")
-	public String ModifyPOST(ReviewVO board, RedirectAttributes rttr) {
+	public String modifyPOST(ReviewVO board, RedirectAttributes rttr) {
 		
 		reviewservice.modify(board);
 		
 		rttr.addFlashAttribute("result", "modify success");
+		
+		return "redirect:/review/list";
+	}
+	
+	@PostMapping("/delete")
+	public String deletePOST(int bno, RedirectAttributes rttr) {
+		
+		reviewservice.deleteBoard(bno);
+		
+		rttr.addFlashAttribute("result", "delete success");
 		
 		return "redirect:/review/list";
 	}

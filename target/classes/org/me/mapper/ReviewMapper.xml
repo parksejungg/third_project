@@ -35,4 +35,10 @@
 
 </select>
 
+<delete id="deleteBoard">
+
+	delete tbl_board_C where bno = #{bno}
+
+</delete>
+
 </mapper>

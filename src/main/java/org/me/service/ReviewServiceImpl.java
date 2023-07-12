@@ -40,6 +40,12 @@ public class ReviewServiceImpl implements ReviewService {
 		return mapper.getBoard(bno);
 	}
 
+	// 글삭제
+	@Override
+	public int deleteBoard(int bno) {
+		return mapper.deleteBoard(bno);
+	}
+
 	
 	
 }
