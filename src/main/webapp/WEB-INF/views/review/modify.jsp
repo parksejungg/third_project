@@ -19,41 +19,41 @@
 <form id="modifyForm" action="/review/modify" method="post">
 	<div class="input_wrap">
 		<label>게시판 번호</label>
-		<input name="bno" readonly="readonly" value='<c:out value="${read.bno}"/>' >
+		<input name="bno" readonly="readonly" value='<c:out value="${modify.bno}"/>' >
 	</div>
 	<div class="input_wrap">
 		<label>게시판 제목</label>
-		<input name="title" value='<c:out value="${read.title}"/>' >
+		<input name="title" value='<c:out value="${modify.title}"/>' >
 	</div>
 	<div class="input_wrap">
 		<label>게시판 내용</label>
-		<textarea rows="3" name="content"><c:out value="${read.content}"/></textarea>
+		<textarea rows="3" name="content"><c:out value="${modify.content}"/></textarea>
 	</div>
 	<div class="input_wrap">
 		<label>게시판 작성자</label>
-		<input name="writer" readonly="readonly" value='<c:out value="${read.writer}"/>' >
+		<input name="writer" readonly="readonly" value='<c:out value="${modify.writer}"/>' >
 	</div>
 	<div class="input_wrap">
 		<label>게시판 등록일</label>
-		<input name="regdater" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${read.regdate}"/>' >
+		<input name="regdater" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${modify.regdate}"/>' >
 	</div>
 	<div class="input_wrap">
 		<label>게시판 수정일</label>
-		<input name="updateDate" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${read.updatedate}"/>' >
+		<input name="updateDate" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${modify.updatedate}"/>' >
 	</div>		
 	<div class="btn_wrap">
 		<a class="btn" id="list_btn">목록 페이지</a> 
         <a class="btn" id="modify_btn">수정 완료</a>
-        <a class="btn" id="cancel_btn">수정 취소</a>
+        <a class="btn" id="cancel_btn">취소</a>
 	</div>
 	</form>
 	
 	<form id="infoForm" action="/review/modify" method="get">
-		<input type="hidden" id="bno" name="bno" value='<c:out value="${read.bno}"/>'>
+		<input type="hidden" id="bno" name="bno" value='<c:out value="${modify.bno}"/>'>
 	</form>
 <script>
 		let form = $("#infoForm");        // 페이지 이동 form(리스트 페이지 이동, 조회 페이지 이동)
-		let mForm = $("#modifyForm");    // 페이지 데이터 수정 from
+		let mForm = $("#modifyForm");    // 페이지 데이터 수정 form
 		
 		/* 목록 페이지 이동 버튼 */
 		$("#list_btn").on("click", function(e){

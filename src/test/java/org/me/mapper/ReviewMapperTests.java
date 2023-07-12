@@ -20,18 +20,17 @@ public class ReviewMapperTests {
 	private ReviewMapper mapper;
 	
 	
-	//@Test
-		public void InsertBoard() {
-			
-			 ReviewVO vo = new ReviewVO();
-			         
-		         vo.setTitle("안뇽 제목입니당");
-		         vo.setContent("안뇽 내용임돵");
-		         vo.setWriter("내가 썼다 마!");
+	@Test
+	public void insertBoard() {
+		
+		 ReviewVO vo = new ReviewVO();
 		         
-		         
-		         mapper.insertBoard(vo);
-		}
+         vo.setTitle("안뇽 제목입니당");
+         vo.setContent("안뇽 내용임돵");
+         vo.setWriter("내가 썼다 마!");
+         
+         mapper.insertBoard(vo);
+	}
 		
 	
 	
@@ -59,7 +58,7 @@ public class ReviewMapperTests {
 	}
 	
 	
-	@Test
+	//@Test
 	public void testGetBoard() {
 		
 		int bno = 8;
