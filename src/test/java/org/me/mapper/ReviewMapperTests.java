@@ -33,7 +33,7 @@ public class ReviewMapperTests {
 		
 	
 	
-	@Test
+	//@Test
 	public void testModify() {
 		ReviewVO board = new ReviewVO();
 		

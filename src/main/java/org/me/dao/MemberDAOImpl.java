@@ -36,13 +36,11 @@ public class MemberDAOImpl implements MemberDAO {
 	
 	//회원가입 처리
 	@Override
-	public void register(MemberVO memberVO) {
+	public void join(MemberVO memberVO) {
 		sqlMapper = getInstane();
 		SqlSession session = sqlMapper.openSession();
 		
-		System.out.println("세션열려");
-		session.insert("register", memberVO);
-		System.out.println("찐으로 등록함");
+		session.insert("join", memberVO);
 		session.commit();
 	}
 
@@ -53,6 +51,14 @@ public class MemberDAOImpl implements MemberDAO {
 		SqlSession session = sqlMapper.openSession();
 
 		return session.selectOne("login",memberVO);
+	}
+
+	@Override
+	public int idCheck(String userId) {
+		sqlMapper = getInstane();
+		SqlSession session = sqlMapper.openSession();
+
+		return session.selectOne("idCheck", userId);
 	}
 
 }

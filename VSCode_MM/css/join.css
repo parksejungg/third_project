@@ -103,9 +103,8 @@ input {
     font-weight: bold;
     color: #994D22;
     vertical-align: middle;
-    display: none;
+    /* display: none; */
 
-    border: 1px solid green;
     margin-top: 10px;
     margin-bottom: 10px;
 

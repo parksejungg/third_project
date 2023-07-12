@@ -104,7 +104,19 @@ input {
     vertical-align: middle;
     display: none;
 
-    border: 1px solid green;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.notice2_f {
+    font-size: 16px;
+    padding-bottom: 12px;
+    font-weight: bold;
+    color: #994D22;
+    vertical-align: middle;
+    display: none;
+
     margin-top: 10px;
     margin-bottom: 10px;
 

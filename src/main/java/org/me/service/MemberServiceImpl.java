@@ -12,10 +12,14 @@ public class MemberServiceImpl implements MemberService {
 	@Inject
 	private MemberDAO memberDAO;
 	
+	/*
+	 * @Autowired MemberMapper mapper;
+	 */
+	
 	//회원가입
 	@Override
-	public void register(MemberVO memberVO) {
-		memberDAO.register(memberVO);
+	public void join(MemberVO memberVO) {
+		memberDAO.join(memberVO);
 	}
 
 	//로그인
@@ -24,5 +28,11 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.login(member);
 	}
 
+	//아이디 중복체크
+	@Override
+	public int idCheck(String userId) {
+		return memberDAO.idCheck(userId);
+		//return mapper.idCheck(userId);
+	}
 
 }

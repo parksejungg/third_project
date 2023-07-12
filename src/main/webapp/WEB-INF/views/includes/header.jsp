@@ -11,6 +11,7 @@
     <title>Main_shop</title>
     <link rel="stylesheet" href="/resources/css/hs_css/bootstrap_min.css">
     <link rel="stylesheet" href="/resources/css/hs_css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 
 <body>
@@ -47,7 +48,17 @@
                         </ul>
                     </li>
                     <li><a href="">PLAY</a></li>
-                    <li><a href="">LOGIN</a></li>
+                    <c:if test="${member == null}"><li><a href="/member/login">LOGIN</a></li></c:if>
+                    <c:if test="${member != null}"> <!-- 로긴이 되어있다면 -->
+                    <li class="has-children">
+                        MYINFO
+                        <ul class="dropdown">
+                            <li><a href="/">info</a></li>
+       					<li><a id="btnlogout">logout</a></li>
+       					<!-- <li><a href="/member/logout" id="btnlogout">logout</a></li> -->
+                        </ul>
+                    </li>
+                    </c:if>
                 </ul>
 
                 <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-block"
@@ -63,3 +74,19 @@
         </div>
       </div>
 </body>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	$("#btnlogout").click(function(){
+		$.ajax({
+			type:"POST",
+			url:"member/logout",
+			success:function(data){
+				document.location.reload(); //다시 화면 로드
+			}
+		}); //ajax end
+	});
+});
+</script>

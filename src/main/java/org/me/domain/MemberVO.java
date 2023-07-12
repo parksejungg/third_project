@@ -10,7 +10,8 @@ public class MemberVO {
 	private String userId;
 	private String userPw;
 	private String userName;
-	private String userAdd1;
+	private String userAddr1;
+	private String userAddr2;
 	private int userBirth;
 	private Date regDate;
 	
