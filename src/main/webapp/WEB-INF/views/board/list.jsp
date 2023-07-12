@@ -8,6 +8,12 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <title>릴레이 소설 게시판</title>
 
+<style type="text/css">
+	button:hover {
+    	background: #EEEAE2 !important;
+    }
+</style>
+
 <!-- sts에서 jquery 사용 -->
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -29,7 +35,7 @@
 	<img style="width: 100%;" src="../resources/img/board/relay_banner.png" alt=""> 
 </div>
 
-<div style="text-align: center; font-size: 18pt; line-height: 55px; margin-top: 60px; margin-bottom: 70px">
+<div style="text-align: center; font-size: 18pt; line-height: 45px; margin-top: 60px; margin-bottom: 70px">
 	<span>
 	✎ <br />
 	관람객 또한 작가가 될 수 있는 공간을 꿈꿉니다. <br />
@@ -41,8 +47,8 @@
 	<img style="width: 1280px" src="../resources/img/board/relay_img.png" alt=""> <br /><br />
 </div>
 
-<div class="list_btn01" style="width: 1280px; margin-top: 50px; margin-left: auto; margin-right: auto;">
-	<button class="btn btn-outline-secondary list_btn02" style="margin: 5px; width: 120px; height: 50px;" type="button" id="btnWrite">글쓰기</button>
+<div class="list_btn list_btn03 list_btn01" style="width: 1280px; margin-top: 50px; margin-left: auto; margin-right: auto;">
+	<button class="btn btn-outline-secondary list_btn02" style="border: 1px solid #A98B67 !important; color: #A98B67 !important; margin: 5px; width: 120px; height: 50px;" type="button" id="btnWrite">글쓰기</button>
 </div>
 
 

@@ -12,26 +12,70 @@
 			font-family: 'SUITE-Regular', 'Viaoda Libre';
 		}
 
+		
+		/* input, textarea */
+		input:focus {outline: none;} 
+		textarea:focus {outline: none;}
+		
+		button:hover {
+			background: #EEEAE2 !important;
+		}
+
+		.view_writer01:focus{
+			border-bottom: 2.8px solid #994D22 !important;
+		}
+		.view_writer01{
+			background: transparent;
+			top: 300px;
+			border-bottom: 2.5px solid #A98B67 !important;
+			border:none;
+		}
+		
+		.view_input02:focus{
+			border-bottom: 2.8px solid #994D22 !important;
+		}
+		.view_input02{
+			background: transparent;
+			border-bottom: 2.5px solid #A98B67 !important;
+			border:none;
+			/*margin-bottom: 10px;*/
+		}
+		
+		textarea:focus {
+			outline: none;
+			border: 2.8px solid #994D22;
+		}
+		.view_input03{
+			background: transparent;
+			border: 2.5px solid #A98B67;
+			width: 800px;
+			height: 200px;
+		}
+		/* input, textarea */
+
+		.relay_content{
+			font-size: 14pt;
+		}
+
       	@media screen and (max-width: 1400px){
 			/* *{background: pink;} */
 			
 			.view_content{
-				width: 900px !important;
-				height: 450px !important;
+				width: 970px !important;
 			}
 
 			.view_input01{
-				top: 276px !important;
+				top: 263px !important;
 			}
 
 			.view_input02{
-				width: 670px;
-				height: 35px !important;
+				width: 500px !important;
+				height: 60px !important;
 			}
 
 			.view_input03{
-				width: 670px;
-				height: 90px !important;
+				width: 700px !important;
+				height: 125px !important;
 			}
 
         }

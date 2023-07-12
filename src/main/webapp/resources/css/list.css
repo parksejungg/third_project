@@ -16,6 +16,10 @@
 			font-family: 'SUITE-Regular' !important;
 		}
 
+		.list_btn{
+			text-align: right;
+		}
+
       	@media screen and (max-width: 1400px){
 			/* *{background: pink;} */
 			
@@ -29,10 +33,14 @@
 				margin-bottom: 53px !important;
 				text-align: center;
 			}
-
+			
 			.list_btn02{
 				width: 210px !important;
 				height: 50px !important;
+			}
+			
+			.list_btn03{
+				margin-left: none !important;
 			}
 			
 			.list_table01{
