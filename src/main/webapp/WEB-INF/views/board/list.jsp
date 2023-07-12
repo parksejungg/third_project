@@ -10,7 +10,9 @@
 
 <style type="text/css">
 	button:hover {
-    	background: #EEEAE2 !important;
+    	background: #FAF5EB !important;
+    	color: #994D22 !important;
+    	border: 1px solid #994D22 !important;
     }
 </style>
 
@@ -48,7 +50,7 @@
 </div>
 
 <div class="list_btn list_btn03 list_btn01" style="width: 1280px; margin-top: 50px; margin-left: auto; margin-right: auto;">
-	<button class="btn btn-outline-secondary list_btn02" style="border: 1px solid #A98B67 !important; color: #A98B67 !important; margin: 5px; width: 120px; height: 50px;" type="button" id="btnWrite">글쓰기</button>
+	<button class="btn btn-outline-secondary list_btn02" style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; width: 120px; height: 50px;" type="button" id="btnWrite">글쓰기</button>
 </div>
 
 

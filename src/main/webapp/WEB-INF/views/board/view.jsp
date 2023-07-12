@@ -12,7 +12,9 @@
     textarea:focus {outline: none;}
     
     button:hover {
-    	background: #EEEAE2 !important;
+    	background: #FAF5EB !important;
+    	color: #994D22 !important;
+    	border: 1px solid #994D22 !important;
     }
 </style>
 
@@ -96,9 +98,9 @@
 	<div style="width:650px; margin: 0 auto; text-align: center;">
 	    <!-- 게시물번호를 hidden으로 처리 -->
 	    <input type="hidden" name="bno" value="${dto.bno}">
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67 !important; color: #A98B67 !important; margin: 5px; width: 90px; height: 45px;" type="button" id="btnDelete">삭제</button>
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67 !important; color: #A98B67 !important; margin: 5px; width: 90px; height: 45px;" type="button" id="btnUpdete">수정</button>
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67 !important; color: #A98B67 !important; margin: 5px; width: 90px; height: 45px;" type="button" onclick="btnreset()">취소</button>
+	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; width: 90px; height: 45px;" type="button" id="btnDelete">삭제</button>
+	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; width: 90px; height: 45px;" type="button" id="btnUpdete">수정</button>
+	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; width: 90px; height: 45px;" type="button" onclick="btnreset()">취소</button>
 	</div>
 </form>
 

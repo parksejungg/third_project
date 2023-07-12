@@ -2,14 +2,22 @@
 
 		@font-face {
 		/* 한글 영문 폰트 같이 넣음 */
-			font-family: 'SUITE-Regular', 'Viaoda Libre';
-			src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+			font-family: 'SUITE-Regular';
+			src: url('../common/font/SUITE-Regular.otf') format('woff2');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		@font-face {
+		/* 한글 영문 폰트 같이 넣음 */
+			font-family: 'ViaodaLibre-Regular';
+			src: url('../common/font/ViaodaLibre-Regular.otf') format('woff2');
 			font-weight: 400;
 			font-style: normal;
 		}
 		
-		*{
-			font-family: 'SUITE-Regular', 'Viaoda Libre';
+		body{
+			font-family: 'SUITE-Regular' !important;
 		}
 
 		.card-text{
