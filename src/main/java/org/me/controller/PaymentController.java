@@ -17,7 +17,7 @@ public class PaymentController {
 	
 	@RequestMapping(value = "/paymentProcess.do")
 	public void paymentDone(@RequestBody PaymentVO vo) {
-		paymentService.insertPaymentSuccess(vo);
+		paymentService.PaymentInsert(vo);
 	}	
 	
 	@RequestMapping(value = "paymentDone.do")
@@ -31,10 +31,9 @@ public class PaymentController {
 	}
 	
 	
-	@RequestMapping(value = "/")
-	public ModelAndView goMain() {
-		return new ModelAndView("index");
-	}
+	@RequestMapping(value = "introPayment.do") public ModelAndView goMain() { 
+	      return new  ModelAndView("/payment/intro_payment"); 
+	    }
 	
 	
 }
