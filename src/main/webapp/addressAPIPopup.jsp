@@ -7,6 +7,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel='stylesheet' type='text/css' media='screen' href='/resources/common/bootstrap-3.3.2.min.css'>
+<link rel="stylesheet" href="/resources/css/hs_css/buttons.css">
+<link rel="stylesheet" href="/resources/css/hs_css/popup.css">
 <script src="/resources/common/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
 // https://business.juso.go.kr/addrlink/openApi/searchApi.do 웹사이트에서 하단 "웹 호출 소스 보기"에서 "JSON" 클릭해서 참고 합니다.
@@ -68,7 +70,6 @@ function chooseAddress(roadAddr, jibunAddr, zipNo) {
 	aParam["jibunAddr"] = jibunAddr;
 	aParam["zipNo"] = zipNo;
 	
-	alert("주소선택");
 	opener.callback_openAddressPopup(aParam);
 	window.close();
 	
@@ -88,9 +89,9 @@ function chooseAddress(roadAddr, jibunAddr, zipNo) {
 "/><!-- 요청 변수 설정 (승인키) -->
 	
 	<div class="form-group">
-		<input type="text" name="keyword" id="keyword" class="form-control" placeholder="도로명+건물번호, 건물명, 지번을 입력하세용!" onkeypress="javascript:enterSearch();"  /><!-- 요청 변수 설정 (키워드) -->
+		<input type="text" name="keyword" id="keyword" class="form-control" placeholder="도로명+건물번호, 건물명, 지번을 입력하세요." onkeypress="javascript:enterSearch();"  /><!-- 요청 변수 설정 (키워드) -->
 	</div>
-	<input type="button" class="btn btn_default" onClick="javascript:fn_search();" value="주소검색하기"/>
+	  <button class="button button--ujarak button--border-thin button--text-thick btn" onClick="javascript:fn_search();">검색하기</button>
 		</form>
 		</div>
 	</div>
@@ -100,7 +101,7 @@ function chooseAddress(roadAddr, jibunAddr, zipNo) {
 			<thead>
 				<tr>
 					<th>주소</th>
-					<th>우편번호</th>
+					<th>우편 번호</th>
 				</tr>
 			</thead>
 			<tbody id="addressTableTbody">
