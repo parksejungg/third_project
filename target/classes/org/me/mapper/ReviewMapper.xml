@@ -19,4 +19,26 @@
 
 </update>
 
+
+<!-- 글목록 조회 -->
+<select id="getList" resultType="org.me.domain.ReviewVO">
+
+  SELECT * FROM TBL_BOARD_C order by bno DESC
+
+</select>
+
+
+<!-- 글조회 -->
+<select id="getBoard" resultType="org.me.domain.ReviewVO">
+
+	select * from tbl_board_C where bno = #{bno}
+
+</select>
+
+<delete id="deleteBoard">
+
+	delete tbl_board_C where bno = #{bno}
+
+</delete>
+
 </mapper>

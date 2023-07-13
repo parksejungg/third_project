@@ -1,5 +1,7 @@
 package org.me.mapper;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.me.domain.ReviewVO;
@@ -18,18 +20,17 @@ public class ReviewMapperTests {
 	private ReviewMapper mapper;
 	
 	
-	//@Test
-		public void InsertBoard() {
-			
-			 ReviewVO vo = new ReviewVO();
-			         
-		         vo.setTitle("안뇽 제목입니당");
-		         vo.setContent("안뇽 내용임돵");
-		         vo.setWriter("내가 썼다 마!");
+	@Test
+	public void insertBoard() {
+		
+		 ReviewVO vo = new ReviewVO();
 		         
-		         
-		         mapper.insertBoard(vo);
-		}
+         vo.setTitle("제목입력띙");
+         vo.setContent("내용입력띵");
+         vo.setWriter("메롱띵");
+         
+         mapper.insertBoard(vo);
+	}
 		
 	
 	
@@ -44,6 +45,29 @@ public class ReviewMapperTests {
 		int result = mapper.modify(board);
 		System.out.println("게시글 수정 " + result);
 	
+	}
+	
+	//@Test
+	public void testGetList() {
+		
+		List list = mapper.getList();
+		
+		for(int i = 0; i < list.size(); i++) {
+			log.info("" + list.get(i));
+		}
+	}
+	
+	
+	//@Test
+	public void testGetBoard() {
+		
+		int bno = 8;
+		log.info("글 조회 ===> " + mapper.getBoard(bno));
+	}
+	
+	//@Test
+	public void testDeleteBoard() {
+		mapper.deleteBoard(8);
 	}
 
 }

@@ -10,17 +10,17 @@ public interface ReviewMapper {
 	public void insertBoard(ReviewVO board);
 	
 	// 글조회 메서드
-	public ReviewVO selectBoard(int bno);
+	public ReviewVO getBoard(int bno);
 	
 	// 글목록 메서드
-    public List<ReviewVO> selectAllBoards();
+    public List<ReviewVO> getList();
     
     // 글 수정 메서드
     public int modify(ReviewVO board);
     
     
     // 글 삭제 메서드
-    public void deleteBoard(int bno);
+    public int deleteBoard(int bno);
 	
 	
 }

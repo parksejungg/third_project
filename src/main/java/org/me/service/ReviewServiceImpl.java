@@ -1,5 +1,7 @@
 package org.me.service;
 
+import java.util.List;
+
 import org.me.domain.ReviewVO;
 import org.me.mapper.ReviewMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,25 @@ public class ReviewServiceImpl implements ReviewService {
 	@Override
 	public int modify(ReviewVO board) {
 		return mapper.modify(board);
+	}
+
+	// 글목록
+	@Override
+	public List<ReviewVO> getList() {
+		
+		return mapper.getList();
+	}
+
+	// 글조회
+	@Override
+	public ReviewVO getBoard(int bno) {
+		return mapper.getBoard(bno);
+	}
+
+	// 글삭제
+	@Override
+	public int deleteBoard(int bno) {
+		return mapper.deleteBoard(bno);
 	}
 
 	
