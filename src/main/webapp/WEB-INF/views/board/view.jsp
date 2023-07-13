@@ -66,6 +66,28 @@
             document.form1.submit();
         });
     });
+    
+	// 댓글 기능
+    function commentWrite() {
+      //var writer = document.getElementById("commentWriter").value;
+      var contents = document.getElementById("commentContents").value;
+      
+      //if(title == ""){
+      //    alert("작성자를 입력하세요");
+      //    document. .writer.focus();
+      //    return;
+      //}
+      if(content == ""){
+          alert("내용을 입력하세요");
+          //document. .contents.focus();
+          return;
+      }
+      
+      //console.log("작성자: ", writer);
+      console.log("내용: ", contents);
+    }
+
+
 </script>
 </head>
 <body style="background: #FFFBF2">
@@ -98,11 +120,22 @@
 	<div style="width:650px; margin: 0 auto; text-align: center;">
 	    <!-- 게시물번호를 hidden으로 처리 -->
 	    <input type="hidden" name="bno" value="${dto.bno}">
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; width: 90px; height: 45px;" type="button" id="btnDelete">삭제</button>
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; width: 90px; height: 45px;" type="button" id="btnUpdete">수정</button>
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; width: 90px; height: 45px;" type="button" onclick="btnreset()">취소</button>
+	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 40px;" type="button" id="btnDelete">삭제</button>
+	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 40px;" type="button" id="btnUpdete">수정</button>
+	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 40px;" type="button" onclick="btnreset()">취소</button>
 	</div>
 </form>
+
+
+<!-- 댓글 작성 부분 -->
+	<div id="comment-write" class="comment-write">
+		<h4 class="comment-write-title">익명 댓글 남기기</h4>
+		<!-- <input type="text" id="commentWriter" class="comment-input" placeholder="작성자"> -->
+		<input type="text" id="commentContents" class="comment-input" placeholder="댓글 추가.."><br>
+		<button id="comment-write-btn" class="comment-write-btn" onclick="commentWrite()">댓글작성</button>
+	</div>
+
+<!-- 댓글 출력 부분 -->
 
 
 </body>

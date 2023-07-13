@@ -45,6 +45,7 @@
 		.view_input02{
 			background: transparent;
 			border-bottom: 2.5px solid #A98B67 !important;
+			width: 600px;
 			border:none;
 			/*margin-bottom: 10px;*/
 		}
@@ -63,6 +64,43 @@
 
 		.relay_content{
 			font-size: 14pt;
+		}
+
+		.comment-write-title{
+			float: left;
+		}
+		
+		.comment-input {
+			width: 820px;
+			background: transparent;
+			top: 300px;
+			border-bottom: 2.5px solid #A98B67 !important;
+			border:none;
+			margin-top: 8px;
+		}
+
+		.comment-input:focus {
+			border-bottom: 2.8px solid #994D22 !important;
+		}
+		
+		.comment-write{
+			text-align: center;
+			width: 820px;
+			height: 400px;
+			margin: 0 auto;
+			margin-top: 65px;
+		}
+
+		.comment-write-btn{
+			margin: 5px;
+			width: 90px;
+			height: 38px;
+			border: 1px solid #A98B67;
+			color: #A98B67;
+			background: transparent; 
+			border-radius: 3px;
+			margin-top: 15px;
+			float: right;
 		}
 
       	@media screen and (max-width: 1400px){

@@ -37,6 +37,7 @@
 		.write_input02{
 			background: transparent;
 			border-bottom: 2.5px solid #A98B67 !important;
+			width: 600px;
 			border:none;
 			/*margin-bottom: 10px;*/
 		}
