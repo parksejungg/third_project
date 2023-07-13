@@ -79,7 +79,7 @@
 			
 			<div class="foottxtbox">
 				<ul>
-					<a href="#"><img src="/resources/img/ej_img/logo.png" alt="로고이미지"></a>
+					<a href="/main.jsp"><img src="/resources/img/ej_img/logo.png" alt="로고이미지"></a>
 					<li>대표자 : <span>SS</span></li>
 					<li>대표전화 : 02-1234-5678</li>
 					<li>주소 : 서울특별시 강남구 압구정로 343 (압구정동)</li>
