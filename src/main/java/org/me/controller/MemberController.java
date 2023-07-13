@@ -73,19 +73,28 @@ public class MemberController {
 		HttpSession session = request.getSession();
 		String rawPw = "";
 		String encodePw = "";
+		String loginId ="";
 		
 		MemberVO loginVo = service.memberLogin(memberVO);
 		
 		if(loginVo !=null) { // 일치하는 아이디가 존재한다면?
 			rawPw = memberVO.getUserPw();
 			encodePw = loginVo.getUserPw();
+			loginId = loginVo.getUserId();
 			
 			if(true == pwdEncode.matches(rawPw, encodePw)) { // 비밀번호가 일치한다면
 				loginVo.setUserPw("");
 				session.setAttribute("member", loginVo); //세션에 사용자 정보 저장
 				System.out.println("로그인 됨");
 				
-				return "redirect:/";
+				if(loginId.equals("admin")) {
+					session.setAttribute("member", loginVo);
+					System.out.println("관리자 로긴");
+					
+					return "redirect:/admin/adminMain";
+				}
+				
+				return "redirect:/main.jsp";
 			
 			}else {
 				rttr.addFlashAttribute("result",0);

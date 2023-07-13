@@ -29,7 +29,7 @@
 }
 
 body {
-	--color-bg: #f7f5f0;
+	--color-bg: #FFFBF2;
 	--color-link: #ccc0a2;
 	background-color: var(--color-bg);
 	--cursor-stroke: none; 
@@ -49,6 +49,11 @@ body, main {
 		opacity: 1;
 		transform: scale3d(0.5,0.5,1);
 	}
+}
+
+
+.admintext{
+	color: #994D22 !important;
 }
 
 a {

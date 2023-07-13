@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/resources/css/footer_css/footer.css">
 
+    
 <script>
       window.addEventListener('DOMContentLoaded', function(){
 
@@ -79,7 +80,7 @@
 			<div class="foottxtbox">
 				<ul>
 					<a href="#"><img src="/resources/img/ej_img/logo.png" alt="로고이미지"></a>
-					<li>대표자 : <span>SUNG HAN SOL</span></li>
+					<li>대표자 : <span>SS</span></li>
 					<li>대표전화 : 02-1234-5678</li>
 					<li>주소 : 서울특별시 강남구 압구정로 343 (압구정동)</li>
 					<li>COPYRIGHT ⓒ BY M:美. ALL RIGHTS RESERVED</li>

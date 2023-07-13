@@ -70,14 +70,13 @@
 		<div class="frame">
 			<a href="#"><h1 class="frame__title"><img src="/resources/img/ej_img/logo.png" alt="로고이미지"></h1></a>
 			<div class="frame__links">
-				<a href="#">LOGIN</a>
-				<a href="#">SIGN UP</a>
+				<a style="color: #994D22;">ADMIN PAGE</a>
+				<a href="#">LOGOUT</a>
 			</div>
 		</div>
 		<nav class="menu">
 				<span class="menu__item-text" data-splitting="">NOTICE</span>
 			</a>
-			
 		</nav>
 		<footer>
 			<div class="rollbanner">

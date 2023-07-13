@@ -16,6 +16,7 @@
 <title>login</title>
 </head>
 <body>
+     <%@ include file="/WEB-INF/views/includes/mouse.jsp" %>
       <%@ include file="/WEB-INF/views/includes/header.jsp" %>
             <div class="wrapBody">
                 <div class="loginText">LOGIN</div>

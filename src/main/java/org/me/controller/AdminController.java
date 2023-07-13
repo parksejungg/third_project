@@ -11,7 +11,8 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class AdminController {
 
-	@RequestMapping(value="/main", method = RequestMethod.GET)
+	//관리자 페이지로 이동
+	@RequestMapping(value="/adminMain", method = RequestMethod.GET)
 	public void adminGET() {
 		log.info("관리자 페이지 이동");
 	}

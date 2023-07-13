@@ -170,7 +170,8 @@ input {
 }
 
 .btn-joinfin {
-    width: 100%;
+    margin: auto;
+    width: 97%;
     height: 60px;
     margin-top: 50px;
     font-size: 16pt;

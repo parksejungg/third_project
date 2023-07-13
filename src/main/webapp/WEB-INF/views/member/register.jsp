@@ -17,6 +17,7 @@
 <title>join</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/views/includes/mouse.jsp" %>
   <%@ include file="/WEB-INF/views/includes/header.jsp" %>
    <div class="wrapBody">
        <div class="bodyTop">
@@ -62,9 +63,7 @@
         </form>
         </div>
 
-        <hr>
-        <div class="footer">
-        </div>
+         <%@ include file="/WEB-INF/views/includes/footer.jsp" %>
 </body>
 
 <script>
