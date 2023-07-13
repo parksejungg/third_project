@@ -10,12 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import lombok.extern.log4j.Log4j;
-
 @Controller
-@RequestMapping("/review/*")
-public class ReviewController {
-	
+@RequestMapping("/notice/*")
+public class NoticeController {
 	
 	@Autowired
 	private ReviewService reviewservice;
@@ -51,8 +48,6 @@ public class ReviewController {
 	}
 	
 	
-	
-	
 	// 글수정 페이지로 이동
 	@GetMapping("/modify")
 	public void modify(int bno, Model model) {
@@ -70,6 +65,7 @@ public class ReviewController {
 		return "redirect:/review/list";
 	}
 	
+	//글 삭제
 	@PostMapping("/delete")
 	public String deletePOST(int bno, RedirectAttributes rttr) {
 		

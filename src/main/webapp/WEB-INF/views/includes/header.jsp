@@ -53,8 +53,8 @@
                     <li class="has-children">
                         MYINFO
                         <ul class="dropdown">
-                            <li><a href="/">info</a></li>
-       					<li><a id="btnlogout">logout</a></li>
+                            <li><a href="/">Info</a></li>
+       					<li><a id="btnlogout">Logout</a></li>
        					<!-- <li><a href="/member/logout" id="btnlogout">logout</a></li> -->
                         </ul>
                     </li>

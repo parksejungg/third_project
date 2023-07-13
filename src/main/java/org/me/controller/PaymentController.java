@@ -20,7 +20,7 @@ public class PaymentController {
 		paymentService.PaymentInsert(vo);
 	}	
 	
-	@RequestMapping(value = "paymentDone.do")
+	@RequestMapping(value = "paymentSuccess.do")
 	public ModelAndView fwdPaymentSuccessPage() {
 		return new ModelAndView("/payment/paymentSuccess");
 	}

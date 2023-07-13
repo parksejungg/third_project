@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -71,10 +72,11 @@
 			<a href="#"><h1 class="frame__title"><img src="/resources/img/ej_img/logo.png" alt="로고이미지"></h1></a>
 			<div class="frame__links">
 				<a style="color: #994D22;">ADMIN PAGE</a>
-				<a href="#">LOGOUT</a>
+				<c:if test="${member != null}"><a id="btnlogout">LOGOUT</a></c:if>
 			</div>
 		</div>
-		<nav class="menu">
+	<nav class="menu">
+			<a class="menu__item" href="">
 				<span class="menu__item-text" data-splitting="">NOTICE</span>
 			</a>
 		</nav>
@@ -124,4 +126,19 @@
 	<script src="/resources/js/ej_js/modules02.js"></script>
 	
 </body>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	$("#btnlogout").click(function(){
+		$.ajax({
+			type:"POST",
+			url:"member/logout",
+			success:function(data){
+				document.location.reload(); //다시 화면 로드
+			}
+		}); //ajax end
+	});
+});
+</script>
 </html>

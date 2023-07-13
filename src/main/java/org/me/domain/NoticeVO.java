@@ -5,7 +5,7 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class ReviewVO {
+public class NoticeVO {
 	
 	 	private int bno;
 	    private String title;
@@ -13,5 +13,5 @@ public class ReviewVO {
 	    private String writer;
 	    private Date regdate;
 	    private Date updatedate;
-	
+
 }
