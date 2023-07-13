@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -75,7 +77,7 @@ function fn_buy() {
         <div class="logo_form">
             <img src="/resources/img/sj_img/logo.svg" class="logo_img">
             <!-- 햄버거 토글 시작 -->
-              <span class="site-mobile-menu site-navbar-target">
+                <span class="site-mobile-menu site-navbar-target">
                     <div class="site-mobile-menu-header">
                         <div class="site-mobile-menu-close">
                             <span class="js-menu-toggle"></span>
@@ -84,7 +86,7 @@ function fn_buy() {
                     <div class="site-mobile-menu-body"></div>
                 </span>
 
-                <ul class="js-clone-nav d-none d-lg-inline-noone text-left ">
+              <ul class="js-clone-nav d-none d-lg-inline-noone text-left ">
                     <li><span class="sad">홈</span></li>
                     <li class="has-children">
                         <a href="#">ABOUT</a>
@@ -102,11 +104,21 @@ function fn_buy() {
                             <li><a href="">Q&A</a></li>
                         </ul>
                     </li>
-                    <li><a href="">PLAY</a></li>
-                    <li><a href="">LOGIN</a></li>
+                    <li><a href="/board/list">PLAY</a></li>
+                    <c:if test="${member == null}"><li><a href="/member/login">LOGIN</a></li></c:if>
+                    <c:if test="${member != null}"> <!-- 로긴이 되어있다면 -->
+                    <li class="has-children">
+                        MYINFO
+                        <ul class="dropdown">
+                            <li><a href="/">Info</a></li>
+       					<li><a id="btnlogout">Logout</a></li>
+       					<!-- <li><a href="/member/logout" id="btnlogout">logout</a></li> -->
+                        </ul>
+                    </li>
+                    </c:if>
                 </ul>
 
-                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-block"
+                 <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-block"
                     data-toggle="collapse" data-target="#main-navbar">
                     <span></span>
                 </a>
