@@ -79,16 +79,16 @@
 			</div>
 		</div>
 		<nav class="menu">
-			<a class="menu__item" href="#">
+			<a class="menu__item" href="">
 				<span class="menu__item-text" data-splitting="">ABOUT</span>
 			</a>
-			<a class="menu__item" href="#">
+			<a class="menu__item" href="">
 				<span class="menu__item-text" data-splitting="">EXHIBITION</span>
 			</a>
-			<a class="menu__item" href="#">
+			<a class="menu__item" href="">
 				<span class="menu__item-text" data-splitting="">COMMUNITY</span>
 			</a>
-			<a class="menu__item" href="#">
+			<a class="menu__item" href="list.do">
 				<span class="menu__item-text" data-splitting="">PLAY</span>
 			</a>
 			

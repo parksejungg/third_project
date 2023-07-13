@@ -47,7 +47,7 @@
                             <li><a href="">Q&A</a></li>
                         </ul>
                     </li>
-                    <li><a href="">PLAY</a></li>
+                    <li><a href="/board/list">PLAY</a></li>
                     <c:if test="${member == null}"><li><a href="/member/login">LOGIN</a></li></c:if>
                     <c:if test="${member != null}"> <!-- 로긴이 되어있다면 -->
                     <li class="has-children">

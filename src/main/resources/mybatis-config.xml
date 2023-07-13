@@ -20,7 +20,8 @@
 	
 	<mappers>
 		<mapper resource="org/me/mapper/Payment.xml" />
-		<mapper resource="org/me/mapper/MemberMapper.xml" />				
+		<mapper resource="org/me/mapper/MemberMapper.xml" />	
+		<mapper resource="/org/me/mapper/board.xml" />					
 	</mappers>
 	
 	

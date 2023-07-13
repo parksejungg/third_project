@@ -92,8 +92,8 @@
 </head>
 <body style="background: #FFFBF2">
 <!-- 카테고리 넣을 공간 -->
-<h2>게시글 보기</h2>
-
+ <%@ include file="/WEB-INF/views/includes/mouse.jsp" %>
+      <%@ include file="/WEB-INF/views/includes/header.jsp" %>
 <div style="text-align: center;">
 	<img style="width: 400px; margin-bottom: 55px" src="../resources/img/board/view_title.png" alt=""> <br /><br />
 </div>
@@ -136,7 +136,7 @@
 	</div>
 
 <!-- 댓글 출력 부분 -->
-
+   <%@ include file="/WEB-INF/views/includes/footer.jsp" %>
 
 </body>
 </html>
