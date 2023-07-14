@@ -95,7 +95,7 @@
  <%@ include file="/WEB-INF/views/includes/mouse.jsp" %>
       <%@ include file="/WEB-INF/views/includes/header.jsp" %>
 <div style="text-align: center; margin-top: 43px;">
-	<img style="width: 400px; margin-bottom: 55px" src="../resources/img/board/view_title.png" alt=""> <br /><br />
+	<img style="width: 330px; margin-bottom: 55px" src="../resources/img/board/view_title.png" alt=""> <br /><br />
 </div>
 
 <form name="form1" method="post">
@@ -107,22 +107,22 @@
 		<img class="view_content" style="width: 1150px; margin-top: 10px; position: relative;" src="../resources/img/board/view_contents.png" alt=""> <br /><br />
 	</div>
 	
-		<div class="view_input01" style="position: absolute; width: 100%; text-align: center; top: 430px; font-size: 16pt">
+		<div class="view_input01" style="position: absolute; width: 100%; text-align: center; top: 418px; font-size: 16pt">
 	              제목 : <input class="view_input02" name="title" id="title" size="80" value="${dto.title}" placeholder="제목"> <br /><br />
 	              			  		 
            <span class="relay_content""><b>여러분의 멋진 아이디어로 릴레이 소설을 작성보세요!</b></span><br>
            <textarea class="view_input03" name="content" id="content" rows="4" cols="80" placeholder="">${dto.content}</textarea> <br /><br />
 		         <!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
 	             <!-- 날짜 형식 => yyyy 4자리연도, MM 월, dd 일, a 오전/오후, HH 24시간제, hh 12시간제, mm 분, ss 초 -->
-		   <div style="margin-top: -10px; font-family: 'SUITE-Regular' !important;">작성일자 : <fmt:formatDate value="${dto.regdate}" pattern="yyyy-MM-dd a HH:mm:ss"/></div>
+		   <div class="view_regdate" style="margin-top: 17px; font-family: 'SUITE-Regular' !important; font-size: 13pt;">작성일자 : <fmt:formatDate value="${dto.regdate}" pattern="yyyy-MM-dd a HH:mm:ss"/></div>
 	    </div>
 	
-	<div style="width:650px; margin: 0 auto; text-align: center;">
+	<div style="width: 350px; margin: 0 auto; text-align: center; margin-top: 29px;">
 	    <!-- 게시물번호를 hidden으로 처리 -->
 	    <input type="hidden" name="bno" value="${dto.bno}">
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 50px;" type="button" id="btnDelete">삭제</button>
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 50px;" type="button" id="btnUpdete">수정</button>
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 50px;" type="button" onclick="btnreset()">취소</button>
+	    <button class="btn btn-outline-secondary btn_view01" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 50px;" type="button" id="btnDelete">삭제</button>
+	    <button class="btn btn-outline-secondary btn_view01" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 50px;" type="button" id="btnUpdete">수정</button>
+	    <button class="btn btn-outline-secondary btn_view01" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 50px;" type="button" onclick="btnreset()">취소</button>
 	</div>
 </form>
 
@@ -132,7 +132,7 @@
 		<h4 class="comment-write-title">익명 댓글 남기기</h4>
 		<!-- <input type="text" id="commentWriter" class="comment-input" placeholder="작성자"> -->
 		<input type="text" id="commentContents" class="comment-input" placeholder="댓글 추가.."><br>
-		<button id="comment-write-btn" class="comment-write-btn" onclick="commentWrite()">댓글작성</button>
+		<button id="comment-write-btn" class="comment-write-btn btn_view02" onclick="commentWrite()">댓글작성</button>
 	</div>
 
 <!-- 댓글 출력 부분 -->

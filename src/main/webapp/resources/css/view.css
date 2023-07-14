@@ -58,12 +58,12 @@
 			background: transparent;
 			border: 2.5px solid #A98B67;
 			width: 800px;
-			height: 200px;
+			height: 268px;
 		}
 		/* input, textarea */
 
 		.relay_content{
-			font-size: 14pt;
+			font-size: 11pt;
 		}
 
 		.comment-write-title{
@@ -103,15 +103,15 @@
 			float: right;
 		}
 
-      	@media screen and (max-width: 1400px){
+      	@media screen and (max-width: 1230px){
 			/* *{background: pink;} */
 			
 			.view_content{
-				width: 970px !important;
+				width: 790px !important;
 			}
 
 			.view_input01{
-				top: 410px !important;
+				top: 393px !important;
 			}
 
 			.view_input02{
@@ -120,8 +120,12 @@
 			}
 
 			.view_input03{
-				width: 700px !important;
+				width: 600px !important;
 				height: 125px !important;
+			}
+
+			.relay_content{
+				margin-top: -20px;
 			}
 
 			.comment-input{
@@ -130,6 +134,96 @@
 			
 			.comment-write{
 				width: 650px;
+			}
+
+		}
+		
+		@media screen and (max-width: 854px){
+			/* *{background: pink;} */
+
+			*{
+				font-size: 10pt !important;
+			}
+			
+			.view_content{
+				width: 500px !important;
+			}
+
+			.view_input01{
+				top: 373px !important;
+			}
+
+			.view_input02{
+				width: 300px !important;
+				height: 23px !important;
+			}
+
+			.view_input03{
+				width: 380px !important;
+				height: 80px !important;
+			}
+
+			.comment-input{
+				width: 410px;
+			}
+			
+			.comment-write{
+				width: 410px;
+			}
+
+			.btn_view01{
+				width: 57px !important;
+				height: 32px !important;
+			}
+
+			.btn_view02{
+				width: 67px !important;
+				height: 35px !important;
+			}
+
+		}
+		
+		@media screen and (max-width: 667px){
+			/* *{background: pink;} */
+
+			*{
+				font-size: 6pt !important;
+			}
+			
+			.view_content{
+				width: 360px !important;
+			}
+
+			.view_input01{
+				top: 392px !important;
+			}
+
+			.view_input02{
+				width: 200px !important;
+				height: 23px !important;
+			}
+
+			.view_input03{
+				width: 220px !important;
+				height: 60px !important;
+			}
+
+			.comment-input{
+				width: 300px;
+			}
+			
+			.comment-write{
+				width: 300px;
+			}
+
+			.btn_view01{
+				width: 40px !important;
+				height: 25px !important;
+			}
+
+			.btn_view02{
+				width: 62px !important;
+				height: 30px !important;
 			}
 
         }

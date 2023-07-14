@@ -1,4 +1,3 @@
-<%@page import="org.me.domain.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -66,12 +65,12 @@
 <!-- 카테고리 넣을 공간 -->
 
 <div style="text-align: center; margin-top: 43px">
-	<img style="width: 400px; margin-bottom: 55px; " src="../resources/img/board/view_title.png" alt=""> <br /><br />
+	<img style="width: 330px; margin-bottom: 55px; " src="../resources/img/board/view_title.png" alt=""> <br /><br />
 </div>
 
 <form name="form1" method="post" action="${path}/board/insert.do">
 	<div style="text-align: center; font-size: 16pt">
-	       작성자 : <input class="writer_writer01" name="writer" id="writer" readonly="readonly" value="<%= ((MemberVO) session.getAttribute("member")).getUserId() %>">
+	       작성자 : <input class="writer_writer01" name="writer" id="writer"  placeholder="이름">
 	</div>
 	
 	<div style="text-align: center; padding: 5px; margin-left: auto; margin-right: auto; margin: 0 auto;">
@@ -84,10 +83,10 @@
 	         <textarea class="write_input03" name="content" id="content" rows="4" cols="80" placeholder=""></textarea> <br /><br />
 	    </div>
 
-	<div style="width:650px; margin: 0 auto; text-align: center;">
+	<div style="width:350px; margin: 0 auto; text-align: center;">
 	    <!-- 게시물번호를 hidden으로 처리 -->
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; margin-top: -15px; width: 83px; height: 50px;" type="button" id="btnSave">등록</button>
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; margin-top: -15px; width: 83px; height: 50px;" type="button" onclick="btnreset()">취소</button>
+	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; margin-top: -15px; width: 70px; height: 46px;" type="button" id="btnSave">등록</button>
+	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; margin-top: -15px; width: 70px; height: 46px;" type="button" onclick="btnreset()">취소</button>
 	</div>
 </form>
 

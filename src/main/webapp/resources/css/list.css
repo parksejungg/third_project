@@ -62,8 +62,59 @@
 			.list_table02{
 				display: block !important;
 			}
+
 		}
 		
 		.list_table02{
 			display: none;
 		}
+
+		      	@media screen and (max-width: 767px){
+			/* *{background: pink;} */
+			
+			.list_relay{
+                display: none;
+			}
+			
+			.list_btn01{
+				width: 100% !important;
+				margin-top: -35px !important;
+				margin-bottom: 18px !important;
+				text-align: center;
+			}
+			
+			.list_btn02{
+				width: 80px !important;
+				height: 34px !important;
+				font-size: 10pt !important;
+			}
+			
+			.list_btn03{
+				margin-left: none !important;
+			}
+			
+			.list_table01{
+				display: none;
+			}
+
+			.list_table02{
+				display: none !important;
+			}
+
+			.list-span-text{
+				font-size: 12pt !important;
+				line-height: 24.4px !important;
+				margin-top: 38px !important;
+				margin-bottom: 48.5px !important;
+			}
+
+			.list_table03{
+				display: block !important;
+			}
+
+		}
+
+		.list_table03{
+				display: none;
+			}
+

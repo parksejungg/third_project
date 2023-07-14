@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,29 +19,14 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
- <script>
+<script>
     $(document).ready(function(){
         $("#btnWrite").click(function(){
-         	checkWrite();
+            // 페이지 주소 변경(이동)
+            location.href = "${path}/board/write.do";
         });
     });
 </script>
-
-<!-- 권한 확인 메서드 -->
-<script type="text/javascript">
-function checkWrite() {
-	
-	//세션확인
-	var loginIn = <%= session.getAttribute("member")!=null %>
-	if(loginIn){
-		window.location.href = "${path}/board/write.do";
-	}else{
-		alert("글 작성을 하시려면 로그인을 해주세요!");
-		window.location.href = "/member/login";
-	}
-}
-</script>
-
 </head>
 <body style="background: #FFFBF2">
 
@@ -53,7 +37,7 @@ function checkWrite() {
 	<img style="width: 100%;margin-top: 40px;" src="../resources/img/board/relay_banner.png" alt=""> 
 </div>
 
-<div style="text-align: center; font-size: 18pt; line-height: 45px; margin-top: 60px; margin-bottom: 70px">
+<div class="list-span-text" style="text-align: center; font-size: 18pt; line-height: 45px; margin-top: 60px; margin-bottom: 70px">
 	<span>
 	✎ <br />
 	관람객 또한 작가가 될 수 있는 공간을 꿈꿉니다. <br />
@@ -94,7 +78,7 @@ function checkWrite() {
     </c:forEach>
 </table>
 
-<table class="table list_table02" style="width: 890px; height: auto; margin-top: 5px; margin-left: auto; margin-right: auto;">
+<table class="table list_table02" style="width: 706px; height: auto; margin-top: 5px; margin-left: auto; margin-right: auto;">
     <c:forEach var="row" items="${list}" varStatus="loop">
         <c:if test="${loop.index % 2 == 0}">
             <tr style="border-bottom:hidden;">
@@ -102,10 +86,10 @@ function checkWrite() {
         <td>
         <div style="text-align: center; padding: 15px;">
             <!-- boot card -->
-            <div style="width: 400px; height: 240px; margin: 0 auto; padding: 10px; background: #F1E8DB; border-radius: 5px;">
-	                <div class="card-header" style="color: #994D22; font-size: 20pt; padding: 5px; border-bottom: 2px solid #E1D3BF;">${row.bno}</div>
-	                <div class="card-body" style="color: #545454; margin-top: 11px; font-size: 13pt; padding: 11px; font-family: 'SUITE-Regular' !important;"><span>' </span> <b>${row.writer}</b> <span>' 님</span>
-	                <p class="card-title" style="color: #545454; margin-top: 18px; margin-bottom: 18px; font-size: 20pt; font-family: 'SUITE-Regular' !important;"><b><a href="${path}/board/view.do?bno=${row.bno}" style="text-decoration: none; color: #545454">${row.title}</a></b></p>
+            <div style="width: 300px; height: 200px; margin: 0 auto; padding: 10px; background: #F1E8DB; border-radius: 5px;">
+	                <div style="color: #994D22; font-size: 20pt; padding: 3px; border-bottom: 2px solid #E1D3BF;">${row.bno}</div>
+	                <div style="color: #545454; margin-top: 8px; font-size: 13pt; padding: 11px; font-family: 'SUITE-Regular' !important;"><span>' </span> <b>${row.writer}</b> <span>' 님</span>
+	                <p style="color: #545454; margin-top: 5px; margin-bottom: 5px; font-size: 20pt; font-family: 'SUITE-Regular' !important;"><b><a href="${path}/board/view.do?bno=${row.bno}" style="text-decoration: none; color: #545454">${row.title}</a></b></p>
 	                <!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
 	                <div style="color: #545454; font-family: 'SUITE-Regular' !important;"><fmt:formatDate value="${row.regdate}" pattern="yyyy-MM-dd"/></div>
 	               <!-- <div class="card-text" style="color: #545454"><b>수정일 : </b><fmt:formatDate value="${row.updatedate}" pattern="yyyy-MM-dd"/></div> -->
@@ -114,6 +98,31 @@ function checkWrite() {
         </div>
         </td>
         <c:if test="${(loop.index + 1) % 2 == 0 || loop.last}">
+            </tr>
+        </c:if>
+    </c:forEach>
+</table>
+
+<table class="table list_table03" style="width: 350px; height: auto; margin-top: 5px; margin-left: auto; margin-right: auto;">
+    <c:forEach var="row" items="${list}" varStatus="loop">
+        <c:if test="${loop.index % 1 == 0}">
+            <tr style="border-bottom:hidden;">
+        </c:if>
+        <td>
+        <div style="text-align: center; padding: 15px;">
+            <!-- boot card -->
+            <div style="width: 300px; height: 200px; margin: 0 auto; padding: 10px; background: #F1E8DB; border-radius: 5px;">
+	                <div style="color: #994D22; font-size: 20pt; padding: 3px; border-bottom: 2px solid #E1D3BF;">${row.bno}</div>
+	                <div style="color: #545454; margin-top: 8px; font-size: 13pt; padding: 11px; font-family: 'SUITE-Regular' !important;"><span>' </span> <b>${row.writer}</b> <span>' 님</span>
+	                <p style="color: #545454; margin-top: 5px; margin-bottom: 5px; font-size: 20pt; font-family: 'SUITE-Regular' !important;"><b><a href="${path}/board/view.do?bno=${row.bno}" style="text-decoration: none; color: #545454">${row.title}</a></b></p>
+	                <!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
+	                <div style="color: #545454; font-family: 'SUITE-Regular' !important;"><fmt:formatDate value="${row.regdate}" pattern="yyyy-MM-dd"/></div>
+	               <!-- <div class="card-text" style="color: #545454"><b>수정일 : </b><fmt:formatDate value="${row.updatedate}" pattern="yyyy-MM-dd"/></div> -->
+                </div>
+            </div>
+        </div>
+        </td>
+        <c:if test="${(loop.index + 1) % 1 == 0 || loop.last}">
             </tr>
         </c:if>
     </c:forEach>
