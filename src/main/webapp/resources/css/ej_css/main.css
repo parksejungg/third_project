@@ -362,6 +362,7 @@ footer{
 		display: block;
 		pointer-events: none;
 		z-index: 1001;
+		background: none;
 	}
 	.cursor__inner {
 		fill: var(--cursor-fill);

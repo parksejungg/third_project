@@ -19,7 +19,6 @@
             <div class="N_post_L">
                 <div class="N_post_1">
                     <div class="N_post_1L">
-                        <img src="/resources/img/js_img/pin02.png" class="postL_BM">
                         <span class="post1L_title">
                             <b>리뉴얼 공사 안내</b>
                         </span>
@@ -29,7 +28,6 @@
                         </span>
                     </div>
                     <div class="N_post_1R">
-                        <img src="/resources/img/js_img/pin02.png" class="postR_BM">
                         <img src="/resources/img/js_img/생타드레스의해변.jpg" class="post1R_img">
                     </div>
                 </div>
@@ -64,31 +62,40 @@
         
         <!-- 아래 공지사항 목록 뜰것임 -->
         <a href="/notice/insert">글쓰기</a>
-	<table>
+ 	
+ 	<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 		<thead>
 			<tr>
 				<th>번호</th>
 				<th>제목</th>
 				<th>작성자</th>
 				<th>작성일</th>
-				<th>수정일</th>
+				<th>조회수</th>
 			</tr>
 		</thead>
 		<c:forEach items="${list}" var="list">
 			<tr>
-				<td><c:out value="${list.bno}"/></td>
 				<td>
-					<a class="move" href='<c:out value="${list.bno}"/>'>
-				        <c:out value="${list.title}"/>
-				    </a>
-                </td>
-				<td><c:out value="${list.writer}"/></td>
-				<td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.regdate}"/></td>
-                <td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.updatedate}"/></td>
+					<c:out value="${list.bno}" />
+				</td>
+				<td>							
+					<a class="move" href="<c:out value="${list.bno}" />">
+						<c:out value="${list.title}" />
+					</a>
+				</td>
+				<td>
+					<c:out value="${list.writer}" />
+				</td>
+				<td>
+					<fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" />
+				</td>
+				<td>
+					<fmt:formatDate value="${list.views}" /> <!-- 조회수 views -->
+				</td>
 			</tr>
 		</c:forEach>
 	</table>
-	
+ 
 	   <form id="moveForm" method="get">    
     	</form>
         
