@@ -9,9 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title></title>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+
 <!-- iamport.payment.js -->
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <link rel="stylesheet" href="/resources/css/payment/bootstrap.min.css">
 <link rel="stylesheet" href="/resources/css/payment/sj_payment.css">
 <link rel="stylesheet" href="/resources/css/payment/style2.css">
@@ -75,7 +76,7 @@ function fn_buy() {
 <body>
 	  <div class="row">
         <div class="logo_form">
-            <img src="/resources/img/sj_img/logo.svg" class="logo_img">
+         <a href="main.jsp"><img src="/resources/img/sj_img/logo.svg" class="logo_img" style="width: 125px;"></a>
             <!-- 햄버거 토글 시작 -->
                 <span class="site-mobile-menu site-navbar-target">
                     <div class="site-mobile-menu-header">

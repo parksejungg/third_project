@@ -18,7 +18,7 @@
 
   <div class="row">
         <div class="logo_form">
-            <img src="/resources/img/sj_img/logo.svg" class="logo_img">
+        <a href="main.jsp"><img src="/resources/img/sj_img/logo.svg" class="logo_img" style="width: 125px;"></a>
           <!-- 햄버거 토글 시작 -->
                 <span class="site-mobile-menu site-navbar-target">
                     <div class="site-mobile-menu-header">

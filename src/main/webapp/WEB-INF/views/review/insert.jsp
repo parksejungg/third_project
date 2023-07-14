@@ -7,25 +7,46 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
+<script>
+function goBack() {
+	window.location.href = "/review/list";
+}
+</script>
+<link rel="stylesheet" href="/resources/css/review_css/write.css">
 </head>
 <body>
-<h1>게시판 등록</h1>
-<form action="/review/insert" method="post">
-	<div>
-		<label>제목 </label>
-		<input name="title">
-	</div>
 
-	<div>
-		<label>내용</label>
-		<textarea row="3" name="content"></textarea>
-	</div>
-	
-	<div>
-		<label>글쓴이</label>
-		<input name="writer">
-	</div>
-	<button>글 등록</button>
+<%@ include file="../includes/header.jsp" %>
+ <div class="reviewimg">
+      <img src="/resources/img/review_img/reviewmain.png" alt="리뷰메인">
+ </div>
+ 
+<form action="/review/insert" method="post">
+	 <div class="container">
+        <div>
+            <h2 class="main_title">WRITE</h2>
+            <div class="write_form">
+               <input name="title" class="title_form" placeholder="제목을 입력하세요">
+               </input>
+               <hr class="line_form">
+               <textarea name="content" class="content_form" placeholder="내용을 입력하세요" ></textarea>
+             
+            </div>
+              
+            <div class="writer_form">
+                <span class="writer_span">작성자</span>
+                <input class="writer_input" name="writer">
+            
+            </div>
+
+            <div class="btn_form">
+                <button class="submit_btn">등록</button>
+                <button class="cancel_btn" type="button" onclick="goBack()">취소</button>
+            </div>    
+        </div>
+    </div> 
 </form>
+
+<%@ include file="../includes/footer.jsp" %>
 </body>
 </html>

@@ -13,7 +13,7 @@ INSERT INTO tbl_member(USERID, USERPW, USERNAME,USERADD1,USERADD2,USERBIRTH,REGD
 <!-- 로그인 쿼리문 -->
 <!-- select userId, userpw from tbl_member where userId = 'zzang3' and userPw = 1234; -->
 <select id="login" resultType="org.me.domain.MemberVO">
-select USERID, USERPW from tbl_member 
+select USERID, USERPW, USERNAME, USERADD1 from tbl_member 
 where USERID = #{userId}
 </select>
 
