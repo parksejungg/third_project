@@ -61,11 +61,12 @@
 </script>
 </head>
 <body style="background: #FFFBF2">
+ <%@ include file="/WEB-INF/views/includes/mouse.jsp" %>
+      <%@ include file="/WEB-INF/views/includes/header.jsp" %>
 <!-- 카테고리 넣을 공간 -->
-<h2>게시글 작성</h2>
 
-<div style="text-align: center;">
-	<img style="width: 400px; margin-bottom: 55px" src="../resources/img/board/view_title.png" alt=""> <br /><br />
+<div style="text-align: center; margin-top: 40px;">
+	<img style="width: 400px; margin-bottom: 55px; " src="../resources/img/board/view_title.png" alt=""> <br /><br />
 </div>
 
 <form name="form1" method="post" action="${path}/board/insert.do">
@@ -90,6 +91,6 @@
 	</div>
 </form>
 
-
+   <%@ include file="/WEB-INF/views/includes/footer.jsp" %>
 </body>
 </html>

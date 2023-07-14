@@ -1,0 +1,441 @@
+/* 초기화 코딩 */
+@charset "utf-8";
+
+@font-face {
+    font-family: 'SUITE';
+    src: url("../../common/font/SUITE-Regular.otf")format('opentype');
+}
+
+@font-face {
+    font-family: 'Viaoda-Libre';
+    src: url("../../common/font/ViaodaLibre-Regular.otf")format('opentype');
+}
+
+body{
+    background-color: #f7f5f0;
+}
+*{
+    text-rendering: optimizeLegibility;
+    margin: 0 auto;
+    padding: 0;
+}
+/* 초기화코딩 종료 */
+
+.frame{
+    padding: 1.9rem 2.5rem;
+}
+
+.frame__title {
+	font-size: 1rem;
+	margin: 0 0 1rem;
+	font-weight: 500;
+}
+
+.frame_button{
+    float: right;
+    margin-top: 50px;
+    margin-top: -0.1px;
+}
+
+.N_title{
+    margin-top: -50px;
+    margin-bottom: -15px;
+    text-align: center;
+    font-size: 120px;
+    letter-spacing: 5px;
+    font-family: 'Viaoda-Libre';
+}
+
+.overbar{
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: none;
+    height: 4px;
+    background-color: #994D22;
+    width: 88%;
+}
+
+.N_content{
+    width: 100%;
+    height: 570px;
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.N_post_L{
+    text-align: center;
+    margin-left: 9%;
+    width: 40%;
+}
+
+.N_post_1{
+    display: flex;
+}
+
+.N_post_1L{
+    border: 1px solid #000;
+    background-color: #fff;
+    height: 260px;
+    flex: 5;
+    position: relative;
+    margin: 0 2.5% 15px 0;
+}
+
+.postL_BM{
+    position: absolute;
+    left: 48%;
+    top: -12.5%;
+    width: 15%;
+    background: none;
+}
+
+.N_post_1R{
+    text-align: center;
+    border: 1px solid #000;
+    background-color: #fff;
+    height: 260px;
+    flex: 3;
+    position: relative;
+    margin: 0 0 15px 2.5%;
+}
+
+.postR_BM{
+    position: absolute;
+    left: 46%;
+    top: -12.5%;
+    width: 25%;
+    background: none;
+}
+
+.N_post_2{
+    border: 1px solid #000;
+    background-color: #fff;
+    margin-top: 25px;
+    height: 268px;
+    text-align: center;
+}
+
+.post1L_title, .post2_title{
+    display: block;
+    margin-top: 50px;
+    font-family: 'SUITE';
+    font-size: 25px;
+}
+
+.post1R_img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.N_post_2 hr, .N_post_1L hr{
+    border: none;
+    height: 2px;
+    background-color: #994D22;
+    width: 85%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.post2_content{
+    font-family: 'SUITE';
+    font-size: 22px;
+}
+
+.post1L_content{
+    font-family: 'SUITE';
+    font-size: 22px;
+}
+
+.N_post_R{
+    border: 1px solid #000;
+    margin-right: 9%;
+    width: 40%;
+    height: 570px;
+    text-align: center;
+}
+
+.postBG{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.N_postR_content{
+    position: absolute;
+    top: 480px;
+    width: 35%;
+    margin-left: 3.8%;
+}
+
+.postR_title{
+    font-family: 'SUITE';
+    font-size: 30px;
+}
+
+.N_postR_content hr{
+    border: none;
+    height: 2px;
+    background-color: #994D22;
+    width: 85%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.postR_content{
+    width: 90%;
+    font-family: 'SUITE';
+    font-size: 22px;
+}
+
+.underbar{
+    border: none;
+    height: 2px;
+    background-color: #A98B67;
+    width: 97%;
+}
+
+.JS_footer{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 3%;
+    font-family: 'Viaoda-Libre';
+    font-size: 18px;
+    float: right;
+}
+
+
+@media (max-width:1215px) {
+    .frame__title{
+        width: 65px;
+    }
+    .frame_button{
+        width: 30px;
+        margin-top: -0.1px;
+    }
+    .N_title{
+        margin-top: -35px;
+        margin-bottom: -15px;
+        text-align: center;
+        font-size: 80px;
+        font-family: 'Viaoda-Libre';
+    }
+    .postL_BM, .postR_BM{
+        top: -8.5%;
+    }
+    .N_postR_content{
+        position: absolute;
+        top: 365px;
+        width: 35%;
+        margin-left: 3.8%;
+    }
+}
+
+@media (max-width:1030px){
+    .N_post_L{
+        text-align: center;
+        margin-left: 9%;
+        width: 82%;
+    }
+    .N_post_1{
+        display: flex;
+    }
+    .N_post_1L{
+        border: 1px solid #000;
+        background-color: #fff;
+        height: 260px;
+        flex: 5;
+        position: relative;
+        margin: 0 2.5% 15px 0;
+    }
+    .postL_BM{
+        top: -12.5%;
+        width: 12%;
+    }
+    .N_post_1R{
+        text-align: center;
+        border: 1px solid #000;
+        background-color: #fff;
+        height: 260px;
+        flex: 3;
+        position: relative;
+        margin: 0 0 15px 2.5%;
+    }
+    .postR_BM{
+        top: -12.5%;
+        width: 20%;
+    }
+    .N_post_2{
+        border: 1px solid #000;
+        background-color: #fff;
+        margin-top: 25px;
+        height: 268px;
+        text-align: center;
+    }
+    .post2_title, .post1L_title{
+        display: block;
+        margin-top: 60px;
+        font-family: 'SUITE';
+        font-size: 25px;
+    }
+    .N_post_2 hr, .N_post_1L hr{
+        border: none;
+        height: 2px;
+        background-color: #994D22;
+        width: 85%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .post2_content{
+        font-family: 'SUITE';
+        font-size: 21px;
+    }
+    .post1L_content{
+        font-family: 'SUITE';
+        font-size: 21px;
+    }
+    .N_content{
+        width: 100%;
+        height: 100%;
+        display: block;
+        margin-bottom: 40px;
+    }
+    .N_post_R{
+        display: block;
+        border: 1px solid #000;
+        margin-top: 40px;
+        margin-right: 9%;
+        width: 82%;
+        height: 570px;
+        text-align: center;
+    }
+    .postBG{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .N_postR_content{
+        position: absolute;
+        top: 1000px;
+        width: 65%;
+        margin-left: 10%;
+    }
+    .postR_title{
+        font-family: 'SUITE';
+        font-size: 35px;
+    }
+    .N_postR_content hr{
+        border: none;
+        height: 2px;
+        background-color: #994D22;
+        width: 85%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .postR_content{
+        font-family: 'SUITE';
+        font-size: 23px;
+    }
+}
+
+@media (max-width:670px) {
+    .frame__title{
+        width: 50px;
+    }
+    .frame_button{
+        width: 23px;
+        margin-top: -0.1px;
+    }
+    .N_title{
+        margin-top: -27px;
+        margin-bottom: -15px;
+        text-align: center;
+        font-size: 65px;
+        font-family: 'Viaoda-Libre';
+    }
+    .postL_BM, .postR_BM{
+        top: -8%;
+    }
+    .N_postR_content{
+        top: 980px;
+    }
+    .JS_footer{
+        font-size: 15px;
+    }
+}
+
+@media (max-width:540px) {
+    .frame__title{
+        width: 50px;
+    }
+    .frame_button{
+        width: 23px;
+        margin-top: -0.1px;
+    }
+    .N_title{
+        margin-top: -27px;
+        margin-bottom: -15px;
+        text-align: center;
+        font-size: 65px;
+        font-family: 'Viaoda-Libre';
+    }
+    .post1L_title, .post2_title{
+        margin-top: 45px;
+    }
+    .postR_title{
+        font-family: 'SUITE';
+        font-size: 32px;
+    }
+    .N_postR_content{
+        top: 930px;
+    }
+    .JS_footer{
+        font-size: 15px;
+    }
+}
+
+@media (max-width:460px) {
+    .frame__title{
+        width: 50px;
+    }
+    .frame_button{
+        width: 23px;
+        margin-top: -0.1px;
+    }
+    .N_title{
+        margin-top: -20px;
+        margin-bottom: -15px;
+        text-align: center;
+        font-size: 55px;
+        font-family: 'Viaoda-Libre';
+    }
+    .post1L_title{
+        font-size: 22px;
+        margin-top: 35px;
+    }
+    .post2_title{
+        font-size: 22px;
+        margin-top: 55px;
+    }
+    .post1L_content{
+        font-size: 16px;
+    }
+    .post2_content{
+        font-size: 18px;
+    }
+    .postR_title{
+        font-family: 'SUITE';
+        font-size: 28px;
+    }
+    .N_postR_content{
+        top: 1000px;
+        width: 73%;
+        margin-left: 8%;
+    }
+    .postR_content{
+        font-size: 18px;
+    }
+    .JS_footer{
+        font-size: 12px;
+    }
+}

@@ -31,10 +31,11 @@
 </head>
 <body style="background: #FFFBF2">
 
-<h2>게시글 목록</h2>
+ <%@ include file="/WEB-INF/views/includes/mouse.jsp" %>
+ <%@ include file="/WEB-INF/views/includes/header.jsp" %>
 
 <div>
-	<img style="width: 100%;" src="../resources/img/board/relay_banner.png" alt=""> 
+	<img style="width: 100%;margin-top: 40px;" src="../resources/img/board/relay_banner.png" alt=""> 
 </div>
 
 <div style="text-align: center; font-size: 18pt; line-height: 45px; margin-top: 60px; margin-bottom: 70px">
@@ -107,6 +108,6 @@
 <div style="text-align: center;">
 	<input style="width: 90px; margin-top: 3%; margin-bottom: 4%;" type="image" src="../resources/img/board/top.png" onClick="javascript:window.scrollTo(0,0)" alt="맨위로" />
 </div>
-
+   <%@ include file="/WEB-INF/views/includes/footer.jsp" %>
 </body>
 </html>

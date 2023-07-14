@@ -4,6 +4,6 @@ import org.me.domain.PaymentVO;
 
 public interface PaymentService {
 
-	void insertPaymentSuccess(PaymentVO vo);
+	void PaymentInsert(PaymentVO vo);
 	
 }
