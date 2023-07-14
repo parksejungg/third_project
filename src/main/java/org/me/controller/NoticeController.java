@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -17,11 +18,20 @@ public class NoticeController {
 	@Autowired
 	private ReviewService reviewservice;
 	
+	/*
+	 * @RequestMapping(value = "notice.do") public ModelAndView
+	 * fwdPaymentSuccessPage() { return new ModelAndView("/notice/notice"); }
+	 */
+	
 	// 글목록
 	@GetMapping("/list")
-	public void boardList(Model model) {
+	public ModelAndView boardList(Model model) {
 		model.addAttribute("list", reviewservice.getList());
+		return new ModelAndView("/notice/list");
+		
 	}
+	
+	
 	
 	// 글등록 페이지로 이동
 	@GetMapping("/insert")

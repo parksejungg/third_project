@@ -14,9 +14,10 @@
 }
 
 @font-face {
-    font-family: 'ViaodaLibre';
-    src: url('/resources/fonts/ej_fonts/ViaodaLibre-Regular.ttf') format('truetype');
+    font-family: 'Viaoda-Libre';
+    src: url("../../common/font/ViaodaLibre-Regular.otf")format('opentype');
 }
+
 
 *,
 *::after,

@@ -1,20 +1,16 @@
 /* 초기화 코딩 */
 @charset "utf-8";
 
-@font-face{
-    font-family: 'Viaoda-Libre';
-    src: url('../font/Viaoda_Libre/ViaodaLibre-Regular.ttf') format('truetype');
-}
-
-@font-face{
-    font-family: 'LeferiPointSpecial';
-    src: url('../font/Leferi_TTF/LeferiPointSpecial.ttf') format('truetype');
-}
-
-@font-face{
+@font-face {
     font-family: 'SUITE';
-    src: url('../font/SUITE-ttf/SUITE-Regular.ttf') format('truetype');
+    src: url("../../common/font/SUITE-Regular.otf")format('opentype');
 }
+
+@font-face {
+    font-family: 'Viaoda-Libre';
+    src: url("../../common/font/ViaodaLibre-Regular.otf")format('opentype');
+}
+
 body{
     background-color: #f7f5f0;
 }

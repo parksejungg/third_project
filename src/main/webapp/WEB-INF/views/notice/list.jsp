@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/css/js.css/notice.css">
+    <link rel="stylesheet" href="/resources/css/js.css/notice.css">
     <title>M:美</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
             <div class="N_post_L">
                 <div class="N_post_1">
                     <div class="N_post_1L">
-                        <img src="resources/img/js_img/pin02.png" class="postL_BM">
+                        <img src="/resources/img/js_img/pin02.png" class="postL_BM">
                         <span class="post1L_title">
                             <b>리뉴얼 공사 안내</b>
                         </span>
@@ -29,8 +29,8 @@
                         </span>
                     </div>
                     <div class="N_post_1R">
-                        <img src="resources/img/js_img/pin02.png" class="postR_BM">
-                        <img src="resources/img/js_img/생타드레스의해변.jpg" class="post1R_img">
+                        <img src="/resources/img/js_img/pin02.png" class="postR_BM">
+                        <img src="/resources/img/js_img/생타드레스의해변.jpg" class="post1R_img">
                     </div>
                 </div>
                 <div class="N_post_2">
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="N_post_R">
-                <img src="resources/img/js_img/postBG.png" class="postBG">
+                <img src="/resources/img/js_img/postBG.png" class="postBG">
                 <div class="N_postR_content">
                     <span class="postR_title">
                         <b>M:美 축제 안내</b>
