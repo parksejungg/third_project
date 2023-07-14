@@ -94,7 +94,7 @@ a:focus:not(:focus-visible) {
 	display: inline;
 	float: right;
 	font-size: 27px;
-	font-family: 'ViaodaLibre';
+	font-family: 'Viaoda-Libre';
 }
 
 .frame__links a:not(:last-child) {
@@ -122,7 +122,7 @@ a:focus:not(:focus-visible) {
 .menu__item {
 	margin-top: 40px;
 	margin-bottom: 1rem;
-    font-family: 'ViaodaLibre';
+    font-family: 'Viaoda-Libre';
 	text-transform: uppercase;
 	cursor: pointer;
 	color: var(--color-menu);
@@ -303,7 +303,7 @@ footer{
 	margin-top: 30px;
 	height: 30px;
 	line-height: 25px;
-	font-family: 'ViaodaLibre';
+	font-family: 'Viaoda-Libre';
 	font-size: 15px;
 }
 .foottxtbox li{
@@ -311,7 +311,7 @@ footer{
     font-family: 'SUITE-Regular';
 }
 .foottxtbox li:last-child{
-    font-family: 'ViaodaLibre';
+    font-family: 'Viaoda-Libre';
 	
 }
 .foottxtbox img{
@@ -319,7 +319,7 @@ footer{
 	width: 50px;
 }
 .foottxtbox li span{
-    font-family: 'ViaodaLibre';
+    font-family: 'Viaoda-Libre';
 }
 
 

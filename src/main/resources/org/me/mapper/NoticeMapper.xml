@@ -4,7 +4,7 @@
 
 
 <!-- 글 등록 insert-->
-<insert id="insertBoard">
+<insert id="insertNotice">
 
  	 insert into tbl_board_N(bno, title, content, writer, regdate, updatedate)
      values (seq_board_N.nextval, #{title}, #{content}, #{writer}, sysdate, sysdate)
@@ -29,13 +29,13 @@
 
 
 <!-- 글조회 -->
-<select id="getBoard" resultType="org.me.domain.NoticeVO">
+<select id="getNotice" resultType="org.me.domain.NoticeVO">
 
 	select * from tbl_board_N where bno = #{bno}
 
 </select>
 
-<delete id="deleteBoard">
+<delete id="deleteNotice">
 
 	delete tbl_board_N where bno = #{bno}
 
