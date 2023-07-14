@@ -94,7 +94,7 @@
 <!-- 카테고리 넣을 공간 -->
  <%@ include file="/WEB-INF/views/includes/mouse.jsp" %>
       <%@ include file="/WEB-INF/views/includes/header.jsp" %>
-<div style="text-align: center;">
+<div style="text-align: center; margin-top: 43px;">
 	<img style="width: 400px; margin-bottom: 55px" src="../resources/img/board/view_title.png" alt=""> <br /><br />
 </div>
 
@@ -107,7 +107,7 @@
 		<img class="view_content" style="width: 1150px; margin-top: 10px; position: relative;" src="../resources/img/board/view_contents.png" alt=""> <br /><br />
 	</div>
 	
-		<div class="view_input01" style="position: absolute; width: 100%; text-align: center; top: 282px; font-size: 16pt">
+		<div class="view_input01" style="position: absolute; width: 100%; text-align: center; top: 430px; font-size: 16pt">
 	              제목 : <input class="view_input02" name="title" id="title" size="80" value="${dto.title}" placeholder="제목"> <br /><br />
 	              			  		 
            <span class="relay_content""><b>여러분의 멋진 아이디어로 릴레이 소설을 작성보세요!</b></span><br>
@@ -120,9 +120,9 @@
 	<div style="width:650px; margin: 0 auto; text-align: center;">
 	    <!-- 게시물번호를 hidden으로 처리 -->
 	    <input type="hidden" name="bno" value="${dto.bno}">
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 40px;" type="button" id="btnDelete">삭제</button>
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 40px;" type="button" id="btnUpdete">수정</button>
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 40px;" type="button" onclick="btnreset()">취소</button>
+	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 50px;" type="button" id="btnDelete">삭제</button>
+	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 50px;" type="button" id="btnUpdete">수정</button>
+	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67;  margin: 5px; margin-top: -15px; width: 75px; height: 50px;" type="button" onclick="btnreset()">취소</button>
 	</div>
 </form>
 

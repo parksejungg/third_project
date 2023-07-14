@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <link href="/resources/css/list.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- boot css -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <title>릴레이 소설 게시판</title>
 
 <style type="text/css">
@@ -54,7 +54,6 @@
 	<button class="btn btn-outline-secondary list_btn02" style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; width: 120px; height: 50px;" type="button" id="btnWrite">글쓰기</button>
 </div>
 
-
 <table class="table list_table01" style="width: 1200px; height: auto; margin-top: 5px; margin-left: auto; margin-right: auto;">
     <c:forEach var="row" items="${list}" varStatus="loop">
         <c:if test="${loop.index % 3 == 0}">
@@ -63,10 +62,10 @@
         <td>
         <div style="text-align: center; padding: 15px;">
             <!-- boot card -->
-            <div style="width: 400px; height: 240px; margin: 0 auto; background: #F1E8DB; border-radius: 5px;">
-	                <div class="card-header" style="color: #994D22; font-size: 20pt";>${row.bno}</div>
-	                <div class="card-body" style="color: #545454; margin-top: 11px; font-size: 13pt; font-family: 'SUITE-Regular' !important;"><span>' </span> <b>${row.writer}</b> <span>' 님</span>
-	                <p class="card-title" style="color: #545454; margin-top: 18px; margin-bottom: 18px; font-size: 20pt; font-family: 'SUITE-Regular' !important;"><b><a href="${path}/board/view.do?bno=${row.bno}" style="text-decoration: none; color: #545454">${row.title}</a></b></p>
+            <div style="width: 400px; height: 245px; margin: 0 auto; padding: 10px; background: #F1E8DB; border-radius: 5px; ">
+	                <div style="color: #994D22; font-size: 22pt; padding: 5px; border-bottom: 2px solid #E1D3BF;">${row.bno}</div>
+	                <div style="color: #545454; margin-top: 11px; font-size: 13pt; padding: 11px; font-family: 'SUITE-Regular' !important;"><span>' </span> <b>${row.writer}</b> <span>' 님</span>
+	                <p style="color: #545454; margin-top: 18px; margin-bottom: 18px; font-size: 20pt; font-family: 'SUITE-Regular' !important;"><b><a href="${path}/board/view.do?bno=${row.bno}" style="text-decoration: none; color: #545454">${row.title}</a></b></p>
 	                <!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
 	                <div style="color: #545454; font-family: 'SUITE-Regular' !important;"><fmt:formatDate value="${row.regdate}" pattern="yyyy-MM-dd"/></div>
 	               <!-- <div class="card-text" style="color: #545454"><b>수정일 : </b><fmt:formatDate value="${row.updatedate}" pattern="yyyy-MM-dd"/></div> -->
@@ -88,9 +87,9 @@
         <td>
         <div style="text-align: center; padding: 15px;">
             <!-- boot card -->
-            <div style="width: 400px; height: 240px; margin: 0 auto; background: #F1E8DB; border-radius: 5px;">
-	                <div class="card-header" style="color: #994D22; font-size: 20pt";>${row.bno}</div>
-	                <div class="card-body" style="color: #545454; margin-top: 11px; font-size: 13pt; font-family: 'SUITE-Regular' !important;"><span>' </span> <b>${row.writer}</b> <span>' 님</span>
+            <div style="width: 400px; height: 240px; margin: 0 auto; padding: 10px; background: #F1E8DB; border-radius: 5px;">
+	                <div class="card-header" style="color: #994D22; font-size: 20pt; padding: 5px; border-bottom: 2px solid #E1D3BF;">${row.bno}</div>
+	                <div class="card-body" style="color: #545454; margin-top: 11px; font-size: 13pt; padding: 11px; font-family: 'SUITE-Regular' !important;"><span>' </span> <b>${row.writer}</b> <span>' 님</span>
 	                <p class="card-title" style="color: #545454; margin-top: 18px; margin-bottom: 18px; font-size: 20pt; font-family: 'SUITE-Regular' !important;"><b><a href="${path}/board/view.do?bno=${row.bno}" style="text-decoration: none; color: #545454">${row.title}</a></b></p>
 	                <!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
 	                <div style="color: #545454; font-family: 'SUITE-Regular' !important;"><fmt:formatDate value="${row.regdate}" pattern="yyyy-MM-dd"/></div>

@@ -70,7 +70,7 @@
 <body>
 	<main>
 		<div class="frame">
-			<a href="#"><h1 class="frame__title"><img src="/resources/img/ej_img/logo.png" alt="로고이미지"></h1></a>
+			<a href="/main.jsp"><h1 class="frame__title"><img src="/resources/img/ej_img/logo.png" alt="로고이미지"></h1></a>
 			<div class="frame__links">
 				 <c:if test="${member == null}"><a href="member/login">LOGIN</a></c:if>
 				<c:if test="${member == null}"><a href="member/register">SIGN UP</a></c:if>
@@ -85,7 +85,7 @@
 			<a class="menu__item" href="introPayment.do">
 				<span class="menu__item-text" data-splitting="">EXHIBITION</span>
 			</a>
-			<a class="menu__item" href="">
+			<a class="menu__item" href="notice/list">
 				<span class="menu__item-text" data-splitting="">COMMUNITY</span>
 			</a>
 			<a class="menu__item" href="list.do">

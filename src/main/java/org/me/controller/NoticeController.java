@@ -25,9 +25,9 @@ public class NoticeController {
 	// 글목록
 	@GetMapping("/list")
 	public ModelAndView boardList(Model model) {
-		model.addAttribute("list", service.getList());
 		
-		System.out.println("공지사항 목록 페이지");
+		log.info("글목록 페이지");
+		model.addAttribute("list", service.getList());
 		
 		return new ModelAndView("/notice/list");
 		
@@ -43,9 +43,10 @@ public class NoticeController {
 	@PostMapping("/insert")
 	public String insertBoard(NoticeVO notice, RedirectAttributes rttr) {
 
-		log.info("notice Vo:"+notice);
 		service.insertNotice(notice);
-		rttr.addFlashAttribute("result", "insert Success");
+		log.info("notice Vo:"+notice);
+		
+		rttr.addFlashAttribute("result", "insert success");
 
 		return "redirect:/notice/list";
 	}
@@ -61,6 +62,8 @@ public class NoticeController {
 	// 글수정 페이지로 이동
 	@GetMapping("/modify")
 	public void modify(int bno, Model model) {
+		
+		log.info("글 수정 페이지");
 		model.addAttribute("modify", service.getNotice(bno));
 	}
 	
@@ -72,7 +75,7 @@ public class NoticeController {
 		
 		rttr.addFlashAttribute("result", "modify success");
 		
-		return "redirect:/review/list";
+		return "redirect:/notice/list";
 	}
 	
 	//글 삭제
@@ -83,7 +86,7 @@ public class NoticeController {
 		
 		rttr.addFlashAttribute("result", "delete success");
 		
-		return "redirect:/review/list";
+		return "redirect:/notice/list";
 	}
 	
 }

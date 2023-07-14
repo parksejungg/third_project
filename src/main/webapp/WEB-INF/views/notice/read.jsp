@@ -66,7 +66,7 @@
 	
 	
 	$("#delete_btn").on("click", function(e){
-	    form.attr("action", "/review/delete");
+	    form.attr("action", "/notice/delete");
 	    form.attr("method", "post");
 	    form.submit();
 	});

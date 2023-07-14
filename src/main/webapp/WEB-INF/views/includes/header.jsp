@@ -18,7 +18,7 @@
    <div class="container1">
         <div class="wrapAll">
             <div class="header">
-                <img src="/resources/img/hs_img/logo.svg" alt="로고">
+                <a href="/main.jsp"><img src="/resources/img/hs_img/logo.svg" alt="로고"></a>
                 <!-- 햄버거 토글 시작 -->
                 <span class="site-mobile-menu site-navbar-target">
                     <div class="site-mobile-menu-header">
@@ -40,11 +40,12 @@
                     </li>
                     <li><a href="/">EXHIBITION</a></li>
                     <li class="has-children">
-                        <a href="/">COMMUNITY</a>
+                        <a href="/notice/list">COMMUNITY</a>
                         <ul class="dropdown">
-                            <li><a href="/">Notice</a></li>
+                            <li><a href="/notice/list">Notice</a></li>
                             <li><a href="">FAQ</a></li>
                             <li><a href="">Q&A</a></li>
+                            <li><a href="/review/list">Review</a></li>
                         </ul>
                     </li>
                     <li><a href="/board/list">PLAY</a></li>
@@ -53,7 +54,7 @@
                     <li class="has-children">
                         MYINFO
                         <ul class="dropdown">
-                            <li><a href="/">Info</a></li>
+                            <li><a href="#">Info</a></li>
        					<li><a id="btnlogout">Logout</a></li>
        					<!-- <li><a href="/member/logout" id="btnlogout">logout</a></li> -->
                         </ul>

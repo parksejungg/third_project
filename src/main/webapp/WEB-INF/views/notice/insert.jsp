@@ -23,7 +23,7 @@
 	
 	<div>
 		<label>글쓴이</label>
-		<input name="writer" disabled="disabled" value="admin">
+		<input name="writer" value="admin" readonly="readonly">
 	</div>
 	<button>글 등록</button>
 </form>

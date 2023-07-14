@@ -86,7 +86,7 @@
 		.comment-write{
 			text-align: center;
 			width: 820px;
-			height: 130px;
+			height: 400px;
 			margin: 0 auto;
 			margin-top: 65px;
 		}
@@ -111,7 +111,7 @@
 			}
 
 			.view_input01{
-				top: 263px !important;
+				top: 410px !important;
 			}
 
 			.view_input02{
@@ -122,6 +122,14 @@
 			.view_input03{
 				width: 700px !important;
 				height: 125px !important;
+			}
+
+			.comment-input{
+				width: 650px;
+			}
+			
+			.comment-write{
+				width: 650px;
 			}
 
         }
