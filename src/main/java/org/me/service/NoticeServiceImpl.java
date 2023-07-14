@@ -2,8 +2,8 @@ package org.me.service;
 
 import java.util.List;
 
-import org.me.domain.ReviewVO;
-import org.me.mapper.ReviewMapper;
+import org.me.domain.NoticeVO;
+import org.me.mapper.NoticeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,39 +11,37 @@ import org.springframework.stereotype.Service;
 public class NoticeServiceImpl implements NoticeService {
 
 	@Autowired
-	private ReviewMapper mapper;
+	private NoticeMapper mapper;
 	
 	
-	// 글등록
+	//글등록
 	@Override
-	public void insertBoard(ReviewVO board) {
-		mapper.insertBoard(board);
-		
+	public void insertNotice(NoticeVO board) {
+		mapper.insertNotice(board);
 	}
 
-	// 글수정
+	//글 수정
 	@Override
-	public int modify(ReviewVO board) {
+	public int modify(NoticeVO board) {
 		return mapper.modify(board);
 	}
-
+	
 	// 글목록
 	@Override
-	public List<ReviewVO> getList() {
-		
+	public List<NoticeVO> getList() {
 		return mapper.getList();
+	}	
+
+	//글조회
+	@Override
+	public NoticeVO getNotice(int bno) {
+		return mapper.getNotice(bno);
 	}
 
-	// 글조회
+	//글삭제
 	@Override
-	public ReviewVO getBoard(int bno) {
-		return mapper.getBoard(bno);
-	}
-
-	// 글삭제
-	@Override
-	public int deleteBoard(int bno) {
-		return mapper.deleteBoard(bno);
+	public int deleteNotice(int bno) {
+		return mapper.deleteNotice(bno);
 	}
 
 	
