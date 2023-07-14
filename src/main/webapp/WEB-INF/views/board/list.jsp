@@ -20,14 +20,29 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<script>
+ <script>
     $(document).ready(function(){
         $("#btnWrite").click(function(){
-            // 페이지 주소 변경(이동)
-            location.href = "${path}/board/write.do";
+         	checkWrite();
         });
     });
 </script>
+
+<!-- 권한 확인 메서드 -->
+<script type="text/javascript">
+function checkWrite() {
+	
+	//세션확인
+	var loginIn = <%= session.getAttribute("member")!=null %>
+	if(loginIn){
+		window.location.href = "${path}/board/write.do";
+	}else{
+		alert("글 작성을 하시려면 로그인을 해주세요!");
+		window.location.href = "/member/login";
+	}
+}
+</script>
+
 </head>
 <body style="background: #FFFBF2">
 

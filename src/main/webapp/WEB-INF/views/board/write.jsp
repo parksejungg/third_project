@@ -1,3 +1,4 @@
+<%@page import="org.me.domain.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -70,7 +71,7 @@
 
 <form name="form1" method="post" action="${path}/board/insert.do">
 	<div style="text-align: center; font-size: 16pt">
-	       작성자 : <input class="writer_writer01" name="writer" id="writer"  placeholder="이름">
+	       작성자 : <input class="writer_writer01" name="writer" id="writer" readonly="readonly" value="<%= ((MemberVO) session.getAttribute("member")).getUserId() %>">
 	</div>
 	
 	<div style="text-align: center; padding: 5px; margin-left: auto; margin-right: auto; margin: 0 auto;">
