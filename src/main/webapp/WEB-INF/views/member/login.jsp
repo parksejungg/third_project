@@ -17,7 +17,7 @@
 </head>
 <body>
      <%@ include file="/WEB-INF/views/includes/mouse.jsp" %>
-      <%@ include file="/WEB-INF/views/includes/header.jsp" %>
+     <%@ include file="/WEB-INF/views/includes/header.jsp" %>
             <div class="wrapBody">
                 <div class="loginText">LOGIN</div>
                  <form id="login_form" method="post">
@@ -35,7 +35,7 @@
 
                 <div class="btnRegister"><a href="/member/register">회원가입</a></div>
             </div>
-             <%@ include file="/WEB-INF/views/includes/footer.jsp" %>
+<%@ include file="/WEB-INF/views/includes/footer.jsp" %>
 
          
 

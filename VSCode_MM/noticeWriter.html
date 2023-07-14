@@ -67,7 +67,7 @@
 
             <div class="bodyTop">
                 <div class="category">NOTICE</div>
-                <hr class="line">
+                <!-- <hr class="line"> -->
             </div>
 
             <div class="wrapBody">
@@ -75,33 +75,25 @@
                 <div class="frame">
                     <div class="frameWrap">
                         <div class="n1">
-                            <input type="text" id="" class="" placeholder="이름(실명)">
+                            <input type="text" id="" class="" placeholder="제목">
+                        </div>
+                        <div class="n2">
+                            <input type="text" id="" class="" placeholder="작성자">
+                        </div>
+                        <div class="n3">
+                            <textarea row="50" placeholder="내용"></textarea>
+                        </div>
+                        <div class="n4">
+                            <button class="button button--ujarak button--border-thin button--text-thick btnRegister"
+                                id="fin_join" type="submit">등록</button>
+                            </button>
+                            <button class="button button--ujarak button--border-thin button--text-thick btnRegister"
+                                id="fin_join" type="submit">취소</button>
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="p2">
-                    <input type="password" placeholder="비밀번호" id="userPw" name="userPw" class=" must">
-                    <input class="password_check" type="password" placeholder="비밀번호 확인" id="user_pwd_check"
-                        name="user_pwd">
-                </div>
-
-                <div class="p1">
-                    <input type="text" maxlength="8" id="user_birth"
-                        oninput="this.value = this.value.replace(/[^0-9.]/g, '')" placeholder="생년월일(예:20000101)">
-                </div>
-
-                <div class="p4">
-                    <input type="text" class="must" placeholder="주소입력" id="user_add">
-                    <button class="button button--ujarak button--border-thin button--text-thick btn-add" id="add_search"
-                        onclick="searchAddr();">주소검색</button>
-                </div>
-
-                <div>
-                    <button class="button button--ujarak button--border-thin button--text-thick btn-joinfin"
-                        id="fin_join" type="submit">가입완료</button>
-                    </button>
-                </div>
             </div>
 
 

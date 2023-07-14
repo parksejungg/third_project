@@ -6,13 +6,42 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<link rel="stylesheet" href="/resources/css/hs_css/buttons.css">
+<link rel="stylesheet" href="/resources/css/hs_css/noticeWrite.css">
+<title>공지사항 insert</title>
 </head>
 <body>
-<h1>공지사항 등록</h1>
+ <%@ include file="/WEB-INF/views/includes/mouse.jsp" %>
+ <%@ include file="/WEB-INF/views/includes/header.jsp" %>
+
+  <div class="bodyTop">
+                <div class="category">NOTICE</div>
+                <!-- <hr class="line"> -->
+            </div> 
 <form action="/notice/insert" method="post">
-	<div>
-		<label>제목 </label>
+            <div class="wrapBody">
+                <div class="bodyText">Write</div>
+                <div class="frame">
+                    <div class="frameWrap">
+                        <div class="n1">
+                            <input type="text" name="title" class="" placeholder="제목">
+                        </div>
+                        <div class="n2">
+                            <input type="text" name="writer" value="관리자" readonly="readonly">
+                        </div>
+                        <div class="n3">
+                            <textarea row="50" placeholder="내용" name="content"></textarea>
+                        </div>
+                        <div class="n4">
+                            <button class="button button--ujarak button--border-thin button--text-thick btnRegister">등록</button>
+                            <button class="button button--ujarak button--border-thin button--text-thick btnRegister">취소</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+</form>
+<!-- 		<label>제목 </label>
 		<input name="title">
 	</div>
 
@@ -25,7 +54,7 @@
 		<label>글쓴이</label>
 		<input name="writer" value="admin" readonly="readonly">
 	</div>
-	<button>글 등록</button>
-</form>
+	<button>글 등록</button> -->
+ <%@ include file="/WEB-INF/views/includes/footer.jsp" %>
 </body>
 </html>
