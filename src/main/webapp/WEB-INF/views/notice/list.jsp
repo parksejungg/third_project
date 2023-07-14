@@ -61,7 +61,78 @@
                 </div>
             </div>
         </div>
+        
+        <!-- 아래 공지사항 목록 뜰것임 -->
+        <a href="/notice/insert">글쓰기</a>
+	<table>
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>작성일</th>
+				<th>수정일</th>
+			</tr>
+		</thead>
+		<c:forEach items="${list}" var="list">
+			<tr>
+				<td><c:out value="${list.bno}"/></td>
+				<td>
+					<a class="move" href='<c:out value="${list.bno}"/>'>
+				        <c:out value="${list.title}"/>
+				    </a>
+                </td>
+				<td><c:out value="${list.writer}"/></td>
+				<td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.regdate}"/></td>
+                <td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.updatedate}"/></td>
+			</tr>
+		</c:forEach>
+	</table>
+	
+	   <form id="moveForm" method="get">    
+    	</form>
+        
         <%@ include file="/WEB-INF/views/includes/footer.jsp" %>
     </div>
+    
+    <script>
+	$(document).ready(function() {
+		
+		let result = '<c:out value="${result}"/>';
+		
+		checkAlert(result);
+		
+		function checkAlert(result) {
+			
+			if(result === ''){
+				return;
+			}
+			if(result === "insert Success"){
+				alert("글 등록이 완료되었습니다!");
+			}
+		    if(result === "modify success"){
+	            alert("수정이 완료되었습니다.");
+	        }
+		    if(result === "delete success"){
+	            alert("삭제가 완료되었습니다.");
+	        }
+		}
+		
+	});
+	
+	
+	
+    let moveForm = $("#moveForm");
+    
+    $(".move").on("click", function(e){
+        e.preventDefault();
+        
+        moveForm.empty();
+        moveForm.append("<input type='hidden' name='bno' value='"+ $(this).attr("href")+ "'>");
+        moveForm.attr("action", "/notice/read");
+        moveForm.submit();
+    });
+ 
+</script>
 </body>
 </html>

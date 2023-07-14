@@ -1,7 +1,7 @@
 package org.me.controller; 
 
-import org.me.domain.ReviewVO;
-import org.me.service.ReviewService;
+import org.me.domain.NoticeVO;
+import org.me.service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,64 +11,64 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import lombok.extern.log4j.Log4j;
+
 @Controller
 @RequestMapping("/notice/*")
+@Log4j
+
 public class NoticeController {
 	
 	@Autowired
-	private ReviewService reviewservice;
-	
-	/*
-	 * @RequestMapping(value = "notice.do") public ModelAndView
-	 * fwdPaymentSuccessPage() { return new ModelAndView("/notice/notice"); }
-	 */
+	private NoticeService service;
 	
 	// 글목록
 	@GetMapping("/list")
 	public ModelAndView boardList(Model model) {
-		model.addAttribute("list", reviewservice.getList());
+		model.addAttribute("list", service.getList());
+		
+		System.out.println("공지사항 목록 페이지");
+		
 		return new ModelAndView("/notice/list");
 		
 	}
 	
-	
-	
 	// 글등록 페이지로 이동
 	@GetMapping("/insert")
 	public void board() {
-		System.out.println("게시판 등록 페이지 이동!");
+		log.info("글쓰는 페이지");
 	}
 	
-	// 글등록
+	//글등록
 	@PostMapping("/insert")
-	public String insertBoard(ReviewVO board, RedirectAttributes rttr) {
-		reviewservice.insertBoard(board);
-		
+	public String insertBoard(NoticeVO notice, RedirectAttributes rttr) {
+
+		log.info("notice Vo:"+notice);
+		service.insertNotice(notice);
 		rttr.addFlashAttribute("result", "insert Success");
 
-		return "redirect:/review/list";
+		return "redirect:/notice/list";
 	}
-	
 	
 	// 글조회
 	@GetMapping("/read")
 	public void reviewBoardGET(int bno, Model model) {
 		
-		model.addAttribute("read", reviewservice.getBoard(bno));
+		model.addAttribute("read", service.getNotice(bno));
 	}
 	
 	
 	// 글수정 페이지로 이동
 	@GetMapping("/modify")
 	public void modify(int bno, Model model) {
-		model.addAttribute("modify", reviewservice.getBoard(bno));
+		model.addAttribute("modify", service.getNotice(bno));
 	}
 	
 	// 글 수정
 	@PostMapping("/modify")
-	public String modifyPOST(ReviewVO board, RedirectAttributes rttr) {
+	public String modifyPOST(NoticeVO notice, RedirectAttributes rttr) {
 		
-		reviewservice.modify(board);
+		service.modify(notice);
 		
 		rttr.addFlashAttribute("result", "modify success");
 		
@@ -79,7 +79,7 @@ public class NoticeController {
 	@PostMapping("/delete")
 	public String deletePOST(int bno, RedirectAttributes rttr) {
 		
-		reviewservice.deleteBoard(bno);
+		service.deleteNotice(bno);
 		
 		rttr.addFlashAttribute("result", "delete success");
 		

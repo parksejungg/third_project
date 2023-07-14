@@ -16,7 +16,7 @@
 	</logger>
 	
 	<!-- Application Loggers -->
-	<logger name="org.zerock.controller">
+	<logger name="org.me.controller">
 		<level value="info" />
 	</logger>
 	
