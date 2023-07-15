@@ -14,7 +14,11 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <!-- aos -->
+<script src="/resources/js/payment/aboutex.js"></script>
 <link rel="stylesheet" href="/resources/css/review_css/list.css">
+
 </head>
 <body>
 <%@ include file="../includes/header.jsp" %>
@@ -33,9 +37,10 @@
             </div>
          </div>
                <button class="insertbtn" onclick="location.href='/review/insert'">등록</button><br>
-            <div class="formcontainer">
+            <div class="formcontainer" >
                <c:forEach var="item" items="${list}">
-               <div class="write_form">
+               <div class="write_form" data-aos="fade-up"
+     data-aos-anchor-placement="top-center">
                   <a class="move" href='<c:out value="${item.bno}"/>'><input name="title" class="title_form" readonly="readonly" value="${item.title}"></a>
                   <hr class="line_form">
                   <textarea name="content" class="content_form" readonly="readonly">${item.content}</textarea>
@@ -86,6 +91,9 @@
     });
  
 </script>
+ <script>
+    AOS.init();
+  </script>
 
 <%@ include file="../includes/footer.jsp" %>
 <%@ include file="../includes/mouse.jsp" %>
