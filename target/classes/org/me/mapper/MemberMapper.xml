@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="org.me.mapper.MemberMapper">
 
-<!-- INSERT INTO tbl_member(userid, USERPW, USERNAME,useradd,userbirth,regdate)  VALUES('zzang', '123', '짱한솔1','싸움도 짱시 주먹3동 내가제일쎄 아파트 2동', 19600101,sysdate); -->
-
+<!-- INSERT INTO tbl_member(USERID, USERPW, USERNAME,USERADD1,USERADD2,USERBIRTH,REGDATE,ADMINCHECK) 
+VALUES('테테', '123', '이름', '주소', '냐하', 12,  sysdate,DEFAULT ); -->
 <insert id="join">
-INSERT INTO tbl_member(USERID, USERPW, USERNAME,USERADD1,USERADD2,USERBIRTH,REGDATE) VALUES(#{userId}, #{userPw}, #{userName}, #{userAddr1}, #{userAddr2},#{userBirth}, sysdate)
+INSERT INTO tbl_member(USERID, USERPW, USERNAME,USERADD1,USERADD2,USERBIRTH,REGDATE,ADMINCHECK) VALUES(#{userId}, #{userPw}, #{userName}, #{userAddr1}, #{userAddr2},#{userBirth}, sysdate ,DEFAULT)
 </insert>
 
 
@@ -13,7 +13,7 @@ INSERT INTO tbl_member(USERID, USERPW, USERNAME,USERADD1,USERADD2,USERBIRTH,REGD
 <!-- 로그인 쿼리문 -->
 <!-- select userId, userpw from tbl_member where userId = 'zzang3' and userPw = 1234; -->
 <select id="login" resultType="org.me.domain.MemberVO">
-select USERID, USERPW, USERNAME, USERADD1 from tbl_member 
+select USERID, USERPW, USERNAME, USERADD1, ADMINCHECK from tbl_member 
 where USERID = #{userId}
 </select>
 

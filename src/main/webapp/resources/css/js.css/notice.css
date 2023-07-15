@@ -11,6 +11,21 @@
     src: url("../../common/font/ViaodaLibre-Regular.otf")format('opentype');
 }
 
+.bodyTop {
+    margin-bottom: 40px;
+}
+.category {
+    font-family: 'Viaoda-Libre';
+    font-size: 90pt;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 3px solid #a9592a;
+    padding-bottom: 40px;
+    width: 92%;
+    margin-top: 20px;
+}
+
 body{
     background-color: #FFFBF2 !important;
 }

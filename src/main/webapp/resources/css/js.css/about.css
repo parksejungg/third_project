@@ -7,11 +7,6 @@
 }
 
 @font-face{
-    font-family: 'LeferiPointSpecial';
-    src: url('../font/Leferi_TTF/LeferiPointSpecial.ttf') format('truetype');
-}
-
-@font-face{
     font-family: 'SUITE';
     src: url('../font/SUITE-ttf/SUITE-Regular.ttf') format('truetype');
 }

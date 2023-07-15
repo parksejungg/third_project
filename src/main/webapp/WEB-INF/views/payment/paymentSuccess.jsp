@@ -51,14 +51,7 @@
                     <li><a href="/board/list">PLAY</a></li>
                     <c:if test="${member == null}"><li><a href="/member/login">LOGIN</a></li></c:if>
                     <c:if test="${member != null}"> <!-- 로긴이 되어있다면 -->
-                    <li class="has-children">
-                        MYINFO
-                        <ul class="dropdown">
-                            <li><a href="#">Info</a></li>
-                      <li><a id="btnlogout">Logout</a></li>
-                      <!-- <li><a href="/member/logout" id="btnlogout">logout</a></li> -->
-                        </ul>
-                    </li>
+                      <li><a id="btnlogout">LOGOUT</a></li>
                     </c:if>
                 </ul>
                 
@@ -74,6 +67,9 @@
     			 <!-- 햄버거 토글 끝 -->
     	</div>
         </div>
+        
+        
+        
         <div class="left_form">
         <img src="/resources/img/sj_img/payment.svg" class="pay_img">
         </div>
@@ -82,9 +78,17 @@
             <fieldset class="ticket_form">
                 <legend class="tk_legend">TICKET</legend>
                 <div class="success_form">
-                    <span class="success_text">결제가 완료되었습니다.</span>
-                    <hr class="line">
-    
+                
+	               <%-- 사용자 이름 가져오기 --%>
+	    			<% String userName = request.getParameter("userName"); %>
+	               <%-- 사용자 이름 출력 --%>
+			   	 	<% if (userName != null && !userName.isEmpty()) { %>
+			        <div class="pay_name"><%= userName %> 님</div>
+			   	 	<% } %>                
+                <hr class="line">
+                 <span class="success_text">결제가 완료되었습니다.</span>
+                 
+                    
     
     <%
     String applyNum = request.getParameter("apply_num"); // apply_num 파라미터 추출
@@ -121,7 +125,7 @@ $(document).ready(function(){
    $("#btnlogout").click(function(){
       $.ajax({
          type:"POST",
-         url:"member/logout",
+         url:"/member/logout",
          success:function(data){
             document.location.reload(); //다시 화면 로드
          }

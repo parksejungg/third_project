@@ -11,9 +11,10 @@
 <meta name="description" content="A hover animation for a menu with 3D letters and image effect.">
 	<meta name="keywords" content="gsap, animation, 3d, hover, menu, image, web design, javascript, template">
 	<meta name="author" content="Codrops">
-	<link rel="shortcut icon" href="/logoimg.ico">
+	<link rel="shortcut icon" href="/resources/img/ej_img/logoimg.ico">
 	<link rel="stylesheet" type="text/css" href="/resources/css/ej_css/main.css">
 	<link rel="stylesheet" href="/resources/css/ej_css/mainscript.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<!-- script 시작 -->
 	<script>document.documentElement.className = "js";
         var supportsCssVars = function supportsCssVars() {
@@ -72,11 +73,12 @@
 			<a href="#"><h1 class="frame__title"><img src="/resources/img/ej_img/logo.png" alt="로고이미지"></h1></a>
 			<div class="frame__links">
 				<a style="color: #994D22;">ADMIN PAGE</a>
+				<c:if test="${member == null}"><a href="/member/login">LOGIN</a></c:if>
 				<c:if test="${member != null}"><a id="btnlogout">LOGOUT</a></c:if>
 			</div>
 		</div>
 	<nav class="menu">
-			<a class="menu__item" href="">
+			<a class="menu__item" href="/notice/list">
 				<span class="menu__item-text" data-splitting="">NOTICE</span>
 			</a>
 		</nav>
@@ -108,7 +110,7 @@
 			
 			<div class="foottxtbox">
 				<ul>
-					<a href="#"><img src="/resources/img/ej_img/logo.png" alt="로고이미지"></a>
+					<a href="/main.jsp"><img src="/resources/img/ej_img/logo.png" alt="로고이미지"></a>
 					<li>대표자 : <span>SUNG HAN SOL</span></li>
 					<li>대표전화 : 02-1234-5678</li>
 					<li>주소 : 서울특별시 강남구 압구정로 343 (압구정동)</li>
@@ -133,7 +135,7 @@ $(document).ready(function(){
 	$("#btnlogout").click(function(){
 		$.ajax({
 			type:"POST",
-			url:"member/logout",
+			url:"/member/logout",
 			success:function(data){
 				document.location.reload(); //다시 화면 로드
 			}

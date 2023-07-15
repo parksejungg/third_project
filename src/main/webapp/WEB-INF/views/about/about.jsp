@@ -15,7 +15,7 @@
       <%@ include file="/WEB-INF/views/includes/header.jsp" %>
     <div class="entire">
         <div class="A_title" data-aos="fade-down">
-            We are,
+            WE ARE,
         </div>
         
         <div class="A_content">

@@ -32,13 +32,13 @@
                 <ul class="js-clone-nav d-none d-lg-inline-noone text-left ">
                     <li><span class="sad">홈</span></li>
                     <li class="has-children">
-                        <a href="#">ABOUT</a>
+                        <a href="/about/about">ABOUT</a>
                         <ul class="dropdown">
-                            <li><a href="/" class="chlid-menu">Mmuseum</a></li>
+                            <li><a href="/about/about" class="chlid-menu">Mmuseum</a></li>
                             <li><a href="/">Map</a></li>
                         </ul>
                     </li>
-                    <li><a href="/">EXHIBITION</a></li>
+                    <li><a href="/introPayment.do">EXHIBITION</a></li>
                     <li class="has-children">
                         <a href="/notice/list">COMMUNITY</a>
                         <ul class="dropdown">
@@ -48,17 +48,11 @@
                             <li><a href="/review/list">Review</a></li>
                         </ul>
                     </li>
-                    <li><a href="/board/list">PLAY</a></li>
+                    <li><a href="list.do">PLAY</a></li>
                     <c:if test="${member == null}"><li><a href="/member/login">LOGIN</a></li></c:if>
                     <c:if test="${member != null}"> <!-- 로긴이 되어있다면 -->
-                    <li class="has-children">
-                        MYINFO
-                        <ul class="dropdown">
-                            <li><a href="#">Info</a></li>
-       					<li><a id="btnlogout">Logout</a></li>
-       					<!-- <li><a href="/member/logout" id="btnlogout">logout</a></li> -->
-                        </ul>
-                    </li>
+       					<li><a id="btnlogout">LOGOUT</a></li>
+       					<c:if test="${member.adminCheck == 1}"><li>@This is ADMIN</li></c:if>
                     </c:if>
                 </ul>
 
@@ -83,7 +77,7 @@ $(document).ready(function(){
 	$("#btnlogout").click(function(){
 		$.ajax({
 			type:"POST",
-			url:"member/logout",
+			url:"/member/logout",
 			success:function(data){
 				document.location.reload(); //다시 화면 로드
 			}

@@ -62,7 +62,7 @@ function fn_buy() {
                             data: JSON.stringify(paymentInfo),
                             success:function(data, textStatus){
                                 console.log(paymentInfo);
-                                location.href = "/paymentSuccess.do?apply_num=" + rsp.apply_num + "&paid_amount=" + rsp.paid_amount;
+                                location.href = "/paymentSuccess.do?apply_num=" + rsp.apply_num + "&paid_amount=" + rsp.paid_amount + "&userName=" + encodeURIComponent(userName);
                             },
                             error : function(e) {
                                 console.log(e);
@@ -123,14 +123,7 @@ function fn_buy() {
                     <li><a href="/board/list">PLAY</a></li>
                     <c:if test="${member == null}"><li><a href="/member/login">LOGIN</a></li></c:if>
                     <c:if test="${member != null}"> <!-- 로긴이 되어있다면 -->
-                    <li class="has-children">
-                        MYINFO
-                        <ul class="dropdown">
-                            <li><a href="#">Info</a></li>
-                      <li><a id="btnlogout">Logout</a></li>
-                      <!-- <li><a href="/member/logout" id="btnlogout">logout</a></li> -->
-                        </ul>
-                    </li>
+                      <li><a id="btnlogout">LOGOUT</a></li>
                     </c:if>
                 </ul>
 
@@ -169,7 +162,7 @@ $(document).ready(function(){
    $("#btnlogout").click(function(){
       $.ajax({
          type:"POST",
-         url:"member/logout",
+         url:"/member/logout",
          success:function(data){
             document.location.reload(); //다시 화면 로드
          }

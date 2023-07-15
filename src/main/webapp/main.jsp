@@ -11,7 +11,7 @@
 <meta name="description" content="A hover animation for a menu with 3D letters and image effect.">
 	<meta name="keywords" content="gsap, animation, 3d, hover, menu, image, web design, javascript, template">
 	<meta name="author" content="Codrops">
-	<link rel="shortcut icon" href="/logoimg.ico">
+	<link rel="shortcut icon" href="/resources/img/ej_img/logoimg.ico">
 	<link rel="stylesheet" type="text/css" href="/resources/css/ej_css/main.css">
 	<link rel="stylesheet" href="/resources/css/ej_css/mainscript.css">
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -74,7 +74,10 @@
 			<div class="frame__links">
 				 <c:if test="${member == null}"><a href="member/login">LOGIN</a></c:if>
 				<c:if test="${member == null}"><a href="member/register">SIGN UP</a></c:if>
-				<c:if test="${member != null}"><a id="btnlogout">LOGOUT</a></c:if>
+				<c:if test="${member != null}">
+				<a id="btnlogout">LOGOUT</a>
+				<c:if test="${ member.adminCheck == 1 }">관리자 어쩌고</c:if>
+				</c:if>
 				
 			</div>
 		</div>
@@ -156,7 +159,7 @@ $(document).ready(function(){
 	$("#btnlogout").click(function(){
 		$.ajax({
 			type:"POST",
-			url:"member/logout",
+			url:"/member/logout",
 			success:function(data){
 				document.location.reload(); //다시 화면 로드
 			}

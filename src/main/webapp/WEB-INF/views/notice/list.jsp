@@ -14,11 +14,11 @@
 <body>
 <%@ include file="/WEB-INF/views/includes/mouse.jsp" %>
       <%@ include file="/WEB-INF/views/includes/header.jsp" %>
+      
+      <div class="bodyTop">
+                <div class="category">NOTICE</div>
+     </div>
     <div class="entire">
-        <div class="N_title">
-            NOTICE
-        </div>
-        <hr class="overbar">
         <div class="N_content">
             <div class="N_post_L">
                 <div class="N_post_1">
@@ -65,7 +65,10 @@
         </div>
         
         <!-- 아래 공지사항 목록 뜰것임 -->
-        <a href="/notice/insert">글쓰기</a>
+        
+         <c:if test="${member != null && member.adminCheck == 1}"> <!-- 로긴이 되어있다면 -->
+	        <a href="/notice/insert">글쓰기</a>
+         </c:if>
  	
  	<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 		<thead>
@@ -131,8 +134,6 @@
 		
 	});
 	
-	
-	
     let moveForm = $("#moveForm");
     
     $(".move").on("click", function(e){
@@ -143,6 +144,7 @@
         moveForm.attr("action", "/notice/read");
         moveForm.submit();
     });
+    
  
 </script>
 </body>

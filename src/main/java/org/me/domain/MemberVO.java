@@ -14,6 +14,7 @@ public class MemberVO {
 	private String userAddr2;
 	private int userBirth;
 	private Date regDate;
+	private int adminCheck;
 	
 	
 }
