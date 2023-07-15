@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-
 @font-face {
     font-family: korFont;
     src: url("../../common/font/SUITE-Regular.otf")format('opentype');
@@ -66,7 +65,7 @@ body {
 
 input,
 textarea,
-button {
+a {
     font-family: 'korFont' !important;
 }
 
@@ -100,6 +99,7 @@ button {
     border: none;
     border-bottom: 1.5px solid #A98B67;
     text-align: center;
+    margin-right: 10px;
 }
 
 .n2 input[type=text]:focus {
@@ -131,11 +131,13 @@ button {
     text-align: right;
 }
 
-.n4 button {
+.n4 a {
     display: inline-block;
     width: 200px;
     font-size: 15pt;
     padding: 7px 0px;
+    text-align: center;
+    
 }
 
 .btnRegister {
@@ -143,6 +145,18 @@ button {
 }
 
 /* 미디어쿼리 */
+@media(max-width: 940px) {
+    .n4 {
+        text-align: center;
+        margin-left: -40px;
+    }
+
+    .n4 a {
+        width: 185px;
+    }
+
+}
+
 @media(max-width: 768px) {
 
     .frameWrap {
@@ -161,13 +175,24 @@ button {
 
     .n4 {
         text-align: center;
-        margin-left: -40px;
+        margin-left: -24px;
     }
 
-    .n4 button {
-        width: 185px;
+    .n4 a {
+        width: 140px;
     }
 
+}
+
+
+@media(max-width: 630px) {
+    .n4 {
+        margin-left: -25px;
+    }
+
+    .n4 a {
+        width: 105px;
+    }
 }
 
 @media(max-width: 500px) {
@@ -182,7 +207,7 @@ button {
 
     .must {
         padding-left: 42px;
-        background: url(/resources/img/hs_img/must.svg) no-repeat 5px 38px;
+        background: url(/img/must.svg) no-repeat 5px 38px;
         background-size: 6pt;
     }
 
@@ -192,12 +217,12 @@ button {
     }
 
     .n4 {
-        margin-left: -20px;
+        margin-left: -24px;
     }
 
-    .n4 button {
+    .n4 a {
         display: inline-block;
-        width: 170px;
+        width: 105px;
         font-size: 14pt;
     }
 }

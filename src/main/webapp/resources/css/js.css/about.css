@@ -21,13 +21,16 @@
     margin: 0 auto;
     padding: 0;
     list-style: none;
-    background-color: #f7f5f0;
+}
+
+body{
+	 background-color:  #FFFBF2 !important;;
 }
 /* 초기화코딩 종료 */
 
 .A_title{
-    margin-top: -35px;
-    margin-bottom: -15px;
+    margin-top: 25px;
+    /* margin-bottom: -15px; */
     text-align: center;
     font-size: 120px;
     letter-spacing: 5px;
@@ -52,6 +55,7 @@
 
 .A_content_R{
     width: 43%;
+    margin-top: 38px;
     font-family: 'SUITE';
     margin-right: 3%;
     font-size: 30px;

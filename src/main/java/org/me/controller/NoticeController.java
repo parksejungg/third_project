@@ -43,11 +43,13 @@ public class NoticeController {
 	@PostMapping("/insert")
 	public String insertBoard(NoticeVO notice, RedirectAttributes rttr) {
 
-		service.insertNotice(notice);
-		log.info("notice Vo:"+notice);
+		if (notice.getTitle().isEmpty() || notice.getContent().isEmpty()) {
+			rttr.addFlashAttribute("result", "insert failed");
+		} else {
+			service.insertNotice(notice);
+			rttr.addFlashAttribute("result", "insert success");
+		}
 		
-		rttr.addFlashAttribute("result", "insert success");
-
 		return "redirect:/notice/list";
 	}
 	

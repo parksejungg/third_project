@@ -69,32 +69,26 @@
                 <div class="category">NOTICE</div>
                 <!-- <hr class="line"> -->
             </div>
-
-            <div class="wrapBody">
-                <div class="bodyText">Write</div>
-                <div class="frame">
-                    <div class="frameWrap">
-                        <div class="n1">
-                            <input type="text" id="" class="" placeholder="제목">
-                        </div>
-                        <div class="n2">
-                            <input type="text" id="" class="" placeholder="작성자">
-                        </div>
-                        <div class="n3">
-                            <textarea row="50" placeholder="내용"></textarea>
-                        </div>
-                        <div class="n4">
-                            <button class="button button--ujarak button--border-thin button--text-thick btnRegister"
-                                id="fin_join" type="submit">등록</button>
-                            </button>
-                            <button class="button button--ujarak button--border-thin button--text-thick btnRegister"
-                                id="fin_join" type="submit">취소</button>
-                            </button>
-                        </div>
+            <form action="/notice/insert" method="post">
+                <div class="frameWrap">
+                    <div class="bodyText must">Write</div>
+                    <div class="n1">
+                        <input type="text" name="title" class="" placeholder="제목">
+                    </div>
+                    <div class="n2">
+                        <input type="text" name="writer" value="관리자" readonly="readonly">
+                    </div>
+                    <div class="n3">
+                        <textarea row="50" placeholder="내용" name="content"></textarea>
+                    </div>
+                    <div class="n4">
+                        <button
+                            class="button button--ujarak button--border-thin button--text-thick btnRegister">등록</button>
+                        <button
+                            class="button button--ujarak button--border-thin button--text-thick btnRegister">취소</button>
                     </div>
                 </div>
-
-            </div>
+            </form>
 
 
             <hr>

@@ -75,6 +75,9 @@
             <div class="A_en_content_R" data-aos="fade-down-left" data-aos-once="false">
                 Even if you go back to your busy daily life tomorrow, I hope today will be a day where you can enjoy today's light and focus solely on yourself.
             </div>
+            <br/>
+            <br/>
+            <br/>
         </div>
     </div>
     <script src="/resources/js/js.js/about.js"></script>

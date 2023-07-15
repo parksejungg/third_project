@@ -16,7 +16,7 @@
 </head>
 <body>
 <h1>조회 페이지</h1>
-<form id="modifyForm" action="/review/modify" method="post">
+<form id="modifyForm" action="/notice/modify" method="post">
 	<div class="input_wrap">
 		<label>게시판 번호</label>
 		<input name="bno" readonly="readonly" value='<c:out value="${modify.bno}"/>' >
@@ -49,7 +49,7 @@
 	</div>
 	</form>
 	
-	<form id="infoForm" action="/review/modify" method="get">
+	<form id="infoForm" action="/notice/modify" method="get">
 		<input type="hidden" id="bno" name="bno" value='<c:out value="${modify.bno}"/>'>
 	</form>
 <script>
@@ -59,7 +59,7 @@
 		/* 목록 페이지 이동 버튼 */
 		$("#list_btn").on("click", function(e){
 		    form.find("#bno").remove();
-		    form.attr("action", "/review/list");
+		    form.attr("action", "/notice/list");
 		    form.submit();
 		});
 		
@@ -70,11 +70,9 @@
 		
 		/* 취소 버튼 */
 		$("#cancel_btn").on("click", function(e){
-		    form.attr("action", "/review/read");
+		    form.attr("action", "/notice/read");
 		    form.submit();
 		});
-		
-		
 		
 </script>	
 
