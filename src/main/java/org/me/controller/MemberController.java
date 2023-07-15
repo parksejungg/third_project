@@ -135,6 +135,24 @@ public class MemberController {
 	
 	
 	
+   // 추가한 거 !
+   @RequestMapping(value = "/checkLogin", method = RequestMethod.GET)
+   @ResponseBody
+   public String checkLogin(HttpSession session) {
+       MemberVO member = (MemberVO) session.getAttribute("member");
+
+       if (member != null) {
+           String userName = member.getUserName(); // userName 값 가져오기
+           System.out.println("member안에 뭐있어 ? " + member);
+           System.out.println("userName 값: " + userName);
+           return "true"; // 로그인 상태인 경우
+       } else {
+           return "false"; // 로그인하지 않은 상태인 경우
+       }
+   }
+	
+	
+	
 	
 	  
 }

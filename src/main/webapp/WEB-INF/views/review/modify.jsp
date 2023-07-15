@@ -22,9 +22,9 @@ function goBack() {
 </head>
 <body>
    <%@ include file="../includes/header.jsp" %>
-		
+   <%@ include file="../includes/mouse.jsp" %>
 		<div class="reviewimg">
-            <img src="/resources/img/review_img/reviewmain.png" alt="리뷰메인">
+            <a href="main.jsp"><img src="/resources/img/review_img/reviewmain.png" alt="리뷰메인"></a>
         </div>
 
 	<div class="container">

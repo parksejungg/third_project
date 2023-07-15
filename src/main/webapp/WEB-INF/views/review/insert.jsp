@@ -15,10 +15,10 @@ function goBack() {
 <link rel="stylesheet" href="/resources/css/review_css/write.css">
 </head>
 <body>
-
+<%@ include file="../includes/mouse.jsp" %>
 <%@ include file="../includes/header.jsp" %>
  <div class="reviewimg">
-      <img src="/resources/img/review_img/reviewmain.png" alt="리뷰메인">
+      <a href="main.jsp"><img src="/resources/img/review_img/reviewmain.png" alt="리뷰메인"></a>
  </div>
  
 <form action="/review/insert" method="post">
@@ -33,7 +33,7 @@ function goBack() {
              
             </div>
               
-            <div class="writer_form">
+            <div class="insert_form">
                 <span class="writer_span">작성자</span>
                 <input class="writer_input" name="writer">
             

@@ -87,6 +87,14 @@ body{
     text-align: center;
 }
 
+.insert_form{
+	font-family: 'SUITE';
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 70px;
+    text-align: center;
+}
+
 .writer_span{
     font-size: 20px;
     margin-right: 70px;
@@ -195,6 +203,14 @@ body{
     }
 }
 
+
+@media(max-width: 774px) {
+   .writer_form{
+   		display: none !important;
+   }
+}
+
+
 @media(max-width: 669px) {
     .main_title{
     padding-left: 39px;
@@ -206,4 +222,6 @@ body{
     .main_title{
     padding-left: 30px;
     }
+    
+    
 }
