@@ -26,6 +26,6 @@
 <svg class="cursor" width="20" height="20" viewBox="0 0 20 20">
 		<circle class="cursor__inner" cx="10" cy="10" r="5"></circle>
 	</svg>
-	<script src="/resources/js/ej_js/modules02.js"></script>
+	 <script src="/resources/js/ej_js/modules02.js"></script> 
 <!-- 마우스포인터 끝 -->
 </body>

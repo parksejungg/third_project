@@ -8,11 +8,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/resources/css/hs_css/buttons.css">
 <link rel="stylesheet" href="/resources/css/hs_css/noticeWrite.css">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <title>공지사항 insert</title>
 </head>
 <body>
- <%@ include file="/WEB-INF/views/includes/mouse.jsp" %>
- <%@ include file="/WEB-INF/views/includes/header.jsp" %>
+<%@ include file="/WEB-INF/views/includes/header.jsp" %>
+<%@ include file="/WEB-INF/views/includes/mouse.jsp" %>
+
 
   <div class="bodyTop">
                 <div class="category">NOTICE</div>
@@ -21,7 +23,8 @@
 <form action="/notice/insert" method="post">
             <div class="wrapBody">
                 <div class="bodyText">Write</div>
-                <div class="frame">
+                <div class="frameform">
+                            <input type="text" name="title" class="" placeholder="제목">
                     <div class="frameWrap">
                         <div class="n1">
                             <input type="text" name="title" class="" placeholder="제목">

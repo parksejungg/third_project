@@ -61,7 +61,7 @@
 </head>
 <body style="background: #FFFBF2">
  <%@ include file="/WEB-INF/views/includes/mouse.jsp" %>
-      <%@ include file="/WEB-INF/views/includes/header.jsp" %>
+ <%@ include file="/WEB-INF/views/includes/header.jsp" %> 
 <!-- 카테고리 넣을 공간 -->
 
 <div style="text-align: center; margin-top: 43px">

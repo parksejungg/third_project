@@ -55,20 +55,19 @@ body {
     margin-bottom: 15px;
 }
 
-.frame {
+.frameform {
     width: 100%;
     height: 800px;
     background: url(/resources/img/hs_img/frame.svg) no-repeat center;
     background-size: contain;
     overflow: hidden;
-    z-index:-1;
 
 }
 
-.frameWrap {
+  .frameWrap {
     width: 78%;
     margin-top: 130px;
-}
+} 
 
 input {
     font-family: korFont;
@@ -97,7 +96,7 @@ input {
 }
 
 .n2 input[type=text] {
-    width: 14%;
+    width: 10%;
     padding: 10px;
     margin-bottom: 15px;
     font-size: 12pt;
@@ -150,66 +149,9 @@ input {
 /* 미디어쿼리 */
 @media(max-width: 768px) {
 
-
-    .joinText {
-        font-family: 'engFont';
-        font-size: 80pt;
-        letter-spacing: 8px;
-        margin-bottom: 20px;
-    }
 }
 
 @media(max-width: 500px) {
 
-    .header img {
-        width: 100px;
-    }
-
-    .joinText {
-        font-family: 'engFont';
-        font-size: 60pt;
-        letter-spacing: 8px;
-        margin-bottom: 20px;
-    }
-
-    .wrapBody {
-        width: 100%;
-        margin-bottom: 124px;
-    }
-
-    .p2 input[type=password] {
-        width: 232.1px;
-        padding: 10px;
-        font-size: 12pt;
-        margin-bottom: 15px;
-
-        display: inline-block;
-        background-color: transparent;
-        border: none;
-        border-bottom: 1.5px solid #A98B67;
-    }
-
-    .p4 input[type=text] {
-        width: 352px;
-        padding: 10px;
-        font-size: 12pt;
-        margin-top: 10px;
-        margin-bottom: 15px;
-        display: inline-block;
-        background-color: transparent;
-        border: none;
-        border-bottom: 1.5px solid #A98B67;
-    }
-
-    .btn-add {
-        width: 100px;
-        height: 42px;
-        background-color: transparent;
-        font-size: 12pt;
-        font-family: korFont;
-        display: inline-block !important;
-        margin-left: 10px;
-
-    }
 
 }

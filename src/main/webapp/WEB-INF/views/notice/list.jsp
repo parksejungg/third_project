@@ -74,7 +74,7 @@
 				<th>제목</th>
 				<th>작성자</th>
 				<th>작성일</th>
-				<th>조회수</th>
+				<th>수정일</th>
 			</tr>
 		</thead>
 		<c:forEach items="${list}" var="list">
@@ -94,7 +94,7 @@
 					<fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" />
 				</td>
 				<td>
-					<fmt:formatDate value="${list.views}" /> <!-- 조회수 views -->
+					<fmt:formatDate value="${list.updatedate}" pattern="yyyy-MM-dd" /> 
 				</td>
 			</tr>
 		</c:forEach>
