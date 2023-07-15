@@ -43,7 +43,7 @@ body {
 	--color-menu: #000;
 	/* --color-menu-hover: #f32015; */
 	color: var(--color-text);
-	background-color: var(--color-bg);
+	background-color: #FFFBF2 !important;
 	--cursor-stroke: none; 
 	--cursor-fill: #994D22; 
 	--cursor-stroke-width: 1px; 
@@ -290,6 +290,7 @@ a:focus-visible {
 .introimg img{
 	width: 100%;
     height: 750px;
+    margin-top: 40px;
 }
 
 
