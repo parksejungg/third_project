@@ -66,6 +66,7 @@ public class MemberController {
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public void loginGET() {
 		log.info("로긴 페이지");
+		
 	}
 	
 	//로그인 작동
@@ -79,6 +80,8 @@ public class MemberController {
 		
 		// 저장되어 있는 이전 페이지 URL이 있다면
 		String previousPage = (String) session.getAttribute("previousPage");
+		log.info("저장 되어 있는 페이지" +previousPage);
+		
 		
 		MemberVO loginVo = service.memberLogin(memberVO);
 		
