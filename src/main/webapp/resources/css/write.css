@@ -59,30 +59,63 @@
 		}
 
 
-      	@media screen and (max-width: 1400px){
+      	@media screen and (max-width: 1230px){
 			/* *{background: pink;} */
 			
 			.write_content{
-				width: 900px !important;
+				width: 790px !important;
 			}
 
 			.write_input01{
-				top: 272px !important;
+				top: 405px !important;
 				height: 263px !important;
 			}
 
 			.write_input02{
 				width: 500px !important;
-				height: 60px !important;
+				height: 50px !important;
 			}
 
 			.write_input03{
-				width: 700px !important;
-				height: 150px !important;
+				width: 600px !important;
+				height: 130px !important;
 			}
 
 			.relay_content{
 				font-size: 11pt;
 			}
 
-        }
+		}
+		
+		@media screen and (max-width: 854px){
+			/* *{background: pink;} */
+
+			*{
+				font-size: 10pt !important;
+			}
+			
+			.write_content{
+				width: 500px !important;
+			}
+
+			.write_input01{
+			    width: 150px;
+				top: 371px !important;
+				height: 263px !important;
+			}
+
+			.write_input02{
+				width: 300px !important;
+				height: 23px !important;
+			}
+
+			.write_input03{
+				width: 380px !important;
+				height: 82px !important;
+			}
+
+			.relay_content{
+				font-size: 11pt;
+			}
+
+		}

@@ -73,6 +73,7 @@ a:focus:not(:focus-visible) {
 
 .cursor { 
 	display: none; 
+	background: none;
 }
 
 .frame {
@@ -362,6 +363,7 @@ footer{
 		display: block;
 		pointer-events: none;
 		z-index: 1001;
+		
 	}
 	.cursor__inner {
 		fill: var(--cursor-fill);

@@ -4,7 +4,6 @@
 <head>
 <link href="/resources/css/write.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <title>게시글 작성</title>
 
 <style type="text/css">
@@ -62,11 +61,11 @@
 </head>
 <body style="background: #FFFBF2">
  <%@ include file="/WEB-INF/views/includes/mouse.jsp" %>
-      <%@ include file="/WEB-INF/views/includes/header.jsp" %>
+ <%@ include file="/WEB-INF/views/includes/header.jsp" %> 
 <!-- 카테고리 넣을 공간 -->
 
-<div style="text-align: center; margin-top: 40px;">
-	<img style="width: 400px; margin-bottom: 55px; " src="../resources/img/board/view_title.png" alt=""> <br /><br />
+<div style="text-align: center; margin-top: 43px">
+	<img style="width: 330px; margin-bottom: 55px; " src="../resources/img/board/view_title.png" alt=""> <br /><br />
 </div>
 
 <form name="form1" method="post" action="${path}/board/insert.do">
@@ -78,16 +77,16 @@
 		<img class="write_content" style="width: 1150px; margin-top: 10px; position: relative;" src="../resources/img/board/view_contents.png" alt=""> <br /><br />
 	</div>
 	
-	   <div  class="write_input01" style="position: absolute; width: 100%; text-align: center; top: 292px; font-size: 16pt">
+	   <div  class="write_input01" style="position: absolute; width: 100%; text-align: center; top: 435px; font-size: 16pt">
 	              제목 : <input class="write_input02" name="title" id="title" size="80" placeholder="제목"> <br /><br />
-	         <span class="relay_content""><b>여러분의 멋진 아이디어로 릴레이 소설을 작성보세요!</b></span><br>
+	         <span class="relay_content"><b>여러분의 멋진 아이디어로 릴레이 소설을 작성보세요!</b></span><br>
 	         <textarea class="write_input03" name="content" id="content" rows="4" cols="80" placeholder=""></textarea> <br /><br />
 	    </div>
 
-	<div style="width:650px; margin: 0 auto; text-align: center;">
+	<div style="width:350px; margin: 0 auto; text-align: center;">
 	    <!-- 게시물번호를 hidden으로 처리 -->
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; margin-top: -15px; width: 83px; height: 40px;" type="button" id="btnSave">등록</button>
-	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; margin-top: -15px; width: 83px; height: 40px;" type="button" onclick="btnreset()">취소</button>
+	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; margin-top: -15px; width: 70px; height: 46px;" type="button" id="btnSave">등록</button>
+	    <button class="btn btn-outline-secondary" style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; margin-top: -15px; width: 70px; height: 46px;" type="button" onclick="btnreset()">취소</button>
 	</div>
 </form>
 

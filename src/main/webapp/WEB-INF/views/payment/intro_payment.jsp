@@ -8,6 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title></title>
 <link rel="stylesheet" href="/resources/css/payment/intro.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <!-- aos -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="/resources/js/payment/aboutex.js"></script>
 <script>
 document.documentElement.className = "js";
@@ -20,22 +22,17 @@ document.documentElement.className = "js";
 </script>
 </head>
 <body>
-<body class="loading">
-	<main>
-		<div class="frame">
-			<h1 class="frame__title"><img src="/resources/img/intro_img/logo.png" alt="로고이미지"></h1>
-			<div class="frame__links">
-				<a href="#"><img src="/resources/img/intro_img/menu_bar.svg"></a>
-			</div>
-		</div>
 
+<body class="loading">
+<%@ include file="../includes/header.jsp" %>
+	<main>
 <!-- 소개부분 시작-->
-		<div class="row">
+		<div class="intro_form">
 			<div class="introimg">
 				<img src="/resources/img/intro_img/intro.svg" class="intro_img" alt="전시소개 이미지">
 			</div>
 
-			<p class="introtxt">
+			 <p class="introtxt" data-aos="fade-right" data-aos-offset="500">
 				클로드 모네의 작품은 마음을 향유로 이끄는 단편들입니다. 
 				끝 없이 흘러가는 색채와 은유적인 붓터치는 우리를 우리 자신의 감성적인 세계로 안내합니다.이전에 미처 알지 못한 아름다움을 발견하고 우리 안에 잠재된 창조의 에너지를 일깨워보세요.
 				전시회를 통해 창작자와 관객 사이의 간극을 헤치고, 마음이 만나는 곳에서 진정한 연결을 경험할 수 있다고 믿습니다.
@@ -47,7 +44,7 @@ document.documentElement.className = "js";
 			</p>
 
 			<div class="introsub">
-				<div class="introsub_text">
+				<div class="introsub_text" data-aos="fade-left" data-aos-offset="500">
 				<h2>Who is HE</h2>
 				<p>
 					'빛은 곧 색채'라는 인상주의 원칙을 끝까지 고수했으며, 
@@ -105,18 +102,13 @@ document.documentElement.className = "js";
 
 		</div>
 <!-- 소개부분 끝 -->
-		<footer>
-			<hr class="footline">
-			<div class="foottxt">
-				COPYRIGHT ⓒ BY WEBDESIGN. ALL RIGHTS RESERVED
-			</div>
-		</footer>
-	</main>
 
-	<svg class="cursor" width="20" height="20" viewBox="0 0 20 20">
-		<circle class="cursor__inner" cx="10" cy="10" r="5"></circle>
-	</svg>
+  <script>
+    AOS.init();
+  </script>
 
+<%@ include file="../includes/footer.jsp" %>
+<%@ include file="../includes/mouse.jsp" %>
 
 <script src="/resources/js/payment/modules02.js"></script>
 </body>

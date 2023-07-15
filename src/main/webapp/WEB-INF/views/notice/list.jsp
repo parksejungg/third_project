@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/resources/css/js.css/notice.css">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <title>M:美</title>
 </head>
 <body>
@@ -19,7 +23,6 @@
             <div class="N_post_L">
                 <div class="N_post_1">
                     <div class="N_post_1L">
-                        <img src="/resources/img/js_img/pin02.png" class="postL_BM">
                         <span class="post1L_title">
                             <b>리뉴얼 공사 안내</b>
                         </span>
@@ -29,7 +32,6 @@
                         </span>
                     </div>
                     <div class="N_post_1R">
-                        <img src="/resources/img/js_img/pin02.png" class="postR_BM">
                         <img src="/resources/img/js_img/생타드레스의해변.jpg" class="post1R_img">
                     </div>
                 </div>
@@ -64,7 +66,8 @@
         
         <!-- 아래 공지사항 목록 뜰것임 -->
         <a href="/notice/insert">글쓰기</a>
-	<table>
+ 	
+ 	<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 		<thead>
 			<tr>
 				<th>번호</th>
@@ -76,19 +79,27 @@
 		</thead>
 		<c:forEach items="${list}" var="list">
 			<tr>
-				<td><c:out value="${list.bno}"/></td>
 				<td>
-					<a class="move" href='<c:out value="${list.bno}"/>'>
-				        <c:out value="${list.title}"/>
-				    </a>
-                </td>
-				<td><c:out value="${list.writer}"/></td>
-				<td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.regdate}"/></td>
-                <td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.updatedate}"/></td>
+					<c:out value="${list.bno}" />
+				</td>
+				<td>							
+					<a class="move" href="<c:out value="${list.bno}" />">
+						<c:out value="${list.title}" />
+					</a>
+				</td>
+				<td>
+					<c:out value="${list.writer}" />
+				</td>
+				<td>
+					<fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" />
+				</td>
+				<td>
+					<fmt:formatDate value="${list.updatedate}" pattern="yyyy-MM-dd" /> 
+				</td>
 			</tr>
 		</c:forEach>
 	</table>
-	
+ 
 	   <form id="moveForm" method="get">    
     	</form>
         
@@ -107,8 +118,8 @@
 			if(result === ''){
 				return;
 			}
-			if(result === "insert Success"){
-				alert("글 등록이 완료되었습니다!");
+			if(result === "insert success"){
+				alert("글 등록이 완료되었습니다.");
 			}
 		    if(result === "modify success"){
 	            alert("수정이 완료되었습니다.");

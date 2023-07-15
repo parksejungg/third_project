@@ -13,39 +13,51 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/resources/css/review_css/write.css">
 </head>
 <body>
 <%@ include file="../includes/header.jsp" %>
-<h1>조회 페이지</h1>
-	<div class="input_wrap">
-		<label>게시판 번호</label>
-		<input name="bno" readonly="readonly" value='<c:out value="${read.bno}"/>' >
-	</div>
-	<div class="input_wrap">
-		<label>게시판 제목</label>
-		<input name="title" readonly="readonly" value='<c:out value="${read.title}"/>' >
-	</div>
-	<div class="input_wrap">
-		<label>게시판 내용</label>
-		<textarea rows="3" name="content" readonly="readonly"><c:out value="${read.content}"/></textarea>
-	</div>
-	<div class="input_wrap">
-		<label>게시판 작성자</label>
-		<input name="writer" readonly="readonly" value='<c:out value="${read.writer}"/>' >
-	</div>
-	<div class="input_wrap">
-		<label>게시판 등록일</label>
-		<input name="regdater" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${read.regdate}"/>' >
-	</div>
-	<div class="input_wrap">
-		<label>게시판 수정일</label>
-		<input name="updateDate" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${read.updatedate}"/>' >
-	</div>		
-	<div class="btn_wrap">
-		 <a class="btn" id="list_btn" href="/review/list">뒤로가기</a> 
-         <a class="btn" id="modify_btn" href="/review/modify?bno=${read.bno}">수정</a>
-         <a class="btn" id="delete_btn">삭제</a>
-	</div>
+<%@ include file="../includes/mouse.jsp" %>
+		
+		<div class="reviewimg">
+            <a href="main.jsp"><img src="/resources/img/review_img/reviewmain.png" alt="리뷰메인"></a>
+        </div>
+
+	<div class="container">
+     <div>
+        <h2 class="main_title">EDIT</h2>
+
+
+        <div class="write_form">
+		  <input name="title" class="title_form" readonly="readonly" value='<c:out value="${read.title}"/>' >
+          </input>
+          <hr class="line_form">
+          <textarea name="content" class="content_form" readonly="readonly"><c:out value="${read.content}"/></textarea>
+        </div>
+
+
+        <div class="writer_form">
+            <span class="writer_span2">작성자</span>
+            <input class="writer_input" name="writer" readonly="readonly" value='<c:out value="${read.writer}"/>'>
+        </div>
+
+        <div class="writer_form">
+            <span class="writer_span">등록일자</span>
+            <input class="writer_input" name="regdater" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${read.regdate}"/>' >
+        </div>
+
+        <div class="writer_form">
+            <span class="writer_span">수정일자</span>
+            <input class="writer_input" name="updateDate" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${read.updatedate}"/>' >
+        </div>
+
+        <div class="btn_form">
+            <button class="submit_btn" id="modify_btn" onclick="location.href='/review/modify?bno=${read.bno}'">수정</button>
+            <button class="cancel_btn" id="delete_btn">삭제</button>
+        </div> 
+          
+      </div>
+   </div>
 	<form id="infoForm" action="/review/modify" method="get">
 		<input type="hidden" id="bno" name="bno" value='<c:out value="${read.bno}"/>'>
 	</form>

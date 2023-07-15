@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -13,69 +14,71 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <!-- aos -->
+<script src="/resources/js/payment/aboutex.js"></script>
+<link rel="stylesheet" href="/resources/css/review_css/list.css">
+
 </head>
 <body>
-
-<div>
-	<a href="/review/insert">게시판 등록</a>
-	<table>
-		<thead>
-			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>내용</th>
-				<th>작성자</th>
-				<th>작성일</th>
-				<th>수정일</th>
-			</tr>
-		</thead>
-		<c:forEach items="${list}" var="list">
-			<tr>
-				<td><c:out value="${list.bno}"/></td>
-				<td>
-					<a class="move" href='<c:out value="${list.bno}"/>'>
-				        <c:out value="${list.title}"/>
-				    </a>
-                </td>
-				<td><c:out value="${list.content}"/></td>
-				<td><c:out value="${list.writer}"/></td>
-				<td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.regdate}"/></td>
-                <td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.updatedate}"/></td>
-			</tr>
-		</c:forEach>
-	</table>
-	
-	   <form id="moveForm" method="get">    
-    	</form>
-</div>
+<%@ include file="../includes/header.jsp" %>
+      <div class="reviewimg">
+         <img src="/resources/img/review_img/reviewmain.png" alt="리뷰메인">
+      </div>
+      <div>
+         <div class="rvsection">
+            <div class="rvbanner">
+               <div class="rvtext01">CLAUDE MONET </div><br>
+               <div class="rvtext02">전시회 방문 후기를 남겨주세요!</div>
+                  
+               <div class="rvboder">
+                  <img src="/resources/img/review_img/reviewimg.png" alt="리뷰이미지">
+               </div>
+            </div>
+         </div>
+               <button class="insertbtn" onclick="location.href='/review/insert'">등록</button><br>
+            <div class="formcontainer" >
+               <c:forEach var="item" items="${list}">
+               <div class="write_form" data-aos="fade-up"
+     data-aos-anchor-placement="top-center">
+                  <a class="move" href='<c:out value="${item.bno}"/>'><input name="title" class="title_form" readonly="readonly" value="${item.title}"></a>
+                  <hr class="line_form">
+                  <textarea name="content" class="content_form" readonly="readonly">${item.content}</textarea>
+               </div>
+               </c:forEach>
+            </div>
+       
+         <form id="moveForm" method="get">    
+          </form>
+      
+      </div>
 
 <script>
-	$(document).ready(function() {
-		
-		let result = '<c:out value="${result}"/>';
-		
-		checkAlert(result);
-		
-		function checkAlert(result) {
-			
-			if(result === ''){
-				return;
-			}
-			if(result === "insert Success"){
-				alert("글 등록이 완료되었습니다!");
-			}
-		    if(result === "modify success"){
-	            alert("수정이 완료되었습니다.");
-	        }
-		    if(result === "delete success"){
-	            alert("삭제가 완료되었습니다.");
-	        }
-		}
-		
-	});
-	
-	
-	
+   $(document).ready(function() {
+      
+      let result = '<c:out value="${result}"/>';
+      
+      checkAlert(result);
+      
+      function checkAlert(result) {
+         
+         if(result === ''){
+            return;
+         }
+         if(result === "insert Success"){
+            alert("등록이 완료되었습니다.");
+         }
+          if(result === "modify success"){
+               alert("수정이 완료되었습니다.");
+           }
+          if(result === "delete success"){
+               alert("삭제가 완료되었습니다.");
+           }
+      }
+      
+   });
+   
+   
     let moveForm = $("#moveForm");
     
     $(".move").on("click", function(e){
@@ -88,7 +91,12 @@
     });
  
 </script>
+ <script>
+    AOS.init();
+  </script>
 
+<%@ include file="../includes/footer.jsp" %>
+<%@ include file="../includes/mouse.jsp" %>
 
 </body>
 </html>

@@ -1,0 +1,280 @@
+/* 초기화 코딩 */
+@charset "utf-8";
+
+@font-face{
+    font-family: 'Viaoda-Libre';
+    src: url('../font/Viaoda_Libre/ViaodaLibre-Regular.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'LeferiPointSpecial';
+    src: url('../font/Leferi_TTF/LeferiPointSpecial.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'SUITE';
+    src: url('../font/SUITE-ttf/SUITE-Regular.ttf') format('truetype');
+}
+
+*{
+    text-rendering: optimizeLegibility;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+body{
+	 background-color:  #FFFBF2 !important;;
+}
+/* 초기화코딩 종료 */
+
+.A_title{
+    margin-top: 25px;
+    /* margin-bottom: -15px; */
+    text-align: center;
+    font-size: 120px;
+    letter-spacing: 5px;
+    font-family: 'Viaoda-Libre';
+}
+
+.A_content{
+    display: flex;
+    margin-top: 100px;
+}
+
+.A_content_L{
+    width: 50%;
+    display: flex;
+    float: right;
+}
+
+.A_content_L>img{
+    width: 100%;
+    margin-left: 2%;
+}
+
+.A_content_R{
+    width: 43%;
+    margin-top: 38px;
+    font-family: 'SUITE';
+    margin-right: 3%;
+    font-size: 30px;
+}
+
+.A_blank{
+    width: 100%;
+    height: 120px;
+}
+
+.underbar{
+    border: none;
+    height: 2px;
+    background-color: #A98B67;
+    width: 97%;
+    margin: auto !important;
+}
+
+.A_artists{
+    font-size: 100px;
+    font-family: 'Viaoda-Libre';
+    letter-spacing: 5px;
+    margin-left: 3%;
+    margin-bottom: 2%;
+}
+
+.artists_list{
+    width: 100%;
+    display: flex;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    white-space: nowrap;
+    overflow: auto;
+
+}
+
+.artists_paint{
+    flex-shrink: 0;
+    scroll-snap-align: center;
+}
+
+.artists_paint>img{
+    width: 300px;
+    height: 400px;
+    padding: 5px;
+}
+
+.A_en_content_L{
+    margin-left: 6%;
+    width: 40%;
+    float: left;
+    font-family: 'Viaoda-Libre';
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.A_en_content_R{
+    margin-right: 6%;
+    width: 40%;
+    float: right;
+    font-family: 'Viaoda-Libre';
+    font-size: 25px;
+    font-weight: bold;
+}
+
+@media (max-width:1215px) {
+    .A_title{
+        margin-top: -35px;
+        margin-bottom: -15px;
+        text-align: center;
+        font-size: 80px;
+        font-family: 'Viaoda-Libre';
+    }
+    .A_content{
+        display: block;
+    }
+    .A_content_L{
+        width: 100%;
+        margin-right: 2.5%;
+        margin-bottom: 2%;
+    }
+    .A_content_R{
+        width: 91%;
+        margin-left: 5%;
+        margin-right: 2.5%;
+        font-size: 25px;
+    }
+    .A_artists{
+        font-size: 70px;
+    }
+    .A_en_content_L{
+        float: left;
+        margin-left: 6%;
+        margin-right: 6%;
+        width: 90%;
+        font-family: 'Viaoda-Libre';
+        font-size: 25px;
+    }
+    
+    .A_en_content_R{
+        float: left;
+        margin-left: 6%;
+        margin-right: 7%;
+        width: 90%;
+        font-family: 'Viaoda-Libre';
+        font-size: 25px;
+        margin-bottom: 3%;
+    }
+    .artists_paint>img{
+        width: 220px;
+        height: 300px;
+        padding: 5px;
+    }
+}
+
+@media (max-width:670px) {
+    .A_title{
+        margin-top: -27px;
+        margin-bottom: -15px;
+        text-align: center;
+        font-size: 65px;
+        font-family: 'Viaoda-Libre';
+    }
+    .A_content{
+        display: block;
+        margin-top: 80px;
+    }
+    .A_content_L{
+        width: 100%;
+        margin-right: 2.5%;
+        margin-bottom: 2%;
+    }
+    .A_content_R{
+        width: 91%;
+        margin-left: 5%;
+        margin-right: 2.5%;
+        font-size: 25px;
+    }
+    .A_artists{
+        font-size: 65px;
+    }
+    .A_en_content_L{
+        float: left;
+        margin-left: 6%;
+        width: 90%;
+        font-family: 'Viaoda-Libre';
+        font-size: 25px;
+        /* font-weight: bold; */
+    }
+    .A_en_content_R{
+        float: left;
+        margin-left: 6%;
+        width: 90%;
+        font-family: 'Viaoda-Libre';
+        font-size: 25px;
+        margin-bottom: 5%;
+    }
+    .artists_paint>img{
+        width: 220px;
+        height: 300px;
+        padding: 5px;
+    }
+    .A_blank{
+        width: 100%;
+        height: 80px;
+    }
+}
+
+@media (max-width:460px) {
+    .A_title{
+        margin-top: -50px;
+        margin-bottom: -15px;
+        text-align: center;
+        font-size: 55px;
+        font-family: 'Viaoda-Libre';
+    }
+    .A_content{
+        display: block;
+        margin-top: 80px;
+    }
+    .A_content_L{
+        width: 100%;
+        margin-right: 2.5%;
+        margin-bottom: 2%;
+    }
+    .A_content_R{
+        width: 91%;
+        margin-left: 5%;
+        margin-right: 2.5%;
+        font-size: 17px;
+    }
+    .A_artists{
+        font-size: 55px;
+    }
+    .A_en_content_L{
+        float: left;
+        margin-left: 6%;
+        width: 90%;
+        font-family: 'Viaoda-Libre';
+        font-size: 20px;
+    }
+    .A_en_content_R{
+        float: left;
+        margin-left: 6%;
+        width: 90%;
+        font-family: 'Viaoda-Libre';
+        font-size: 20px;
+        margin-bottom: 5%;
+    }
+    .artists_paint>img{
+        width: 220px;
+        height: 300px;
+        padding: 5px;
+    }
+    .A_blank{
+        width: 100%;
+        height: 50px;
+    }
+    .JS_footer{
+        font-size: 12px;
+    }
+}
