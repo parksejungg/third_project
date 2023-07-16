@@ -85,6 +85,10 @@ body {
     margin-bottom: 20px;
 }
 
+.saveId {
+    border: 1px solid red;
+}
+
 .notice {
     text-align: center;
     font-size: 14pt;
@@ -108,7 +112,7 @@ hr {
     margin-top: 30px;
 }
 
-.btnLogin {
+.btnLogin_ {
     font-family: korFont;
     padding: 10px 0 10px 0;
     width: 100%;

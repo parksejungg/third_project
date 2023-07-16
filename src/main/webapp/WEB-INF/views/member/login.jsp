@@ -22,11 +22,15 @@
                 <div class="loginText">LOGIN</div>
                  <form id="login_form" method="post">
 	                <div class="loginform">
-	                    <div><input type="text" name="userId" placeholder="아이디"></div>
+	                    <div><input type="text" id="userId" name="userId" placeholder="아이디"></div>
 	                    <div><input type="password" name="userPw" placeholder="비밀번호"></div>
 	                    <c:if test= "${result==0}"><div class="notice">
 	                        아이디 또는 비밀번호를 확인 해 주세요.
 	                    </div></c:if>
+	                    <div class="logSave">
+	                    	<input type="checkbox" class="saveId" name="saveId" id="saveId" >
+	                    	<label for="saveId">아이디 저장</label>
+	                    </div>
 	                </div>
 	                <div class="btn_">
 	                    <button type="submit" class="button button--ujarak button--border-thin button--text-thick btnLogin_ " >로그인</button>
@@ -39,7 +43,33 @@
 
          
 
-<script>
+<script type="text/javascript">
+
+$(function(){
+	fnInit();
+});
+
+function frm_check() {
+	saveId();
+}
+
+//아이디저장이 체크 되어 있는지
+function fnInit() {
+	var cookieId = getCookie("saveId");
+	console.log(cookieId);
+	if(cookieId !=""){
+		$("input:checkbox[id='saveId']").prop("checked", true);
+		$('#userId').val(cookieId);
+	}
+}
+
+//쿠키 세팅
+function setCookie(name, value, expiredays) {
+	var 
+	
+}
+
+
 $(".loginbtn_").click(function(){
 	alert("로그인 버튼 작용");
 	
