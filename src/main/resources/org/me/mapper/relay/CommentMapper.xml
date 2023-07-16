@@ -8,12 +8,12 @@
              , REPLY.BNO                               AS BNO         /* 글번호 */
              , REPLY.REPLY                             AS REPLY       /* 댓글내용 */
              , REPLY.USERID                            AS USERID      /* 유저ID */
-             , MEMBER.USERNAME                         AS USERNAME    /* 유저명 */
+             , MEM.USERNAME                            AS USERNAME    /* 유저명 */
              , TO_CHAR(REPLY.REPLYDATE, 'YYYY.MM.DD')  AS REPLYDATE   /* 댓글등록일자 */
              , TO_CHAR(REPLY.UPDATEDATE, 'YYYY.MM.DD') AS UPDATEDATE  /* 댓글수정일자 */
           FROM TBL_REPLY_B REPLY
-         INNER JOIN TBL_MEMBER MEMBER
-            ON REPLY.USERID = MEMBER.USERID
+         INNER JOIN TBL_MEMBER MEM
+            ON REPLY.USERID = MEM.USERID
          WHERE REPLY.BNO = #{bno}     
          ORDER BY REPLY.RNO DESC 
     </select>	

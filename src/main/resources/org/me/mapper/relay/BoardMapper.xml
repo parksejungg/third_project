@@ -7,12 +7,12 @@
         SELECT BOARD.BNO        AS BNO
              , BOARD.TITLE      AS TITLE
              , BOARD.CONTENT    AS CONTENT
-             , MEMBER.USERNAME  AS USERNAME
+             , MEM.USERNAME     AS USERNAME
              , BOARD.REGDATE    AS REGDATE
              , BOARD.UPDATEDATE AS UPDATEDATE
           FROM TBL_BOARD_B BOARD
-         INNER JOIN TBL_MEMBER MEMBER
-            ON BOARD.USERID = MEMBER.USERID
+         INNER JOIN TBL_MEMBER MEM
+            ON BOARD.USERID = MEM.USERID
          ORDER BY BOARD.BNO DESC 
     </select>
     
@@ -41,12 +41,12 @@
              , BOARD.TITLE      AS TITLE
              , BOARD.CONTENT    AS CONTENT
              , BOARD.USERID     AS USERID
-             , MEMBER.USERNAME  AS USERNAME
+             , MEM.USERNAME     AS USERNAME
              , BOARD.REGDATE    AS REGDATE
              , BOARD.UPDATEDATE AS UPDATEDATE
           FROM TBL_BOARD_B BOARD
-         INNER JOIN TBL_MEMBER MEMBER
-            ON BOARD.USERID = MEMBER.USERID
+         INNER JOIN TBL_MEMBER MEM
+            ON BOARD.USERID = MEM.USERID
          WHERE BOARD.BNO = #{bno}
     </select>
     
