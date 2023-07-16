@@ -16,82 +16,89 @@ import org.springframework.web.servlet.ModelAndView;
 
 import lombok.RequiredArgsConstructor;
 
-@Controller // ÇöÀç Å¬·¡½º¸¦ ÄÁÆ®·Ñ·¯ ºó(bean)À¸·Î µî·Ï
+@Controller // ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ ï¿½ï¿½(bean)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 @RequiredArgsConstructor
 public class BoardController {
 
 	private final BoardService boardService;
 
-	// 01. °Ô½Ã±Û ¸ñ·Ï
-	// Æ¯Á¤ uri·Î ¿äÃ»À» º¸³»¸é Controller¿¡¼­ ¾î¶°ÇÑ ¹æ½ÄÀ¸·Î Ã³¸®ÇÒÁö Á¤ÀÇ
+	// 01. ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½
+	// Æ¯ï¿½ï¿½ uriï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Controllerï¿½ï¿½ï¿½ï¿½ ï¿½î¶°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	/**
-	 * @RequestMapping(value = "/hello-basic")
- ÀÌ·¸°Ô ¸ÅÇÎÀ» ÇÏ¸é localhost:8080/hello-basicÀ¸·Î urlÀ» ÀÔ·ÂÇßÀ» °æ¿ì¿¡ ÀÌ°Í¿¡ ÇØ´çÇÏ´Â ¸Ş¼­µå°¡ ½ÇÇàµÈ´Ù.
+	 * @RequestMapping(value = "/hello-basic") ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¸ï¿½
+	 *                       localhost:8080/hello-basicï¿½ï¿½ï¿½ï¿½ urlï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ì¿¡ ï¿½Ì°Í¿ï¿½
+	 *                       ï¿½Ø´ï¿½ï¿½Ï´ï¿½ ï¿½Ş¼ï¿½ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½È´ï¿½.
 	 */
 	@RequestMapping(value = "/list.do")
-	//  ModelAndView´Â µ¥ÀÌÅÍ¿Í ÀÌµ¿ÇÏ°íÀÚ ÇÏ´Â View Page¸¦ °°ÀÌ ÀúÀåÇÑ´Ù
+	// ModelAndViewï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½Ìµï¿½ï¿½Ï°ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ View Pageï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½
 	public ModelAndView list() {
 
 		List<BoardVo> list = boardService.listAll();
-		
-		// ModelAndView - ¸ğµ¨°ú ºä
+
+		// ModelAndView - ï¿½ğµ¨°ï¿½ ï¿½ï¿½
 		ModelAndView mav = new ModelAndView();
-		
-		mav.setViewName("/board/list"); // ºä¸¦ list.jsp·Î ¼³Á¤
-		mav.addObject("list", list); // µ¥ÀÌÅÍ¸¦ ÀúÀå
-		
-		return mav; // list.jsp·Î List°¡ Àü´ŞµÈ´Ù.
+
+		mav.setViewName("/board/list"); // ï¿½ä¸¦ list.jspï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		mav.addObject("list", list); // ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+
+		return mav; // list.jspï¿½ï¿½ Listï¿½ï¿½ ï¿½ï¿½ï¿½ŞµÈ´ï¿½.
 	}
-	
-	// 02_01. °Ô½Ã±Û ÀÛ¼ºÈ­¸é
+
+	// 02_01. ï¿½Ô½Ã±ï¿½ ï¿½Û¼ï¿½È­ï¿½ï¿½
 	@RequestMapping(value = "/board/write.do", method = RequestMethod.GET)
-	public ModelAndView insertPage(@ModelAttribute BoardVo vo) {
-		
+	public ModelAndView insertPage(BoardVo boardVo) {
+
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/board/write");
-		
-		return mav; 
-	}
 
-	// 02_02. °Ô½Ã±Û ÀÛ¼º
-	@RequestMapping(value = "/board/insert.do", method = RequestMethod.POST)
-	public String insert(@ModelAttribute BoardVo vo) {
-		
-		boardService.create(vo);
-		
-		return "redirect:/list.do";
-	}
-
-	// 03. °Ô½Ã±Û »ó¼¼³»¿ë Á¶È¸, °Ô½Ã±Û Á¶È¸¼ö Áõ°¡ Ã³¸®
-	// @RequestParam
-	@RequestMapping(value = "/board/view.do", method = RequestMethod.GET)
-	public ModelAndView view(@RequestParam int bno) {
-		// ¸ğµ¨(µ¥ÀÌÅÍ)+ºä(È­¸é)¸¦ ÇÔ²² Àü´ŞÇÏ´Â °´Ã¼
-		ModelAndView mav = new ModelAndView();
-		// ºäÀÇ ÀÌ¸§
-		mav.setViewName("board/view");
-		// ºä¿¡ Àü´ŞÇÒ µ¥ÀÌÅÍ
-		mav.addObject("dto", boardService.read(bno));
-		
 		return mav;
 	}
 
-	// 04. °Ô½Ã±Û ¼öÁ¤
-	// Æû¿¡¼­ ÀÔ·ÂÇÑ ³»¿ëµéÀº @ModelAttribute BoardVo vo·Î Àü´ŞµÊ
+	// 02_02. ï¿½Ô½Ã±ï¿½ ï¿½Û¼ï¿½
+	@RequestMapping(value = "/board/insert.do", method = RequestMethod.POST)
+	public String insert(BoardVo boardVo) { // ë©”ì†Œë“œëª… ì˜¤ë¥¸ìª½ì— ì ëŠ” íŒŒë¼ë¯¸í„°ëŠ” ë°›ëŠ” ê°’
+		System.out.println("title:" + boardVo.getTitle());
+		System.out.println("content:" + boardVo.getContent());
+		System.out.println("writer:" + boardVo.getWriter());
+
+		boardService.create(boardVo); // ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•  ë–„ ì ëŠ” íŒŒë¼ë¯¸í„°ëŠ” ë„˜ê²¨ì£¼ëŠ” ê°’
+
+		return "redirect:/list.do"; // ë¦¬ë‹¤ì´ë ‰íŠ¸ ë’¤ì— ë¦¬í€˜ìŠ¤íŠ¸ ë§µí•‘ ê°’ì„ ì ì–´ì£¼ë¯€ë¡œì¨ ìƒˆë¡œìš´ APIë¥¼ í˜¸ì¶œ
+	}
+
+	// 03. ï¿½Ô½Ã±ï¿½ ï¿½ó¼¼³ï¿½ï¿½ï¿½ ï¿½ï¿½È¸, ï¿½Ô½Ã±ï¿½ ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
+	// @RequestParam
+	@RequestMapping(value = "/board/view.do", method = RequestMethod.GET)
+	public ModelAndView view(@RequestParam int bno) {
+		
+		BoardVo boardVo = boardService.read(bno);
+		
+		// ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)+ï¿½ï¿½(È­ï¿½ï¿½)ï¿½ï¿½ ï¿½Ô²ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Ã¼
+		ModelAndView mav = new ModelAndView();
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
+		mav.setViewName("board/view");
+		// ï¿½ä¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		mav.addObject("dto", boardVo);
+
+		return mav;
+	}
+
+	// 04. ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ @ModelAttribute BoardVo voï¿½ï¿½ ï¿½ï¿½ï¿½Şµï¿½
 	@RequestMapping(value = "/board/update.do", method = RequestMethod.POST)
-	public String update(@ModelAttribute BoardVo vo) {
-		
+	public String update(BoardVo vo) {
+
 		boardService.update(vo);
-		
+
 		return "redirect:/list.do";
 	}
 
-	// 05. °Ô½Ã±Û »èÁ¦
+	// 05. ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/board/delete.do")
 	public String delete(@RequestParam int bno) {
-		
+
 		boardService.delete(bno);
-		
+
 		return "redirect:/list.do";
 	}
 

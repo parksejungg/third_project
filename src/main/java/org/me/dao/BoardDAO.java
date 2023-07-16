@@ -1,24 +1,88 @@
 package org.me.dao;
 
+import java.io.Reader;
 import java.util.List;
 
+import javax.inject.Inject;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.me.vo.BoardVo;
+import org.springframework.stereotype.Repository;
 
-public interface BoardDAO {
+import lombok.RequiredArgsConstructor;
 
-	// 01. °Ô½Ã±Û ÀÛ¼º
-    public void create(BoardVo vo);
-    
-    // 02. °Ô½Ã±Û »ó¼¼º¸±â
-    public BoardVo read(int bno);
-    
-    // 03. °Ô½Ã±Û ¼öÁ¤
-    public void update(BoardVo vo);
-    
-    // 04. °Ô½Ã±Û »èÁ¦
-    public void delete(int bno);
-    
-    // 05. °Ô½Ã±Û ÀüÃ¼ ¸ñ·Ï
-    public List<BoardVo> listAll();
-    
+@Repository // ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ dao beanï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+@RequiredArgsConstructor
+// DAO ì—­í•  : xmlí˜¸ì¶œ ë° xmlì˜ ì¿¼ë¦¬ì˜ ê²°ê³¼ë¥¼ ë°›ëŠ”ë‹¤.
+public class BoardDAO {
+
+	private final SqlSession SqlSession;
+
+	private static SqlSessionFactory sqlMapper;
+
+	private static SqlSessionFactory getInstance() {
+
+		if (sqlMapper == null) {
+			String resource = "mybatis-config.xml";
+
+			try {
+				Reader reader = Resources.getResourceAsReader(resource);
+				sqlMapper = new SqlSessionFactoryBuilder().build(reader);
+				reader.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return sqlMapper;
+	}
+
+	// 01. ï¿½Ô½Ã±ï¿½ ï¿½Û¼ï¿½
+	public void create(BoardVo boardVo) {
+		sqlMapper = getInstance();
+		SqlSession session = sqlMapper.openSession();
+
+		session.insert("board.insertBoard", boardVo);
+		session.commit();
+	}
+
+	// 02. ï¿½Ô½Ã±ï¿½ ï¿½ó¼¼ºï¿½ï¿½ï¿½
+	public BoardVo read(int bno) {
+		sqlMapper = getInstance();
+		SqlSession session = sqlMapper.openSession();
+
+		return session.selectOne("board.view", bno);
+	}
+
+	// 03. ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void update(BoardVo vo) {
+		sqlMapper = getInstance();
+		SqlSession session = sqlMapper.openSession();
+
+		session.update("board.updateBoard", vo);
+		session.commit();
+	}
+
+	// 04. ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void delete(int bno) {
+		sqlMapper = getInstance();
+		SqlSession session = sqlMapper.openSession();
+
+		session.delete("board.deleteBoard", bno);
+		session.commit();
+
+	}
+
+	// 05. ï¿½Ô½Ã±ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½
+	public List<BoardVo> listAll() {
+		sqlMapper = getInstance();
+		SqlSession session = sqlMapper.openSession();
+
+		List<BoardVo> boardVo = session.selectList("board.listAll");
+
+		return boardVo;
+	}
+
 }

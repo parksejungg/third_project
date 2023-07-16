@@ -16,58 +16,38 @@ import lombok.RequiredArgsConstructor;
 public class BoardServiceImpl implements BoardService {
 
 	private final BoardDAO boardDao;
-	    
-	    // 01. °Ô½Ã±Û¾²±â
-	    @Override
-	    public void create(BoardVo vo) {
-	        String title = vo.getTitle();
-	        String content = vo.getContent();
-	        String writer = vo.getWriter();
-	        
-	        // *ÅÂ±×¹®ÀÚ Ã³¸® (< ==> &lt; > ==> &gt;)
-	        // replace(A, B) A¸¦ B·Î º¯°æ
-	        title = title.replace("<", "&lt;");
-	        title = title.replace("<", "&gt;");
-	        writer = writer.replace("<", "&lt;");
-	        writer = writer.replace("<", "&gt;");
-	        // *°ø¹é¹®ÀÚ Ã³¸®
-	        title = title.replace("  ",    "&nbsp;&nbsp;");
-	        writer = writer.replace("  ",    "&nbsp;&nbsp;");
-	        // *ÁÙ¹Ù²Þ ¹®ÀÚÃ³¸®
-	        content = content.replace("\n", "<br>");
-	        
-	        vo.setTitle(title);
-	        vo.setContent(content);
-	        vo.setWriter(writer);
-	        
-	        boardDao.create(vo);
-	    }
-	    
-	    // 02. °Ô½Ã±Û »ó¼¼º¸±â
-	    @Override
-	    public BoardVo read(int bno){
-	        return boardDao.read(bno);
-	    }
-	    
-	    // 03. °Ô½Ã±Û ¼öÁ¤
-	    @Override
-	    public void update(BoardVo vo){
-	    	boardDao.update(vo);
-	    }
-	    
-	    // 04. °Ô½Ã±Û »èÁ¦
-	    @Override
-	    public void delete(int bno){
-	    	boardDao.delete(bno);
-	    }
-	    
-	    // 05. °Ô½Ã±Û ÀüÃ¼ ¸ñ·Ï
-	    @Override
-	    public List<BoardVo> listAll(){
-	    	
-	    	List<BoardVo> boardVo = boardDao.listAll();
-	    	
-	        return boardVo ;
-	    }
-	    
+
+	// 01. ï¿½Ô½Ã±Û¾ï¿½ï¿½ï¿½
+	@Override
+	public void create(BoardVo vo) {
+		boardDao.create(vo);
+	}
+
+	// 02. ï¿½Ô½Ã±ï¿½ ï¿½ó¼¼ºï¿½ï¿½ï¿½
+	@Override
+	public BoardVo read(int bno) {
+		
+		return boardDao.read(bno);
+	}
+
+	// 03. ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½
+	@Override
+	public void update(BoardVo vo) {
+		boardDao.update(vo);
+	}
+
+	// 04. ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½
+	@Override
+	public void delete(int bno) {
+		boardDao.delete(bno);
+	}
+
+	// 05. ï¿½Ô½Ã±ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½
+	@Override
+	public List<BoardVo> listAll() {
+		List<BoardVo> boardVo = boardDao.listAll();
+
+		return boardVo;
+	}
+
 }
