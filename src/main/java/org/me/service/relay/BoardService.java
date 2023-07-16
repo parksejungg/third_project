@@ -2,8 +2,12 @@ package org.me.service.relay;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.me.domain.MemberVO;
 import org.me.domain.relay.dto.BoardDto;
 import org.me.mapper.relay.BoardMapper;
+import org.me.mapper.relay.CommentMapper;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -31,14 +35,15 @@ public class BoardService {
 
 	public void update(BoardDto boardDto) {
 		
-		System.out.println(boardDto);
-		
 		boardMapper.update(boardDto);
 	}
 
 	public void delete(int bno) {
 		
-		boardMapper.delete(bno);
+		// 글에 속한 댓글을 먼저 삭제한다.
+		boardMapper.deleteComment(bno);
+		
+		// 글 삭제
+		boardMapper.deleteBoard(bno);
 	}
-
 }

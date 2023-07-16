@@ -1,3 +1,4 @@
+<%@page import="org.me.domain.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,14 +21,26 @@ button:hover {
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%
+	MemberVO memberVo = (MemberVO) session.getAttribute("member");
+%>
 <script>
+	var userId = '<%= memberVo == null ? "" : memberVo.getUserId() %>';
+
 	function moveWrite() {
-		location.href = "${path}/relay/board/write.do";
+		if (userId == '') {
+			if (confirm("로그인 후 이용하실 수 있는 페이지입니다.\n로그인 페이지로 이동하시겠습니까?")) {
+				location.href = "/member/login";
+			}
+			return;
+		}
+		
+		location.href = "/relay/board/write";
 	}
 </script>
+
 </head>
 <body style="background: #FFFBF2">
-
 	<%@ include file="/WEB-INF/views/includes/mouse.jsp"%>
 	<%@ include file="/WEB-INF/views/includes/header.jsp"%>
 
@@ -70,10 +83,10 @@ button:hover {
 							style="color: #994D22; font-size: 22pt; padding: 5px; border-bottom: 2px solid #E1D3BF;">${row.bno}</div>
 						<div
 							style="color: #545454; margin-top: 11px; font-size: 13pt; padding: 11px; font-family: 'SUITE-Regular' !important;">
-							<span>' </span> <b>${row.writer}</b> <span>' 님</span>
+							<span>' </span> <b>${row.username}</b> <span>' 님</span>
 							<p
 								style="color: #545454; margin-top: 18px; margin-bottom: 18px; font-size: 20pt; font-family: 'SUITE-Regular' !important;">
-								<b><a href="${path}/relay/board/view.do?bno=${row.bno}"
+								<b><a href="/relay/board/view?bno=${row.bno}"
 									style="text-decoration: none; color: #545454">${row.title}</a></b>
 							</p>
 							<!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
@@ -81,7 +94,6 @@ button:hover {
 								style="color: #545454; font-family: 'SUITE-Regular' !important;">
 								<fmt:formatDate value="${row.regdate}" pattern="yyyy-MM-dd" />
 							</div>
-							<!-- <div class="card-text" style="color: #545454"><b>수정일 : </b><fmt:formatDate value="${row.updatedate}" pattern="yyyy-MM-dd"/></div> -->
 						</div>
 					</div>
 				</div>
@@ -107,10 +119,10 @@ button:hover {
 							style="color: #994D22; font-size: 20pt; padding: 3px; border-bottom: 2px solid #E1D3BF;">${row.bno}</div>
 						<div
 							style="color: #545454; margin-top: 8px; font-size: 13pt; padding: 11px; font-family: 'SUITE-Regular' !important;">
-							<span>' </span> <b>${row.writer}</b> <span>' 님</span>
+							<span>' </span> <b>${row.username}</b> <span>' 님</span>
 							<p
 								style="color: #545454; margin-top: 5px; margin-bottom: 5px; font-size: 20pt; font-family: 'SUITE-Regular' !important;">
-								<b><a href="${path}/relay/board/view.do?bno=${row.bno}"
+								<b><a href="/relay/board/view?bno=${row.bno}"
 									style="text-decoration: none; color: #545454">${row.title}</a></b>
 							</p>
 							<!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
@@ -144,10 +156,10 @@ button:hover {
 							style="color: #994D22; font-size: 20pt; padding: 3px; border-bottom: 2px solid #E1D3BF;">${row.bno}</div>
 						<div
 							style="color: #545454; margin-top: 8px; font-size: 13pt; padding: 11px; font-family: 'SUITE-Regular' !important;">
-							<span>' </span> <b>${row.writer}</b> <span>' 님</span>
+							<span>' </span> <b>${row.username}</b> <span>' 님</span>
 							<p
 								style="color: #545454; margin-top: 5px; margin-bottom: 5px; font-size: 20pt; font-family: 'SUITE-Regular' !important;">
-								<b><a href="${path}/relay/board/view.do?bno=${row.bno}"
+								<b><a href="/relay/board/view?bno=${row.bno}"
 									style="text-decoration: none; color: #545454">${row.title}</a></b>
 							</p>
 							<!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->

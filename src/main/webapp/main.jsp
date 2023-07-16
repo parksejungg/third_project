@@ -88,7 +88,7 @@
 			<a class="menu__item" href="notice/list">
 				<span class="menu__item-text" data-splitting="">COMMUNITY</span>
 			</a>
-			<a class="menu__item" href="relay/board/list.do">
+			<a class="menu__item" href="/relay/board/list">
 				<span class="menu__item-text" data-splitting="">PLAY</span>
 			</a>
 			

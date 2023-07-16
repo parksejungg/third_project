@@ -41,18 +41,21 @@ button:hover {
 	var rno;
 
 	$(document).ready(function(){
+		displayButton();
 		commentList();
 	});
 	
-	function reset() {
-		if (confirm("작성한 내용이 저장되지 않을 수 있습니다. \n정말로 취소하시겠습니까?")) {
-			window.history.back(); // 이전 페이지로 돌아감
+	function displayButton() {
+		// 로그인한 유저와 작성자의 아이디가 동일할 경우 수정, 삭제 버튼 활성화
+		if (userId == $('#writerId').val()) {
+			$('#btnUpdate').show();
+			$('#btnDelete').show();
 		}
 	}
 	
 	function deleteBoard() {
 		if (confirm("정말로 삭제하시겠습니까?")) {
-			document.form1.action = "${path}/relay/board/delete.do";
+			document.form1.action = "/relay/board/delete";
 			document.form1.submit();
 		}
 	}
@@ -60,7 +63,6 @@ button:hover {
 	function updateBoard() {
 		var title = $("#title").val();
 		var content = $("#content").val();
-		var writer = $("#writer").val();
 
 		if (title == "") {
 			alert("제목을 입력하세요");
@@ -70,13 +72,9 @@ button:hover {
 			alert("내용을 입력하세요");
 			document.form1.content.focus();
 			return;
-		} else if (writer == "") {
-			alert("이름을 입력하세요");
-			document.form1.writer.focus();
-			return;
 		}
 
-		document.form1.action = "${path}/relay/board/update.do";
+		document.form1.action = "/relay/board/update";
 		// 폼에 입력한 데이터를 서버로 전송
 		document.form1.submit();
 	}
@@ -119,7 +117,7 @@ button:hover {
 		var content = $('#inputComment').val();
 		
 		if (userId == '') {
-			alert("로그인 후 이용해주세요.");
+			alert("로그인 후 이용할 수 있는 기능입니다.");
 			return;
 		} else if (content == '') {
 			alert("내용을 입력하세요");
@@ -179,7 +177,7 @@ button:hover {
 	<form name="form1" method="post">
 		<div style="text-align: center; font-size: 16pt">
 			작성자 : <input class="view_writer01" name="writer" id="writer"
-				value="${dto.writer}" placeholder="이름">
+				value="${dto.username}" placeholder="이름" readonly>
 		</div>
 
 		<div
@@ -204,9 +202,7 @@ button:hover {
 			<!-- 날짜 형식 => yyyy 4자리연도, MM 월, dd 일, a 오전/오후, HH 24시간제, hh 12시간제, mm 분, ss 초 -->
 			<div class="view_regdate"
 				style="margin-top: 17px; font-family: 'SUITE-Regular' !important; font-size: 13pt;">
-				작성일자 :
-				<fmt:formatDate value="${dto.regdate}"
-					pattern="yyyy-MM-dd a HH:mm:ss" />
+				작성일자 : <fmt:formatDate value="${dto.regdate}" pattern="yyyy-MM-dd a HH:mm:ss" />
 			</div>
 		</div>
 
@@ -214,15 +210,14 @@ button:hover {
 			style="width: 350px; margin: 0 auto; text-align: center; margin-top: 29px;">
 			<!-- 게시물번호를 hidden으로 처리 -->
 			<input type="hidden" name="bno" id="bno" value="${dto.bno}">
+			<input type="hidden" name="writerId" id="writerId" value="${dto.userId}">
+			
 			<button class="btn btn-outline-secondary btn_view01"
-				style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; margin-top: -15px; width: 75px; height: 50px;"
-				type="button" id="btnDelete" onclick="deleteBoard()">삭제</button>
+				style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; margin-top: -15px; width: 75px; height: 50px; display:none"
+				id="btnUpdate" onclick="updateBoard()">수정</button>
 			<button class="btn btn-outline-secondary btn_view01"
-				style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; margin-top: -15px; width: 75px; height: 50px;"
-				type="button" id="btnUpdate" onclick="updateBoard()">수정</button>
-			<button class="btn btn-outline-secondary btn_view01"
-				style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; margin-top: -15px; width: 75px; height: 50px;"
-				type="button" onclick="reset()">취소</button>
+				style="border: 1px solid #A98B67; color: #A98B67; margin: 5px; margin-top: -15px; width: 75px; height: 50px; display:none"
+				id="btnDelete" onclick="deleteBoard()">삭제</button>
 		</div>
 	</form>
 

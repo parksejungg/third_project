@@ -14,6 +14,7 @@ public interface BoardMapper {
 	
 	public void update(BoardDto boardDto);
 	
-	public void delete(int bno);
+	public void deleteBoard(int bno);
 	
+	public void deleteComment(int bno);
 }

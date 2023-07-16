@@ -3,26 +3,28 @@
 <mapper namespace="org.me.mapper.relay.CommentMapper">
 
     <select id="findAll" parameterType="int" resultType="org.me.domain.relay.dto.CommentDto">
+        /* CommentMapper.findAll */
         SELECT REPLY.RNO                               AS RNO         /* 댓글번호 */
              , REPLY.BNO                               AS BNO         /* 글번호 */
              , REPLY.REPLY                             AS REPLY       /* 댓글내용 */
-             , REPLY.REPLYER                           AS USERID      /* 유저ID */
+             , REPLY.USERID                            AS USERID      /* 유저ID */
              , MEMBER.USERNAME                         AS USERNAME    /* 유저명 */
              , TO_CHAR(REPLY.REPLYDATE, 'YYYY.MM.DD')  AS REPLYDATE   /* 댓글등록일자 */
              , TO_CHAR(REPLY.UPDATEDATE, 'YYYY.MM.DD') AS UPDATEDATE  /* 댓글수정일자 */
           FROM TBL_REPLY_B REPLY
          INNER JOIN TBL_MEMBER MEMBER
-            ON REPLY.REPLYER = MEMBER.USERID
+            ON REPLY.USERID = MEMBER.USERID
          WHERE REPLY.BNO = #{bno}     
          ORDER BY REPLY.RNO DESC 
     </select>	
     
     <insert id="insert" parameterType="org.me.domain.relay.dto.CommentDto">
+        /* CommentMapper.insert */
         INSERT INTO TBL_REPLY_B (
           RNO
         , BNO
         , REPLY 
-        , REPLYER 
+        , USERID 
         , REPLYDATE
         , UPDATEDATE
         ) VALUES (
@@ -36,6 +38,7 @@
     </insert>
     
     <update id="update" parameterType="org.me.domain.relay.dto.CommentDto">
+        /* CommentMapper.update */
         UPDATE TBL_REPLY_B
            SET REPLY = #{reply}
              , UPDATEDATE = SYSDATE
@@ -43,6 +46,7 @@
     </update>
     
     <delete id="delete" parameterType="int">
+        /* CommentMapper.delete */
         DELETE
           FROM TBL_REPLY_B
          WHERE RNO = #{rno}

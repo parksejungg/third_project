@@ -38,7 +38,7 @@ public class CommentController {
 	
 	@PostMapping(value="/update")
 	public void update(CommentDto commentDto) {
-		System.out.println(commentDto.toString());
+		System.out.println("commentDto:" + commentDto.toString());
 		
 		commentService.update(commentDto);
 	}

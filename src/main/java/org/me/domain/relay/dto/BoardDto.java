@@ -15,8 +15,10 @@ public class BoardDto {
     
     private String content;    
     
-    private String writer; 
+    private String userId; 
     
+    private String username;    
+
     private Date regdate;      
     
     private Date updatedate;       	
