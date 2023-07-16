@@ -42,6 +42,7 @@ button:hover {
 
 	$(document).ready(function(){
 		displayButton();
+		// 댓글 조회
 		commentList();
 	});
 	
@@ -79,6 +80,7 @@ button:hover {
 		document.form1.submit();
 	}
 
+	// 댓글 전체조회
 	function commentList() {
 		var bno = $("#bno").val();
 		
@@ -92,6 +94,7 @@ button:hover {
 		});
 	}
 	
+	// 댓글 폼 만들기
 	function makeCommentHtml(data) {
 		var html = '';
 		
@@ -106,14 +109,19 @@ button:hover {
 				html += '<button class="comment-delete" data-rno='+row['rno']+' onclick="deleteComment(this)">삭제</button>';
 			}
 			html += '</div>';
-		} 
+		}
 		
+		// btnWrite 버튼에 작성이라는 문구 넣기
 		$("#btnWrite").text('작성');
+		// 댓글 입력창 비우기
 		$("#inputComment").val('');
+		// 댓글 폼에 위에서 만든 html 넣기
 		$('#commentDiv').html(html);
 	}
 	
+	// 댓글 작성
 	function writeComment() {
+		// 작성된 내용 가져오기
 		var content = $('#inputComment').val();
 		
 		if (userId == '') {
@@ -142,6 +150,7 @@ button:hover {
 		});
 	}
 	
+	// 댓글 안의 수정 버튼 클릭할 때
 	function clickUpdate(pThis) {
 		$("#inputComment").val($(pThis).prev().text());
 		$("#inputComment").focus();
@@ -150,6 +159,7 @@ button:hover {
 		rno = pThis.getAttribute('data-rno');
 	}
 	
+	// 댓글 삭제
 	function deleteComment(pThis) {
 		$.ajax({
 			type: "POST",
@@ -224,7 +234,7 @@ button:hover {
 	<!-- 댓글 작성 부분 -->
 	<div id="comment-write" class="comment-write">
 		<input type="text" id="inputComment" class="comment-input" placeholder="댓글 추가">
-		<button id="btnWrite" class="comment-write-btn btn_view02" id="btnInsert" onclick="writeComment()"></button>
+		<button id="btnWrite" class="comment-write-btn btn_view02" onclick="writeComment()"></button>
 	</div>
 
 	<!-- 댓글 출력 부분 -->
