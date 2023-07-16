@@ -44,17 +44,16 @@ button:hover {
 			alert("제목을 입력하세요");
 			document.form1.title.focus();
 			return;
-		}
-		if (content == "") {
+		} else if (content == "") {
 			alert("내용을 입력하세요");
 			document.form1.content.focus();
 			return;
-		}
-		if (writer == "") {
+		} else if (writer == "") {
 			alert("이름을 입력하세요");
 			document.form1.writer.focus();
 			return;
 		}
+		
 		// 폼에 입력한 데이터를 서버로 전송
 		document.form1.submit();
 	}
@@ -68,10 +67,10 @@ button:hover {
 
 	<div style="text-align: center; margin-top: 43px">
 		<img style="width: 330px; margin-bottom: 55px;"
-			src="../resources/img/board/view_title.png" alt=""> <br /> <br />
+			src="/resources/img/board/view_title.png" alt=""> <br /> <br />
 	</div>
 
-	<form name="form1" method="post" action="${path}/board/insert.do">
+	<form name="form1" method="post" action="${path}/relay/board/insert.do">
 		<div style="text-align: center; font-size: 16pt">
 			작성자 : <input class="writer_writer01" name="writer" id="writer"
 				placeholder="이름">
@@ -81,7 +80,7 @@ button:hover {
 			style="text-align: center; padding: 5px; margin-left: auto; margin-right: auto; margin: 0 auto;">
 			<img class="write_content"
 				style="width: 1150px; margin-top: 10px; position: relative;"
-				src="../resources/img/board/view_contents.png" alt=""> <br />
+				src="/resources/img/board/view_contents.png" alt=""> <br />
 			<br />
 		</div>
 

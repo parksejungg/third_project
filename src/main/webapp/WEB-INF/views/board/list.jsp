@@ -21,17 +21,8 @@ button:hover {
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <script>
-/*
-	$(document).ready(function() {
-		$("#btnWrite").click(function() {
-			// 페이지 주소 변경(이동)
-			location.href = "${path}/board/write.do";
-		});
-	});
-*/
-
 	function moveWrite() {
-		location.href = "${path}/board/write.do";
+		location.href = "${path}/relay/board/write.do";
 	}
 </script>
 </head>
@@ -42,7 +33,7 @@ button:hover {
 
 	<div>
 		<img style="width: 100%; margin-top: 40px;"
-			src="../resources/img/board/relay_banner.png" alt="">
+			src="/resources/img/board/relay_banner.png" alt="">
 	</div>
 
 	<div class="list-span-text"
@@ -53,7 +44,7 @@ button:hover {
 	</div>
 
 	<div class="list_relay" style="text-align: center;">
-		<img style="width: 1280px" src="../resources/img/board/relay_img.png"
+		<img style="width: 1280px" src="/resources/img/board/relay_img.png"
 			alt=""> <br /> <br />
 	</div>
 
@@ -82,7 +73,7 @@ button:hover {
 							<span>' </span> <b>${row.writer}</b> <span>' 님</span>
 							<p
 								style="color: #545454; margin-top: 18px; margin-bottom: 18px; font-size: 20pt; font-family: 'SUITE-Regular' !important;">
-								<b><a href="${path}/board/view.do?bno=${row.bno}"
+								<b><a href="${path}/relay/board/view.do?bno=${row.bno}"
 									style="text-decoration: none; color: #545454">${row.title}</a></b>
 							</p>
 							<!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
@@ -119,7 +110,7 @@ button:hover {
 							<span>' </span> <b>${row.writer}</b> <span>' 님</span>
 							<p
 								style="color: #545454; margin-top: 5px; margin-bottom: 5px; font-size: 20pt; font-family: 'SUITE-Regular' !important;">
-								<b><a href="${path}/board/view.do?bno=${row.bno}"
+								<b><a href="${path}/relay/board/view.do?bno=${row.bno}"
 									style="text-decoration: none; color: #545454">${row.title}</a></b>
 							</p>
 							<!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
@@ -156,7 +147,7 @@ button:hover {
 							<span>' </span> <b>${row.writer}</b> <span>' 님</span>
 							<p
 								style="color: #545454; margin-top: 5px; margin-bottom: 5px; font-size: 20pt; font-family: 'SUITE-Regular' !important;">
-								<b><a href="${path}/board/view.do?bno=${row.bno}"
+								<b><a href="${path}/relay/board/view.do?bno=${row.bno}"
 									style="text-decoration: none; color: #545454">${row.title}</a></b>
 							</p>
 							<!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
@@ -177,7 +168,7 @@ button:hover {
 
 	<div style="text-align: center;">
 		<input style="width: 90px; margin-top: 3%; margin-bottom: 4%;"
-			type="image" src="../resources/img/board/top.png"
+			type="image" src="/resources/img/board/top.png"
 			onClick="javascript:window.scrollTo(0,0)" alt="맨위로" />
 	</div>
 	<%@ include file="/WEB-INF/views/includes/footer.jsp"%>

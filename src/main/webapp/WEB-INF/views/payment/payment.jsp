@@ -120,7 +120,7 @@ function fn_buy() {
                             <li><a href="/review/list">Review</a></li>
                         </ul>
                     </li>
-                    <li><a href="/board/list">PLAY</a></li>
+                    <li><a href="/relay/board/list">PLAY</a></li>
                     <c:if test="${member == null}"><li><a href="/member/login">LOGIN</a></li></c:if>
                     <c:if test="${member != null}"> <!-- 로긴이 되어있다면 -->
                     <li class="has-children">

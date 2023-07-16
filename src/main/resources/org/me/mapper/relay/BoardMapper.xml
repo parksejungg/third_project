@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.me.mapper.relay.BoardMapper">
+
+    <select id="findAll" resultType="org.me.domain.relay.dto.BoardDto">
+        SELECT BNO
+             , TITLE
+             , CONTENT
+             , WRITER
+             , REGDATE
+             , UPDATEDATE
+          FROM TBL_BOARD_B
+         ORDER BY BNO DESC 
+    </select>
+    
+    <insert id="insert" parameterType="org.me.domain.relay.dto.BoardDto">
+        INSERT INTO TBL_BOARD_B (
+          BNO
+        , TITLE
+        , CONTENT 
+        , WRITER
+        , REGDATE
+        , UPDATEDATE
+        ) VALUES (
+          SEQ_BOARD_B.NEXTVAL
+        , #{title}
+        , #{content}
+        , #{writer}
+        , SYSDATE
+        , SYSDATE
+        )
+    </insert>
+    
+    <select id="findOne" resultType="org.me.domain.relay.dto.BoardDto" parameterType="int">
+        SELECT BNO
+             , TITLE 
+             , CONTENT 
+             , WRITER
+             , REGDATE 
+             , UPDATEDATE 
+          FROM TBL_BOARD_B 
+         WHERE BNO = #{bno}
+    </select>
+    
+    <update id="update" parameterType="org.me.domain.relay.dto.BoardDto">
+        UPDATE TBL_BOARD_B 
+           SET TITLE = #{title}
+             , CONTENT = #{content}
+             , WRITER = #{writer}
+         WHERE BNO = #{bno}
+    </update>
+    
+    <delete id="delete" parameterType="int">
+        DELETE 
+          FROM TBL_BOARD_B
+         WHERE BNO = #{bno}
+    </delete>
+    
+</mapper>
