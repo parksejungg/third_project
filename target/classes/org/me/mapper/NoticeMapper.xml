@@ -14,9 +14,7 @@
 
 <!-- 글 수정 update -->
 <update id="modify">
-
 	update tbl_board_N set title = #{title}, content = #{content}, updatedate = sysdate where bno = #{bno}
-
 </update>
 
 

@@ -9,6 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Modify</title>
+    <link rel="shortcut icon" href="/resources/img/ej_img/logoimg.ico">
 <link rel="stylesheet" href="/resources/css/hs_css/buttons.css">
 <link rel="stylesheet" href="/resources/css/hs_css/noticeModify.css">
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -24,11 +25,12 @@
 		  <div class="frameWrap">
 		      <div class="bodyText must">Modify</div>
 		      <div class="n1">
+		       <input name="bno" type="hidden" readonly="readonly" value='<c:out value="${modify.bno}"/>' >
 		       <input type="text" name="title" value='<c:out value="${modify.title}"/>' >
 		      </div>
 		      <div class="n2">
 		     	<input type="text" name="updateDate" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${modify.updatedate}"/>' >
-		      <input type="text"name="regdater" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${modify.regdate}"/>' >
+		      <input type="text"name="regdate" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${modify.regdate}"/>' >
 		      <input type="text" name="writer" readonly="readonly" value='<c:out value="${modify.writer}"/>' >
 		      </div>
 		      <div class="n3">
@@ -48,44 +50,6 @@
                 
 <%@ include file="../includes/footer.jsp" %>
 
-
-<%-- <h1>조회 페이지</h1>
-<form id="modifyForm" action="/notice/modify" method="post">
-	<div class="input_wrap">
-		<label>게시판 번호</label>
-		<input name="bno" readonly="readonly" value='<c:out value="${modify.bno}"/>' >
-	</div>
-	<div class="input_wrap">
-		<label>게시판 제목</label>
-		<input name="title" value='<c:out value="${modify.title}"/>' >
-	</div>
-	<div class="input_wrap">
-		<label>게시판 내용</label>
-		<textarea rows="3" name="content"><c:out value="${modify.content}"/></textarea>
-	</div>
-	<div class="input_wrap">
-		<label>게시판 작성자</label>
-		<input name="writer" readonly="readonly" value='<c:out value="${modify.writer}"/>' >
-	</div>
-	<div class="input_wrap">
-		<label>게시판 등록일</label>
-		<input name="regdater" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${modify.regdate}"/>' >
-	</div>
-	<div class="input_wrap">
-		<label>게시판 수정일</label>
-		<input name="updateDate" readonly="readonly" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${modify.updatedate}"/>' >
-	</div>		
-	<div class="btn_wrap">
-		<a class="btn" id="list_btn">목록 페이지</a> 
-        <a class="btn" id="modify_btn">수정 완료</a>
-        <a class="btn" id="cancel_btn">취소</a>
-       
-	</div>
-	</form>
-	
-	<form id="infoForm" action="/notice/modify" method="get">
-		<input type="hidden" id="bno" name="bno" value='<c:out value="${modify.bno}"/>'>
-	</form> --%>
 <script>
 		let form = $("#infoForm");        // 페이지 이동 form(리스트 페이지 이동, 조회 페이지 이동)
 		let mForm = $("#modifyForm");    // 페이지 데이터 수정 form

@@ -74,8 +74,9 @@ public class NoticeController {
 	public String modifyPOST(NoticeVO notice, RedirectAttributes rttr) {
 		
 		service.modify(notice);
-		
 		rttr.addFlashAttribute("result", "modify success");
+		
+		log.info("글 수정 완료");
 		
 		return "redirect:/notice/list";
 	}
