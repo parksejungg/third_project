@@ -64,8 +64,8 @@ body {
 }
 
 input,
-textarea,
-a {
+textarea
+{
     font-family: 'korFont' !important;
 }
 
