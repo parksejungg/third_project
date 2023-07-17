@@ -79,7 +79,7 @@ function fn_buy() {
                 });
             } else {
                 alert('로그인 후에 결제할 수 있습니다. 로그인해 주세요.'); // 알림 메시지 표시
-                location.href = "/member/login"; // 로그인 페이지로 이동
+                location.href = "/member/login?redirect=/payment.do"; // 로그인 페이지로 이동
             }
         },
         error: function(e) {

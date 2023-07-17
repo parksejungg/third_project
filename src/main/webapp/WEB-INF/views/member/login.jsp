@@ -102,6 +102,16 @@ $(document).ready(function () {
         }
         return unescape(cookieValue);
     }
+    
+    //이전 페이지로 돌아가는 함수
+    function redirectToPreviousPage() {
+        var redirectUrl = '<%= request.getParameter("redirect") %>';
+        if (redirectUrl) {
+            location.href = redirectUrl; // 이전 페이지 URL로 이동
+        } else {
+            location.href = "/main.jsp"; // 이전 페이지 URL이 없을 경우 메인 페이지로 이동
+        }
+    }
 });
 
 $(".loginbtn_").click(function () {

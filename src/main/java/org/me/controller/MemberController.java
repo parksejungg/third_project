@@ -78,12 +78,10 @@ public class MemberController {
 		String encodePw = "";
 		String loginId ="";
 		
-		// 저장되어 있는 이전 페이지 URL이 있다면
-		String previousPage = (String) session.getAttribute("previousPage");
-		log.info("저장 되어 있는 페이지" +previousPage);
-		
-		
 		MemberVO loginVo = service.memberLogin(memberVO);
+		
+		String redirectUrl = request.getParameter("redirect");
+		
 		
 		if(loginVo !=null) { // 일치하는 아이디가 존재한다면?
 			rawPw = memberVO.getUserPw();
@@ -94,13 +92,10 @@ public class MemberController {
 				loginVo.setUserPw("");
 				session.setAttribute("member", loginVo); //세션에 사용자 정보 저장
 				log.info("일반 사용자 로긴 성공");
-
-	            if (previousPage != null) {
-	            	log.info("세션 있음");
-	                session.removeAttribute("previousPage");
-	                
-	                return "redirect:" + previousPage;
-	            }
+				
+				if(redirectUrl !=null && !redirectUrl.isEmpty()) {
+					return "redirect:" + redirectUrl;
+				}
 				
 				if(loginId.equals("admin")) {
 					session.setAttribute("member", loginVo);

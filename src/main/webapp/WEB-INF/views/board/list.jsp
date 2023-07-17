@@ -30,7 +30,7 @@ button:hover {
 	function moveWrite() {
 		if (userId == '') {
 			if (confirm("로그인 후 이용하실 수 있는 페이지입니다.\n로그인 페이지로 이동하시겠습니까?")) {
-				location.href = "/member/login";
+				location.href = "/member/login?redirect=/relay/board/write";
 			}
 			return;
 		}
