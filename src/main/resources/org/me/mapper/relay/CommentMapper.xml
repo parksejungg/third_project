@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.me.mapper.relay.CommentMapper">
+
+    <select id="findAll" parameterType="int" resultType="org.me.domain.relay.dto.CommentDto">
+        /* CommentMapper.findAll */
+        SELECT REPLY.RNO                               AS RNO         /* 댓글번호 */
+             , REPLY.BNO                               AS BNO         /* 글번호 */
+             , REPLY.REPLY                             AS REPLY       /* 댓글내용 */
+             , REPLY.USERID                            AS USERID      /* 유저ID */
+             , MEM.USERNAME                            AS USERNAME    /* 유저명 */
+             , TO_CHAR(REPLY.REPLYDATE, 'YYYY.MM.DD')  AS REPLYDATE   /* 댓글등록일자 */
+             , TO_CHAR(REPLY.UPDATEDATE, 'YYYY.MM.DD') AS UPDATEDATE  /* 댓글수정일자 */
+          FROM TBL_REPLY_B REPLY
+         INNER JOIN TBL_MEMBER MEM
+            ON REPLY.USERID = MEM.USERID
+         WHERE REPLY.BNO = #{bno}     
+         ORDER BY REPLY.RNO DESC 
+    </select>	
+    
+    <insert id="insert" parameterType="org.me.domain.relay.dto.CommentDto">
+        /* CommentMapper.insert */
+        INSERT INTO TBL_REPLY_B (
+          RNO
+        , BNO
+        , REPLY 
+        , USERID 
+        , REPLYDATE
+        , UPDATEDATE
+        ) VALUES (
+          SEQ_REPLY_B.NEXTVAL
+        , #{bno}
+        , #{reply}
+        , #{userId}
+        , SYSDATE
+        , SYSDATE
+        )
+    </insert>
+    
+    <update id="update" parameterType="org.me.domain.relay.dto.CommentDto">
+        /* CommentMapper.update */
+        UPDATE TBL_REPLY_B
+           SET REPLY = #{reply}
+             , UPDATEDATE = SYSDATE
+         WHERE RNO = #{rno}
+    </update>
+    
+    <delete id="delete" parameterType="int">
+        /* CommentMapper.delete */
+        DELETE
+          FROM TBL_REPLY_B
+         WHERE RNO = #{rno}
+    </delete>
+    
+</mapper>

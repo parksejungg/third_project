@@ -21,7 +21,8 @@
 	<mappers>
 		<mapper resource="org/me/mapper/Payment.xml" />
 		<mapper resource="org/me/mapper/MemberMapper.xml" />	
-		<mapper resource="/org/me/mapper/board.xml" />					
+		<mapper resource="org/me/mapper/relay/BoardMapper.xml" />					
+		<mapper resource="org/me/mapper/relay/CommentMapper.xml" />					
 	</mappers>
 	
 	

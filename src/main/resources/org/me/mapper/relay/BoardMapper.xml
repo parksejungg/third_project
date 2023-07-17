@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.me.mapper.relay.BoardMapper">
+
+    <select id="findAll" resultType="org.me.domain.relay.dto.BoardDto">
+        /* BoardMapper.findAll */
+        SELECT BOARD.BNO        AS BNO
+             , BOARD.TITLE      AS TITLE
+             , BOARD.CONTENT    AS CONTENT
+             , MEM.USERNAME     AS USERNAME
+             , BOARD.REGDATE    AS REGDATE
+             , BOARD.UPDATEDATE AS UPDATEDATE
+          FROM TBL_BOARD_B BOARD
+         INNER JOIN TBL_MEMBER MEM
+            ON BOARD.USERID = MEM.USERID
+         ORDER BY BOARD.BNO DESC 
+    </select>
+    
+    <insert id="insert" parameterType="org.me.domain.relay.dto.BoardDto">
+        /* BoardMapper.insert */
+        INSERT INTO TBL_BOARD_B (
+          BNO
+        , TITLE
+        , CONTENT 
+        , USERID
+        , REGDATE
+        , UPDATEDATE
+        ) VALUES (
+          SEQ_BOARD_B.NEXTVAL
+        , #{title}
+        , #{content}
+        , #{userId}
+        , SYSDATE
+        , SYSDATE
+        )
+    </insert>
+    
+    <select id="findOne" resultType="org.me.domain.relay.dto.BoardDto" parameterType="int">
+        /* BoardMapper.findOne */
+        SELECT BOARD.BNO        AS BNO
+             , BOARD.TITLE      AS TITLE
+             , BOARD.CONTENT    AS CONTENT
+             , BOARD.USERID     AS USERID
+             , MEM.USERNAME     AS USERNAME
+             , BOARD.REGDATE    AS REGDATE
+             , BOARD.UPDATEDATE AS UPDATEDATE
+          FROM TBL_BOARD_B BOARD
+         INNER JOIN TBL_MEMBER MEM
+            ON BOARD.USERID = MEM.USERID
+         WHERE BOARD.BNO = #{bno}
+    </select>
+    
+    <update id="update" parameterType="org.me.domain.relay.dto.BoardDto">
+        /* BoardMapper.update */
+        UPDATE TBL_BOARD_B 
+           SET TITLE = #{title}
+             , CONTENT = #{content}
+         WHERE BNO = #{bno}
+    </update>
+    
+    <delete id="deleteBoard" parameterType="int">
+        /* BoardMapper.deleteBoard */
+        DELETE 
+          FROM TBL_BOARD_B
+         WHERE BNO = #{bno}
+    </delete>
+   
+    <delete id="deleteComment" parameterType="int">
+        /* BoardMapper.deleteComment */
+        DELETE 
+          FROM TBL_REPLY_B
+         WHERE BNO = #{bno}
+    </delete>
+     
+</mapper>
