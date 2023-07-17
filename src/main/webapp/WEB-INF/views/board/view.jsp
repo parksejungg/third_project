@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="/resources/css/view.css" rel="stylesheet" type="text/css">
+<link href="/resources/css/jm_css/view.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -152,6 +152,7 @@ button:hover {
 	
 	// 댓글 안의 수정 버튼 클릭할 때
 	function clickUpdate(pThis) {
+		alert("댓글을 수정하시겠습니까?");
 		$("#inputComment").val($(pThis).prev().text());
 		$("#inputComment").focus();
 		$("#btnWrite").text('수정');
@@ -161,6 +162,7 @@ button:hover {
 	
 	// 댓글 삭제
 	function deleteComment(pThis) {
+		alert("댓글을 삭제하시겠습니까?");
 		$.ajax({
 			type: "POST",
 			data: {

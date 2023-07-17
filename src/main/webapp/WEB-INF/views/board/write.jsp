@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="/resources/css/write.css" rel="stylesheet" type="text/css">
+<link href="/resources/css/jm_css/write.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>게시글 작성</title>
 
@@ -76,7 +76,7 @@ button:hover {
 		<input type="hidden" id="userId" name="userId" />
 
 		<div class="write_input01"
-			style="position: absolute; width: 100%; text-align: center; top: 435px; font-size: 16pt">
+			style="position: absolute; width: 100%; text-align: center; top: 400px; font-size: 16pt">
 			제목 : <input class="write_input02" name="title" id="title" size="80"
 				placeholder="제목"> <br /> <br /> <span class="relay_content"><b>여러분의 멋진 아이디어로 릴레이 소설을 작성보세요!</b></span><br>
 			<textarea class="write_input03" name="content" id="content" rows="4"

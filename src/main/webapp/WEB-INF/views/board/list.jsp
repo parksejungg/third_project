@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="/resources/css/list.css" rel="stylesheet" type="text/css">
+<link href="/resources/css/jm_css/list.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- boot css -->
 <title>릴레이 소설 게시판</title>
