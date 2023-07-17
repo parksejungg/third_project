@@ -213,7 +213,7 @@ button:hover {
 			<!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
 			<!-- 날짜 형식 => yyyy 4자리연도, MM 월, dd 일, a 오전/오후, HH 24시간제, hh 12시간제, mm 분, ss 초 -->
 			<div class="view_regdate"
-				style="margin-top: 17px; font-family: 'SUITE-Regular' !important; font-size: 13pt;">
+				style="color: #B1AA9A; margin-top: 17px; font-family: 'SUITE-Regular' !important; font-size: 13pt;">
 				작성일자 : <fmt:formatDate value="${dto.regdate}" pattern="yyyy-MM-dd a HH:mm:ss" />
 			</div>
 		</div>
