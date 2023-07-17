@@ -85,9 +85,6 @@ body {
     margin-bottom: 20px;
 }
 
-.saveId {
-    border: 1px solid red;
-}
 
 .notice {
     text-align: center;
@@ -99,6 +96,31 @@ body {
     display: none;
 
 }
+
+.logSave {
+    display: flex;
+    align-items: center;
+    font-family: korFont;
+    margin-bottom: 15px;
+
+}
+
+.logSave label {
+    margin-left: 0;
+    order: 1;
+    cursor: pointer;
+
+}
+
+.logSave input[type="checkbox"] {
+    width: 15px !important;
+    margin-right: 10px;
+    text-align: left;
+    accent-color: #994D22;
+    transform: scale(1.1);
+    outline: none;
+}
+
 
 hr {
     width: 100%;

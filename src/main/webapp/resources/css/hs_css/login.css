@@ -77,6 +77,33 @@ body {
     margin-bottom: 20px;
 }
 
+
+.logSave {
+    display: flex;
+    align-items: center;
+    font-family: korFont;
+    margin-bottom: 15px;
+
+}
+
+.logSave label {
+    margin-left: 0;
+    order: 1;
+    cursor: pointer;
+    font-size: 12pt;
+
+}
+
+.logSave input[type="checkbox"] {
+    width: 15px !important;
+    margin-right: 10px;
+    text-align: left;
+    accent-color: #994D22;
+    transform: scale(1.1);
+    outline: none;
+}
+
+
 hr {
     width: 100%;
     background-color: #A98B67;
