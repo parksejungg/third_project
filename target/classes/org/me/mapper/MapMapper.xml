@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.me.mapper.MapMapper">
+
+<!--  
+<resultMap type="Map" id="Map">
+	<result property="map_Name" column="MAP_NAME"/>
+	<result property="map_Email" column="MAP_EMAIL"/>
+	<result property="basic_Address" column="BASIC_ADDRESS"/>
+	<result property="map_Title" column="MAP_TITLE"/>
+	<result property="map_Content" column="MAP_CONTENT"/>
+</resultMap> -->
+
+<!-- insert into mapInfo values('이름', '이메일', '주소', '제목', '내용') -->
+<insert id="mapInsert">
+
+insert into mapInfo values(#{map_Name}, #{map_Email}, #{basic_Address}, #{map_Title}, #{map_Content})
+
+</insert>
+
+
+
+
+
+</mapper>
