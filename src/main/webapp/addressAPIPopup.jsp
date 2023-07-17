@@ -40,7 +40,6 @@ function fn_search(){
 //결과 테이블 생성
 //위에서 호출 받아서 처리할 fn_makeListJson(jsonStr) 메서드 선언
 function fn_makeListJson(jsonStr){
-	alert("결과테이블 생성");
 	var htmlStr = "";
 	$(jsonStr.results.juso).each(function(){
 		htmlStr += "<tr onclick=\"javascript:chooseAddress('"+this.roadAddr+"','"+this.jibunAddr+"','"+this.zipNo+"');\">";
