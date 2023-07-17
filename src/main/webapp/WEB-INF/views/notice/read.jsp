@@ -9,6 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Read</title>
+<link rel="shortcut icon" href="/resources/img/ej_img/logoimg.ico">
 <link rel="stylesheet" href="/resources/css/hs_css/buttons.css">
 <link rel="stylesheet" href="/resources/css/hs_css/noticeRead.css">
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>

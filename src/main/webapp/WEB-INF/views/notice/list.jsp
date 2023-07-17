@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/resources/css/js.css/notice.css">
     <script
   src="https://code.jquery.com/jquery-3.4.1.js"></script>
+ <link rel="shortcut icon" href="/resources/img/ej_img/logoimg.ico">
     <title>M:美</title>
 </head>
 <body>

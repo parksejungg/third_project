@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main_shop</title>
+    <link rel="shortcut icon" href="/resources/img/ej_img/logoimg.ico">
     <link rel="stylesheet" href="/resources/css/hs_css/bootstrap_min.css">
     <link rel="stylesheet" href="/resources/css/hs_css/style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -48,7 +49,7 @@
                             <li><a href="/review/list">Review</a></li>
                         </ul>
                     </li>
-                    <li><a href="list.do">PLAY</a></li>
+                    <li><a href="/list.do">PLAY</a></li>
                     <c:if test="${member == null}"><li><a href="/member/login">LOGIN</a></li></c:if>
                     <c:if test="${member != null}"> <!-- 로긴이 되어있다면 -->
        					<li><a id="btnlogout">LOGOUT</a></li>

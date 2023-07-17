@@ -64,8 +64,7 @@ body {
 }
 
 input,
-textarea,
-a {
+textarea {
     font-family: 'korFont' !important;
 }
 
@@ -137,7 +136,7 @@ a {
     font-size: 15pt;
     padding: 7px 0px;
     text-align: center;
-    
+    font-family: 'korFont';
 }
 
 .btnRegister {
