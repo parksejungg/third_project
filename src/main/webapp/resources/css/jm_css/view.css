@@ -132,7 +132,7 @@
 		}
 		
 		.comment-update{
-			margin-left: 688px;
+			margin-left: 686px;
 			font-size: 14pt;
 			border: 1px solid #A98B67;
 			color: #A98B67;
@@ -185,6 +185,14 @@
 				width: 650px;
 			}
 
+			.comment-Print{
+				width: 650px !important;
+			}
+
+			.comment-update{
+				margin-left: 548px;
+			}
+
 		}
 		
 		@media screen and (max-width: 854px){
@@ -229,6 +237,15 @@
 				width: 67px !important;
 				height: 35px !important;
 			}
+			
+			.comment-Print{
+				width: 410px !important;
+				height: 75px;
+			}
+
+			.comment-update{
+				margin-left: 328px;
+			}
 
 		}
 		
@@ -244,7 +261,7 @@
 			}
 
 			.view_input01{
-				top: 392px !important;
+				top: 350px !important;
 			}
 
 			.view_input02{
@@ -273,6 +290,15 @@
 			.btn_view02{
 				width: 62px !important;
 				height: 30px !important;
+			}
+			
+			.comment-Print{
+				width: 305px !important;
+				height: 58px;
+			}
+
+			.comment-update{
+				margin-left: 235px;
 			}
 
         }
