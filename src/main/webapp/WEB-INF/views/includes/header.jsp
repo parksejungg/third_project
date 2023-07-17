@@ -36,7 +36,7 @@
                         <a href="/about/about">ABOUT</a>
                         <ul class="dropdown">
                             <li><a href="/about/about" class="chlid-menu">Mmuseum</a></li>
-                            <li><a href="/">Map</a></li>
+                            <li><a href="/map">Map</a></li>
                         </ul>
                     </li>
                     <li><a href="/introPayment.do">EXHIBITION</a></li>
