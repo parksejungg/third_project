@@ -75,7 +75,7 @@ function fn_buy() {
                         });
                     } else {
                         alert("결제가 실패되었습니다! : " + rsp.error_msg);
-                    }
+                    }                                                                                                                                                                             
                 });
             } else {
                 alert('로그인 후에 결제할 수 있습니다. 로그인해 주세요.'); // 알림 메시지 표시

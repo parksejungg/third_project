@@ -75,14 +75,14 @@
 				 <c:if test="${member == null}"><a href="member/login">LOGIN</a></c:if>
 				<c:if test="${member == null}"><a href="member/register">SIGN UP</a></c:if>
 				<c:if test="${member != null}">
+				<c:if test="${ member.adminCheck == 1 }">Admin Page</c:if>
 				<a id="btnlogout">LOGOUT</a>
-				<c:if test="${ member.adminCheck == 1 }">관리자 어쩌고</c:if>
 				</c:if>
 				
 			</div>
 		</div>
 		<nav class="menu">
-			<a class="menu__item" href="">
+			<a class="menu__item" href="/about/about">
 				<span class="menu__item-text" data-splitting="">ABOUT</span>
 			</a>
 			<a class="menu__item" href="introPayment.do">
