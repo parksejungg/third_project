@@ -26,7 +26,7 @@ hr{
 
 .category{
     margin-top: 50px;
-    margin-bottom: -15px;
+    margin-bottom: 20px;
     text-align: center;
     font-size: 120px;
     letter-spacing: 5px;
@@ -711,11 +711,16 @@ hr{
 
 a{
 	text-decoration: none;
-	color: #000 !important;
+	/* color: #000 !important; */
 }
 
-a:hover{
-	text-decoration: underline !important;
+
+.move{
+	color : #000;
+}
+
+.move:hover{
+	border-bottom: 1.5px solid #994D22;
 }
   
 table{
