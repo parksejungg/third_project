@@ -76,9 +76,9 @@
         <!-- 아래 공지사항 목록 뜰것임 -->
         
          <c:if test="${member != null && member.adminCheck == 1}"> <!-- 로긴이 되어있다면 -->
+		 	<a href="/notice/insert" class="N_write_btn">글쓰기</a>
          </c:if>
  	
-	 	<a href="/notice/insert" class="N_write_btn">글쓰기</a>
 	     <div class="panel-body">
 		 	<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 				<thead>
