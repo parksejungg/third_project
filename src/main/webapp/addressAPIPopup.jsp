@@ -79,13 +79,12 @@ function chooseAddress(roadAddr, jibunAddr, zipNo) {
 </head>
 <body>
 <div class="container" style="margin-top:25px;">
-		<div id="memberSearchDiv" class="text-center">
-		<form name="searchForm" id="searchForm" method="post" class="navbar-form navbar-left" role="search" onsubmit="event.preventDefault()">
+	<div id="memberSearchDiv" class="text-center">
+	<form name="searchForm" id="searchForm" method="post" class="navbar-form navbar-left" role="search" onsubmit="event.preventDefault()">
 	<input type="hidden" name="currentPage" value="1"/>
 	<input type="hidden" name="countPerPage" value="100"/><!-- 요청 변수 설정 (페이지당 출력 개수. countPerPage 범위 : 0 < n <= 100) -->
 	<input type="hidden" name="resultType" value="json"/> <!-- 요청 변수 설정 (검색결과형식 설정, json) --> 
-	<input type="hidden" id="confmKey" name="confmKey" value="devU01TX0FVVEgyMDIzMDUwODE3MTIwOTExMzc1MjM=		
-"/><!-- 요청 변수 설정 (승인키) -->
+	<input type="hidden" id="confmKey" name="confmKey" value="devU01TX0FVVEgyMDIzMDUwODE3MTIwOTExMzc1MjM="/><!-- 요청 변수 설정 (승인키) -->
 	
 	<div class="form-group">
 		<input type="text" name="keyword" id="keyword" class="form-control" placeholder="도로명+건물번호, 건물명, 지번을 입력하세요." onkeypress="javascript:enterSearch();"  /><!-- 요청 변수 설정 (키워드) -->

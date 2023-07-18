@@ -25,11 +25,6 @@ function fn_buy() {
     var totalAmount = 18000 * quantity; // 총 결제 금액 계산
     var userName = ""; // 사용자 이름 초기화
     
- // 세션에  URL 저장
-    var previousPage = window.location.href;
-    sessionStorage.setItem('previousPage', previousPage);
-    console.log("세션저장");
-    
     // Check if the user is logged in
     $.ajax({
         url: '/member/checkLogin',

@@ -31,7 +31,7 @@ public class MemberController {
 	//회원가입페이지 이동
 	@RequestMapping(value ="/register", method = RequestMethod.GET)
 	public String registerGET() {
-		log.info("횐가입 페이지");
+		//log.info("회원가입 페이지");
 		return "/member/register";
 	}
 	
@@ -39,7 +39,6 @@ public class MemberController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registerPOST(MemberVO memberVO, RedirectAttributes redirectAttributes)
 	  throws Exception {
-	  
 		
 	  String hashedPw = BCrypt.hashpw(memberVO.getUserPw(), BCrypt.gensalt());
 	  memberVO.setUserPw(hashedPw);
@@ -74,14 +73,13 @@ public class MemberController {
 	public String loginPOST(MemberVO memberVO, HttpServletRequest request, RedirectAttributes rttr) {
 		
 		HttpSession session = request.getSession();
+		String redirectUrl = request.getParameter("redirect");
+
 		String rawPw = "";
 		String encodePw = "";
 		String loginId ="";
 		
 		MemberVO loginVo = service.memberLogin(memberVO);
-		
-		String redirectUrl = request.getParameter("redirect");
-		
 		
 		if(loginVo !=null) { // 일치하는 아이디가 존재한다면?
 			rawPw = memberVO.getUserPw();
@@ -120,27 +118,13 @@ public class MemberController {
 		}
 	}
 	
-	//메뉴바 로그아웃
-	@RequestMapping(value="/logout" , method=RequestMethod.GET)
-	public String logoutGET(HttpServletRequest request) {
-		log.info("로그아웃 매서드 ");
-		
-		HttpSession session = request.getSession();
-		session.invalidate();
-		
-		return "redirect:/main";
-		
-	}
 	
 	//비동식 방식 로그아웃
 	@RequestMapping(value="/logout" , method=RequestMethod.POST)
 	@ResponseBody
 	public void logoutPOST(HttpServletRequest request) {
-		log.info("비동기 로그아웃 매서드 ");
-		
 		HttpSession session = request.getSession();
 		session.invalidate();
-		
 	}
 	
    // 추가한 거 !

@@ -72,7 +72,7 @@
 		<div class="frame">
 			<a href="/main.jsp"><h1 class="frame__title"><img src="/resources/img/ej_img/logo.png" alt="로고이미지"></h1></a>
 			<div class="frame__links">
-				 <c:if test="${member == null}"><a href="member/login">LOGIN</a></c:if>
+				<c:if test="${member == null}"><a href="member/login">LOGIN</a></c:if>
 				<c:if test="${member == null}"><a href="member/register">SIGN UP</a></c:if>
 				<c:if test="${member != null}">
 				<c:if test="${ member.adminCheck == 1 }">Admin Page</c:if>

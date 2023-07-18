@@ -74,7 +74,6 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
-
 	$("#btnlogout").click(function(){
 		$.ajax({
 			type:"POST",

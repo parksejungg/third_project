@@ -88,7 +88,6 @@ function checkId() {
 		data : data,
 		success : function(result){
 			if(result!='fail'){ 	//사용 가능한 아이디일 때
-				console.log("fail");
 				$('.notice2_f').css("display","none");
 				
 				$('.notice2').css("display","inline-block");
@@ -107,7 +106,7 @@ function checkId() {
 }
 
 //도로명주소 - 주소검색 팝업을 호출합니다.
-//https://business.juso.go.kr/addrlink/openApi/popupApi.do 웹사이트에서 하단 "주소입력화면 소스보기"를 클릭해서 참고합니다.
+//https://business.juso.go.kr/addrlink/openApi/popupApi.do 참고
 function openAddr(){
 	var url = "/addressAPIPopup.jsp";
 	var name = "AddressPopup";
