@@ -47,7 +47,7 @@
 		         <div class="text">이벤트 당첨 이후 한 달 이내에 당첨자 확인, 주소 확정을 위하여 연락이 갑니다.<br></div>
 		      </li>
 		   </ul>
-		   <div class="toQnA"><a href="#">더 궁금하신 사항은 QnA게시판을 이용해주세요.</a></div>
+		   <div class="toQnA">더 궁금하신 사항은 <a href="#">QnA게시판</a>을 이용해주세요.</div>
     	</div>
     <script src="/resources/js/js.js/accordion.js"></script>
 </body>
