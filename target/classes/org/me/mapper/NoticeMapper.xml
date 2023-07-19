@@ -28,9 +28,7 @@
 
 <!-- 글 조회 -->
 <select id="getNotice" resultType="org.me.domain.NoticeVO">
-
 	select * from tbl_board_N where bno = #{bno}
-
 </select>
 
 <delete id="deleteNotice">

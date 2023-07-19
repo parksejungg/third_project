@@ -33,6 +33,13 @@ public class NoticeController {
 		
 	}
 	
+	// 글조회
+	@GetMapping("/read")
+	public void reviewBoardGET(int bno, Model model) {
+		
+		model.addAttribute("read", service.getNotice(bno));
+	}
+	
 	// 글등록 페이지로 이동
 	@GetMapping("/insert")
 	public void board() {
@@ -53,12 +60,6 @@ public class NoticeController {
 		return "redirect:/notice/list";
 	}
 	
-	// 글조회
-	@GetMapping("/read")
-	public void reviewBoardGET(int bno, Model model) {
-		
-		model.addAttribute("read", service.getNotice(bno));
-	}
 	
 	
 	// 글수정 페이지로 이동

@@ -72,8 +72,6 @@
 		    form.submit();
 		});
 		
-		
-		
 </script>	
 
 </body>
