@@ -21,7 +21,6 @@
 		   <a class="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
 		      <span class="icon"></span>
 		   </a>
-		   <a class="bg_links logo"></a>
 		</div>
 		<!-- end about -->
 		<div class="category">
