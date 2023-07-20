@@ -37,8 +37,8 @@ button:hover {
 %>
 <!-- 헤더 넣을 공간 -->
 <script>
-	var userId = '<%= memberVo == null ? "" : memberVo.getUserId() %>';
-	var rno;
+	const userId = '<%= memberVo == null ? "" : memberVo.getUserId() %>';
+	let rno;
 
 	$(document).ready(function(){
 		displayButton();
@@ -62,8 +62,8 @@ button:hover {
 	}
 	
 	function updateBoard() {
-		var title = $("#title").val();
-		var content = $("#content").val();
+		const title = $("#title").val();
+		const content = $("#content").val();
 
 		if (title == "") {
 			alert("제목을 입력하세요");
@@ -82,7 +82,7 @@ button:hover {
 
 	// 댓글 전체조회
 	function commentList() {
-		var bno = $("#bno").val();
+		const bno = $("#bno").val();
 		
 		$.ajax({
 			type: "GET",
@@ -96,7 +96,7 @@ button:hover {
 	
 	// 댓글 폼 만들기
 	function makeCommentHtml(data) {
-		var html = '';
+		let html = '';
 		
 		for (var row of data) {
 			html += '<div class="comment-Print">';
@@ -152,7 +152,6 @@ button:hover {
 	
 	// 댓글 안의 수정 버튼 클릭할 때
 	function clickUpdate(pThis) {
-		alert("댓글을 수정하시겠습니까?");
 		$("#inputComment").val($(pThis).prev().text());
 		$("#inputComment").focus();
 		$("#btnWrite").text('수정');
@@ -162,7 +161,6 @@ button:hover {
 	
 	// 댓글 삭제
 	function deleteComment(pThis) {
-		alert("댓글을 삭제하시겠습니까?");
 		$.ajax({
 			type: "POST",
 			data: {
