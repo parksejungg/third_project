@@ -45,7 +45,7 @@
                         <ul class="dropdown">
                             <li><a href="/notice/list">Notice</a></li>
                             <li><a href="/faq/faq">FAQ</a></li>
-                            <li><a href="">Q&A</a></li> <!-- FAQ에서 Q&A로 연결되는 경로도 설정해주세욥 -->
+                            <li><a href="http://localhost:3000/board">Q&A</a></li> <!-- FAQ에서 Q&A로 연결되는 경로도 설정해주세욥 -->
                             <li><a href="/review/list">Review</a></li>
                         </ul>
                     </li>
