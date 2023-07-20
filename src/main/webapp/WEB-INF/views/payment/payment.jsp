@@ -115,8 +115,8 @@ function fn_buy() {
                         <a href="/notice/list">COMMUNITY</a>
                         <ul class="dropdown">
                             <li><a href="/notice/list">Notice</a></li>
-                            <li><a href="">FAQ</a></li>
-                            <li><a href="">Q&A</a></li>
+                            <li><a href="/faq/faq">FAQ</a></li>
+                            <li><a href="http://localhost:3000/board">Q&A</a></li>
                             <li><a href="/review/list">Review</a></li>
                         </ul>
                     </li>
