@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+		@font-face {
+		/* 한글 영문 폰트 같이 넣음 */
+			font-family: 'SUITE-Regular';
+			src: url('../common/font/SUITE-Regular.otf') format('woff2');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		@font-face {
+		/* 한글 영문 폰트 같이 넣음 */
+			font-family: 'ViaodaLibre-Regular';
+			src: url('../common/font/ViaodaLibre-Regular.otf') format('woff2');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		.table>:not(caption)>*>*{
+			 background-color: none !important;
+		}
+
+		body{
+			font-family: 'SUITE-Regular' !important;
+		}
+
+		.card-text{
+			font-family: 'SUITE-Regular' !important;
+		}
+
+		.list_btn{
+			text-align: right;
+		}
+
+      	@media screen and (max-width: 1400px){
+			/* *{background: pink;} */
+			
+			.list_relay{
+                display: none;
+			}
+			
+			.list_btn01{
+				width: 100% !important;
+				margin-top: -35px !important;
+				margin-bottom: 53px !important;
+				text-align: center;
+			}
+			
+			.list_btn02{
+				width: 210px !important;
+				height: 50px !important;
+			}
+			
+			.list_btn03{
+				margin-left: none !important;
+			}
+			
+			.list_table01{
+				display: none;
+			}
+
+			.list_table02{
+				display: block !important;
+			}
+
+		}
+		
+		.list_table02{
+			display: none;
+		}
+
+		      	@media screen and (max-width: 767px){
+			/* *{background: pink;} */
+			
+			.list_relay{
+                display: none;
+			}
+			
+			.list_btn01{
+				width: 100% !important;
+				margin-top: -35px !important;
+				margin-bottom: 18px !important;
+				text-align: center;
+			}
+			
+			.list_btn02{
+				width: 80px !important;
+				height: 34px !important;
+				font-size: 10pt !important;
+			}
+			
+			.list_btn03{
+				margin-left: none !important;
+			}
+			
+			.list_table01{
+				display: none;
+			}
+
+			.list_table02{
+				display: none !important;
+			}
+
+			.list-span-text{
+				font-size: 12pt !important;
+				line-height: 24.4px !important;
+				margin-top: 38px !important;
+				margin-bottom: 48.5px !important;
+			}
+
+			.list_table03{
+				display: block !important;
+			}
+
+		}
+
+		.list_table03{
+				display: none;
+			}
+

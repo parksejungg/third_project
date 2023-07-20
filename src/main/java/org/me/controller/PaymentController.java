@@ -17,10 +17,10 @@ public class PaymentController {
 	
 	@RequestMapping(value = "/paymentProcess.do")
 	public void paymentDone(@RequestBody PaymentVO vo) {
-		paymentService.insertPaymentSuccess(vo);
+		paymentService.PaymentInsert(vo);
 	}	
 	
-	@RequestMapping(value = "paymentDone.do")
+	@RequestMapping(value = "paymentSuccess.do")
 	public ModelAndView fwdPaymentSuccessPage() {
 		return new ModelAndView("/payment/paymentSuccess");
 	}
@@ -30,12 +30,10 @@ public class PaymentController {
 		return new ModelAndView("/payment/payment");
 	}
 	
-
 	
-	@RequestMapping(value = "/")
-	public ModelAndView goMain() {
-		return new ModelAndView("index");
-	}
+	@RequestMapping(value = "introPayment.do") public ModelAndView goMain() { 
+	      return new  ModelAndView("/payment/intro_payment"); 
+	    }
 	
 	
 }

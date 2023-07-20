@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="kor">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/buttons.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapAll">
+            <div class="header">
+                <img src="img/logo.svg" alt="로고">
+            </div>
+            <div class="wrapBody">
+                <div class="loginText">LOGIN</div>
+                <div class="loginform">
+                    <div><input type="text" id="userId" placeholder="아이디"></div>
+                    <div><input type="password" id="userPw" placeholder="비밀번호"></div>
+                    <div class="notice">
+                        아이디 또는 비밀번호를 확인 해 주세요.
+                    </div>
+                </div>
+                <div class="btn">
+                    <button class="button button--ujarak button--border-thin button--text-thick btnLogin">로그인</button>
+                </div>
+
+                <div class="btnRegister"><a href="/member/register">회원가입</a></div>
+            </div>
+            <hr>
+            <div class="footer">
+                <p>COPYRIGHT ⓒ BY WEBDESIGN. ALL RIGHTS RESERVED</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="wrapBody">
+        <div class="loginText">LOGIN</div>
+        <form id="login_form" method="post">
+            <div class="loginform">
+                <div><input type="text" id="userId" name="userId" placeholder="아이디"></div>
+                <div><input type="password" name="userPw" placeholder="비밀번호"></div>
+                <c:if test="${result==0}">
+                    <div class="notice">
+                        아이디 또는 비밀번호를 확인 해 주세요.
+                    </div>
+                </c:if>
+                <div class="logSave">
+                    <label for="saveId">
+                        <input type="checkbox" class="saveId" name="saveId" id="saveId">아이디 저장
+                    </label>
+                </div>
+            </div>
+            <div class="btn_">
+                <button type="submit"
+                    class="button button--ujarak button--border-thin button--text-thick btnLogin_ ">로그인</button>
+            </div>
+        </form>
+        <div class="btnRegister"><a href="/member/register">회원가입</a></div>
+    </div>
+</body>
+
+<script type="text/javascript">
+
+    $(function () {
+        fnInit();
+    });
+
+    function frm_check() {
+        saveId();
+    }
+
+    //getCookie함수에 name값 (아이디)가 비어있지 않으면 체크해서 name값 넣어주기
+    function fnInit() {
+        var cookieId = getCookie("saveId");
+        console.log(cookieId);
+        if (cookieId != "") {
+            $("input:checkbox[id='saveId']").prop("checked", true);
+            $('#userId').val(cookieId);
+        }
+    }
+
+    //쿠키 세팅 (saveg함수에서 넘겨준 시간을 현재시간과 비교해서 쿠키를 생성)
+    function setCookie(name, value, expiredays) {
+        var todatDate = new Date();
+        todatDate.setTime(todatDate.getTime() + 0);
+        if (todatDate > expiredays) {
+            document.cookie = name + "=" + escape(value) + "; path=" / "; expires=" + expiredays + ";";
+        } else if (todatDate < expiredays) {
+            todatDate.setDate(todatDate.getDate() + expiredays);
+            document.cookie = name + "=" + escape(value) + "; path=" / "; expires=" + todatDate.toGMTString() + ";";
+        }
+
+        console.log(document.cookie);
+    }
+
+    //쿠키 가져오기
+    function getCookie(Name) {
+        var search = Name + "=";
+        console.log("search : " + search);
+
+        if (document.cookie.length > 0) {  //쿠키가 설정되어 있으면
+            offset = document.cookie.indexOf(search);
+            console.log("offset :" + offset);
+            if (offset != -1) { //쿠키가 존재하면
+                offset += search.length;
+                //시작 값 설정
+                end = document.cookie.indexOf(";" + offset);
+                console.log("end : " + end);
+
+                // 쿠키 값의 마지막 위치 인데스 번호 설정
+                if (end == -1) {
+                    end = document.cookie.length;
+                }
+                console.log("end위치 :" + end);
+
+                return unescape(document.cookie.substring(offset, end));
+            }
+            return "";
+        }
+    }
+
+    function saveId() {
+        var expdate = new Date();
+        if ($("#saveId").is(":checked")) {
+            expdate.setTime(expdate.getTime() + 1000 * 3600 * 24 * 30);
+            setCookie("saveId", $("#userId").val(), expdate);
+        } else {
+            expdate.setTime(expdate.getTime() - 1000 * 3600 * 24 * 30);
+            setCookie("saveId", $("#userId").val(), expdate);
+        }
+    }
+
+    $(".loginbtn_").click(function () {
+        alert("로그인 버튼 작용");
+
+        //로긴 메서드 서버 요청
+        $("#login_form").attr("action", "/member/login");
+        $("#login_form").submit();
+    });
+</script>
+
+</html>

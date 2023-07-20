@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+		@font-face {
+		/* 한글 영문 폰트 같이 넣음 */
+			font-family: 'SUITE-Regular';
+			src: url('../common/font/SUITE-Regular.otf') format('woff2');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		@font-face {
+		/* 한글 영문 폰트 같이 넣음 */
+			font-family: 'ViaodaLibre-Regular';
+			src: url('../common/font/ViaodaLibre-Regular.otf') format('woff2');
+			font-weight: 400;
+			font-style: normal;
+		}
+		
+		body{
+			font-family: 'SUITE-Regular' !important;
+		}
+	
+		/* input, textarea */
+		.writer_writer01:focus{
+			border-bottom: 2.8px solid #994D22 !important;
+		}
+		.writer_writer01{
+			background: transparent;
+			top: 300px;
+			border-bottom: 2.5px solid #A98B67 !important;
+			border:none;
+		}
+		
+		.write_input02:focus{
+			border-bottom: 2.8px solid #994D22 !important;
+		}
+		.write_input02{
+			background: transparent;
+			border-bottom: 2.5px solid #A98B67 !important;
+			width: 600px;
+			border:none;
+			/*margin-bottom: 10px;*/
+		}
+		
+		textarea:focus {
+			outline: none;
+			border:2.8px solid #994D22;
+		}
+		.write_input03{
+			background: transparent;
+			border: 2.5px solid #A98B67;
+			width: 800px;
+			height: 230px;
+		}
+		/* input, textarea */
+
+		.relay_content{
+			font-size: 14pt;
+		}
+
+
+      	@media screen and (max-width: 1230px){
+			/* *{background: pink;} */
+			
+			.write_content{
+				width: 790px !important;
+			}
+
+			.write_input01{
+				top: 365px !important;
+				height: 263px !important;
+			}
+
+			.write_input02{
+				width: 500px !important;
+				height: 50px !important;
+			}
+
+			.write_input03{
+				width: 600px !important;
+				height: 130px !important;
+			}
+
+			.relay_content{
+				font-size: 11pt;
+			}
+
+		}
+		
+		@media screen and (max-width: 854px){
+			/* *{background: pink;} */
+
+			*{
+				font-size: 10pt !important;
+			}
+			
+			.write_content{
+				width: 500px !important;
+			}
+
+			.write_input01{
+			    width: 150px;
+				top: 348px !important;
+				height: 263px !important;
+			}
+
+			.write_input02{
+				width: 300px !important;
+				height: 23px !important;
+			}
+
+			.write_input03{
+				width: 380px !important;
+				height: 82px !important;
+			}
+
+			.relay_content{
+				font-size: 11pt;
+			}
+
+		}

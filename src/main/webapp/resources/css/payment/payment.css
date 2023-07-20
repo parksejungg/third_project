@@ -1,0 +1,319 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Viao';
+    src: url('/resources/common/font/ViaodaLibre-Regular.otf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    margin: 0;
+    background-color: #FFFBF2 !important;
+}
+
+
+.logo_img{
+	width: 125px;
+}
+
+.pay_img{
+	width: 100%;
+}
+
+
+.row{
+    width: 100%;
+}
+
+.left_form {
+    float: left;
+    width: 50%;
+    animation: fadein 5s ease 3s;
+    -webkit-animation: fadein 3s;
+}
+
+.right_form {
+	display: inline-block;
+    width: 40%;
+    margin-top: 142px;
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+
+
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.logo_form{
+    position: absolute;
+}
+
+
+.col-5{
+    margin-top: 120px !important;
+    width: 690px;
+}
+
+
+
+.title_pay{
+    font-family: 'Viao';
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center !important;
+    letter-spacing: 5px;
+}
+
+
+
+
+.ticket_form{
+    width: 500px;
+    height: 400px;
+    border: 5px solid #8D8D8D;
+    border-image-source: url("/resources/img/sj_img/line.svg");
+    border-image-slice: 0% 0% 0% 0% fill;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    
+
+}
+
+legend{
+    font-family: 'Viao';
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 1;
+    width: 150px !important;
+    float: none !important;
+    
+}
+
+.quantity_form{
+    margin-top: 90px;
+    margin-left: 56px;
+    width: 357px;
+    height: 10px;
+}
+
+.q_text{
+    font-family: 'SUITE-Regular';
+    font-size: 25px;
+    margin-left: 15px;
+}
+
+.success_form{
+    margin-top: 27px;
+    margin-left: 50px;
+    width: 400px;
+    height: 50px;
+}
+
+.pay_name{
+	font-family: 'SUITE-Regular';
+    font-size: 25px;
+    font-weight : bold;
+    margin-bottom: 5px;
+}
+.tk_legend{
+	font-size: 33px;
+}
+
+.success_text{
+    font-family: 'SUITE-Regular';
+    font-size: 25px;
+}
+#quantity{
+    background-color: #FFFBF2;
+    text-align: center;
+    font-size: 20px !important;
+    margin-left: 20px;
+    border: 0;
+    width : 210px;
+    outline: none;
+    border-bottom: 2px solid #A98B67;
+}
+
+#quantity:hover{
+    outline: none;
+}
+
+#quantity:focus{
+    outline: none;
+}
+
+
+.line {
+    margin-top: -7px;
+    margin-left: 151px;
+    width: 100px;
+    border-bottom: 1px solid #A98B67;
+}
+
+.bacord_img{
+	margin-top: 20px;
+	width: 100px;
+	height: 100px;	
+}
+
+.pay_info{
+	font-family: 'SUITE-Regular';
+	font-size: 20px;
+}
+
+.notice{
+	margin-top : 15px;
+	font-family: 'SUITE-Regular';
+	font-size: 20px;
+	text-align: center;
+	
+}
+.button {
+	padding: 10px !important;
+	min-width: 280px;
+	height: 65px;
+	font-size: 25px;
+    font-family: 'SUITE-Regular';
+	word-spacing: 10px;
+	margin-bottom: 130px !important;
+	display: block;
+	margin: auto;
+    margin-top: 80px;
+	border: none;
+	background: none;
+	color: inherit;
+	position: relative;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+}
+.button:focus {
+	outline: none;
+}
+.button--moema {
+	padding: 1.5em 3em;
+	background: #A98B67;
+	color: #fff;
+	-webkit-transition: background-color 0.3s, color 0.3s;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.button--moema::before {
+	content: '';
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	bottom: -20px;
+	right: -20px;
+	background: inherit;
+	z-index: -1;
+	opacity: 0.4;
+	-webkit-transform: scale3d(0.8, 0.5, 1);
+	transform: scale3d(0.8, 0.5, 1);
+}
+.button--moema:hover {
+	-webkit-transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+	transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+	color: #ECEFF1;
+	background-color: #994D22;
+	-webkit-animation: anim-moema-1 0.3s forwards;
+	animation: anim-moema-1 0.3s forwards;
+}
+
+
+
+.button--moema:hover::before {
+	-webkit-animation: anim-moema-2 0.3s 0.3s forwards;
+	animation: anim-moema-2 0.3s 0.3s forwards;
+}
+
+
+@-webkit-keyframes anim-moema-1 {
+	60% {
+		-webkit-transform: scale3d(0.8, 0.8, 1);
+		transform: scale3d(0.8, 0.8, 1);
+	}
+	85% {
+		-webkit-transform: scale3d(1.1, 1.1, 1);
+		transform: scale3d(1.1, 1.1, 1);
+	}
+	100% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+}
+@keyframes anim-moema-1 {
+	60% {
+		-webkit-transform: scale3d(0.8, 0.8, 1);
+		transform: scale3d(0.8, 0.8, 1);
+	}
+	85% {
+		-webkit-transform: scale3d(1.1, 1.1, 1);
+		transform: scale3d(1.1, 1.1, 1);
+	}
+	100% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+}
+@-webkit-keyframes anim-moema-2 {
+	to {
+		opacity: 0;
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+}
+@keyframes anim-moema-2 {
+	to {
+		opacity: 0;
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+
+@media(max-width: 500px){
+	.left_form{
+		margin-top: 153px;
+		display: none;
+	}
+	.right_form{
+		margin-top: 200px;
+		width: 100%;
+		display: block;
+	}
+	.ticket_form {
+    	width: 470px;
+	}
+	.success_form {
+		margin-left: 35px;
+	}
+}
+
+
+

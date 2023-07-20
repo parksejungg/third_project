@@ -1,0 +1,191 @@
+@charset "utf-8";
+
+/* 한글 눈누폰트 적용 사이트 */
+/* https://noonnu.cc/font_page/1150 */
+
+/* 영문 구글폰트 적용 사이트 */
+/* https://fonts.google.com/specimen/Viaoda+Libre?query=Viaoda+Libre */
+
+@font-face {
+    font-family: 'Viao';
+    src: url('/resources/common/font/ViaodaLibre-Regular.otf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'SUITE';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.reviewcontainer{
+    margin-top: 180px;
+    width: 100%;
+}
+
+.reviewimg img{
+    width: 100%;
+    margin-top: 40px;
+}
+
+.rvsection{
+    margin: auto;
+    height: 700px;
+}
+
+.rvbanner{
+    margin: auto;
+    margin-top: 130px;
+    width: 80%;
+    height: 450px;
+    background: #A98B67;
+}
+
+.rvtext01{
+    text-align: center;
+    font-family: 'Viao';
+    font-size: 55px;
+    color: #fff;
+    height: 100px;
+    line-height: 130px;
+}
+
+.rvtext02{
+    text-align: center;
+    color: #fff;
+    font-family: 'SUITE';
+    font-size: 25px;
+}
+
+.rvboder{
+    margin: auto;
+    margin-top: 50px;
+    width: 80%;
+    height: 500px;
+    border: 1px solid #994D22;
+    padding: 20px;
+}
+
+.rvboder img{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.listform{
+   margin-top: 47px;
+   
+}
+
+.insertbtn{
+	font-family: 'SUITE';
+    margin-top: 45px;
+    margin-right: 346px;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #A98B67;
+    background: transparent;
+    text-align: center;
+    float: right;
+}
+
+.insertbtn:hover{
+    background: #A98B67;
+    border: none;
+    color: white;
+}
+
+.formcontainer{
+   margin-top: 100px;
+
+}
+
+.write_form{
+    font-family: 'SUITE';
+     border: 1.5px solid #A98B67;
+     border-radius: 10px;
+     margin: auto;
+     margin-top: 60px;
+     width: 64%;
+     height: 300px;
+ }
+ 
+ .title_form{
+     border: 0;
+     width : 100%;
+     background: transparent;
+     margin-top: 10px;
+     margin-left: 15px;
+     font-size: 30px;
+     cursor: pointer;
+ }
+ 
+ .title_form:focus{
+     outline: none;
+     border: 0;
+ }
+ .title_form:hover{
+ 	color: #994D22;
+ }
+ 
+ .line_form{
+     width: 100%;
+     border: 0 none;
+     height: 1px;
+     background-color: #A98B67;
+ }
+ .content_form{
+     border: 0;
+     width: 87%;
+     margin-left: 15px;
+     background: transparent;
+     font-size: 25px;
+     resize: none;
+     overflow:hidden;
+ 
+ }
+ 
+ .content_form:focus{
+     outline: none;
+     border: 0;
+     resize: none;
+ }
+ 
+
+
+@media (max-width:730px){
+    .rvsection{
+        height: 500px;
+    }
+    .rvtext01{
+        font-size: 30px;
+    }
+
+    .rvtext02{
+        font-size: 15px;
+    }
+
+    .rvboder{
+        height: 45%;
+    }
+
+    .rvboder img{
+        height: 100%;
+    }
+
+    .insertbtn{
+        margin-top: 0;
+        margin-right: 178px;
+    }
+
+    .write_form{
+        margin-top: 100px;
+    }
+
+
+}
+
+
+

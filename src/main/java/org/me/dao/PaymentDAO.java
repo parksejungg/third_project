@@ -31,10 +31,10 @@ public class PaymentDAO {
 			return sqlMapper;		
 	}	
 	
-	public void insertPaymentSuccess(PaymentVO vo) {
+	public void PaymentInsert(PaymentVO vo) {
 		sqlMapper = getInstance();
 		SqlSession session = sqlMapper.openSession();
-		session.insert("payment.insertPaymentSuccess", vo);
+		session.insert("payment.paymentInsert", vo);
 		session.commit();
 	}	
 }
